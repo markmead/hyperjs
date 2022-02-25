@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 
-export const POSTS_PATH = path.join(process.cwd(), "posts");
+export const EXAMPLES_PATH = path.join(process.cwd(), "examples");
 
-export const postFilePaths = fs
-  .readdirSync(POSTS_PATH)
+export const exampleFilePaths = fs
+  .readdirSync(EXAMPLES_PATH)
   .filter((path) => /\.mdx?$/.test(path));

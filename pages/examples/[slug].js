@@ -6,14 +6,14 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
 import path from "path";
-import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
+import { exampleFilePaths, EXAMPLES_PATH } from "../../utils/mdxUtils";
 
 const components = {
   Example: dynamic(() => import("../../components/Example")),
   Head,
 };
 
-export default function PostPage({ source, frontMatter }) {
+export default function ExamplePage({ source, frontMatter }) {
   return (
     <>
       <header class="text-center">
@@ -34,8 +34,8 @@ export default function PostPage({ source, frontMatter }) {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
-  const source = fs.readFileSync(postFilePath);
+  const exampleFilePath = path.join(EXAMPLES_PATH, `${params.slug}.mdx`);
+  const source = fs.readFileSync(exampleFilePath);
 
   const { content, data } = matter(source);
 
@@ -56,7 +56,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = postFilePaths
+  const paths = exampleFilePaths
     .map((path) => path.replace(/\.mdx?$/, ""))
     .map((slug) => ({ params: { slug } }));
 
