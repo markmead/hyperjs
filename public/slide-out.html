@@ -1,0 +1,23 @@
+<div x-data="{ slideOut: false }">
+  <button class="bg-gray-300 p-3 rounded-lg" @click="slideOut = !slideOut">
+    Toggle Slide Out
+  </button>
+
+  <div
+    class="bg-black/25 fixed inset-0"
+    x-show="slideOut"
+    x-transition.opacity
+  ></div>
+
+  <div
+    class="fixed right-0 inset-y-0 max-w-xs w-screen bg-blue-500 z-50"
+    x-show="slideOut"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="translate-x-full"
+    @click.away="slideOut = false"
+  ></div>
+</div>

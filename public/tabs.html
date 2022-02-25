@@ -1,0 +1,73 @@
+<div x-data="{ activeTab: 'productDetails' }">
+  <nav>
+    <ul class="flex space-x-4">
+      <li>
+        <a
+          class="bg-gray-300 p-3 rounded-lg block"
+          href="#productDetails"
+          @click.prevent="activeTab = 'productDetails'"
+          :class="{ 'text-blue-500': activeTab === 'productDetails' }"
+        >
+          Product Details
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="bg-gray-300 p-3 rounded-lg block"
+          href="#productSpecs"
+          @click.prevent="activeTab = 'productSpecs'"
+          :class="{ 'text-blue-500': activeTab === 'productSpecs' }"
+        >
+          Product Specs
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="bg-gray-300 p-3 rounded-lg block"
+          href="#productReviews"
+          @click.prevent="activeTab = 'productReviews'"
+          :class="{ 'text-blue-500': activeTab === 'productReviews' }"
+        >
+          Product Reviews
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="rounded-lg border p-4 mt-4" id="tabTarget"></div>
+
+  <template x-teleport="#tabTarget">
+    <div x-show="activeTab === 'productDetails'">
+      <h2>Product Details</h2>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
+        quisquam.
+      </p>
+    </div>
+  </template>
+
+  <template x-teleport="#tabTarget">
+    <div x-show="activeTab === 'productSpecs'">
+      <h2>Product Specs</h2>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
+        quisquam.
+      </p>
+    </div>
+  </template>
+
+  <template x-teleport="#tabTarget">
+    <div x-show="activeTab === 'productReviews'">
+      <h2>Product Reviews</h2>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
+        quisquam.
+      </p>
+    </div>
+  </template>
+</div>
