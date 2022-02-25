@@ -10,16 +10,19 @@ import { exampleFilePaths, EXAMPLES_PATH } from "../../utils/mdxUtils";
 
 const components = {
   Example: dynamic(() => import("../../components/Example")),
-  Head,
 };
 
 export default function ExamplePage({ source, frontMatter }) {
   return (
     <>
+      <Head>
+        <title>{frontMatter.title} | Alpine JS Cheats</title>
+      </Head>
+
       <header class="text-center">
         <nav>
           <Link href="/">
-            <a>👈 Go back home</a>
+            <a className="text-sm font-medium">👈 Go Back</a>
           </Link>
         </nav>
       </header>

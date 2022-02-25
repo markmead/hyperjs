@@ -1,0 +1,16 @@
+<div x-data="{ inputQuantity: 1 }">
+  <button class="p-3 bg-gray-300 rounded-lg" @click="inputQuantity--">
+    Decrease
+  </button>
+
+  <input
+    class="p-3 mx-3 border-2 border-gray-200 rounded-lg"
+    type="number"
+    x-model="inputQuantity"
+    aria-label="Quantity"
+  />
+
+  <button class="p-3 bg-gray-300 rounded-lg" @click="inputQuantity++">
+    Increase
+  </button>
+</div>

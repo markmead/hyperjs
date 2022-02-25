@@ -1,11 +1,14 @@
-<div x-data="{ activeTab: 'productDetails' }">
+<div
+  x-data="{ activeTab: 'productDetails' }"
+  x-init="activeTab = window.location.hash ? window.location.hash.replace('#', '') : 'productDetails'"
+>
   <nav>
     <ul class="flex space-x-4">
       <li>
         <a
-          class="bg-gray-300 p-3 rounded-lg block"
+          class="block p-3 bg-gray-300 rounded-lg"
           href="#productDetails"
-          @click.prevent="activeTab = 'productDetails'"
+          @click="activeTab = 'productDetails'"
           :class="{ 'text-blue-500': activeTab === 'productDetails' }"
         >
           Product Details
@@ -14,9 +17,9 @@
 
       <li>
         <a
-          class="bg-gray-300 p-3 rounded-lg block"
+          class="block p-3 bg-gray-300 rounded-lg"
           href="#productSpecs"
-          @click.prevent="activeTab = 'productSpecs'"
+          @click="activeTab = 'productSpecs'"
           :class="{ 'text-blue-500': activeTab === 'productSpecs' }"
         >
           Product Specs
@@ -25,9 +28,9 @@
 
       <li>
         <a
-          class="bg-gray-300 p-3 rounded-lg block"
+          class="block p-3 bg-gray-300 rounded-lg"
           href="#productReviews"
-          @click.prevent="activeTab = 'productReviews'"
+          @click="activeTab = 'productReviews'"
           :class="{ 'text-blue-500': activeTab === 'productReviews' }"
         >
           Product Reviews
@@ -36,7 +39,7 @@
     </ul>
   </nav>
 
-  <div class="rounded-lg border p-4 mt-4" id="tabTarget"></div>
+  <div class="p-4 mt-4 border rounded-lg" id="tabTarget"></div>
 
   <template x-teleport="#tabTarget">
     <div x-show="activeTab === 'productDetails'">

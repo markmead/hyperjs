@@ -1,5 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
+import Head from "next/head";
 import Link from "next/link";
 import path from "path";
 import { exampleFilePaths, EXAMPLES_PATH } from "../utils/mdxUtils";
@@ -7,8 +8,12 @@ import { exampleFilePaths, EXAMPLES_PATH } from "../utils/mdxUtils";
 export default function Index({ examples }) {
   return (
     <>
+      <Head>
+        <title>Alpine JS Cheats</title>
+      </Head>
+
       <article class="prose mx-auto prose-lg">
-        <h1>Home Page</h1>
+        <h1>Alpine JS Cheats</h1>
 
         <ul>
           {examples.map((example) => (

@@ -10,6 +10,11 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <script
           defer
+          src="https://unpkg.com/alpinejs-slug@1.x.x/dist/slug.min.js"
+        ></script>
+
+        <script
+          defer
           src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
       </Head>

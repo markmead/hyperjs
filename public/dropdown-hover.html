@@ -1,0 +1,22 @@
+<div x-data="{ showDropdown: false }">
+  <button
+    class="p-3 bg-gray-300 rounded-lg"
+    @mouseover="showDropdown = true"
+    @mouseleave="showDropdown = false"
+  >
+    Toggle Dropdown
+  </button>
+
+  <div
+    class="pt-4"
+    x-show="showDropdown"
+    @mouseover="showDropdown = true"
+    @mouseleave="showDropdown = false"
+  >
+    <ul class="p-4 border-2 border-gray-100">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+</div>
