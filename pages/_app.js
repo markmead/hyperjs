@@ -33,6 +33,42 @@ function MyApp({ Component, pageProps }) {
           defer
           src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
+
+        <title>Examples | Alpine JS UX</title>
+        <meta
+          name="description"
+          content="Examples of common UX functionality built with Alpine JS."
+          key="description"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://alpinejs.hyperui.dev/" />
+        <meta
+          property="og:title"
+          content="Examples | Alpine JS UX"
+          key="og:title"
+        />
+        <meta
+          property="og:description"
+          content="Examples of common UX functionality built with Alpine JS."
+          key="og:description"
+        />
+        <meta
+          property="og:image"
+          content="https://alpinejs.hyperui.dev/og.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://alpinejs.hyperui.dev/" />
+        <meta
+          name="twitter:title"
+          content="Examples | Alpine JS UX"
+          key="twitter:title"
+        />
+        <meta
+          name="twitter:description"
+          content="Examples of common UX functionality built with Alpine JS."
+          key="twitter:description"
+        />
+        <meta name="twitter:image" content="https://hyperui.dev/og.png" />
       </Head>
 
       <Layout>
