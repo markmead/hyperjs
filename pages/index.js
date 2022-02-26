@@ -8,7 +8,7 @@ export default function Index({ examples }) {
   return (
     <>
       <article class="prose mx-auto prose-lg">
-        <h1>Alpine JS Cheats</h1>
+        <h1>Alpine JS Snippets</h1>
 
         <ul>
           {examples.map((example) => (

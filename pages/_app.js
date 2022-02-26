@@ -34,22 +34,22 @@ function MyApp({ Component, pageProps }) {
           src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
 
-        <title>Examples | Alpine JS UX</title>
+        <title>Examples | Alpine JS Snippets</title>
         <meta
           name="description"
-          content="Examples of common UX functionality built with Alpine JS."
+          content="Examples of common snippets functionality built with Alpine JS."
           key="description"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://alpinejs.hyperui.dev/" />
         <meta
           property="og:title"
-          content="Examples | Alpine JS UX"
+          content="Examples | Alpine JS Snippets"
           key="og:title"
         />
         <meta
           property="og:description"
-          content="Examples of common UX functionality built with Alpine JS."
+          content="Examples of common snippets functionality built with Alpine JS."
           key="og:description"
         />
         <meta
@@ -60,12 +60,12 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:url" content="https://alpinejs.hyperui.dev/" />
         <meta
           name="twitter:title"
-          content="Examples | Alpine JS UX"
+          content="Examples | Alpine JS Snippets"
           key="twitter:title"
         />
         <meta
           name="twitter:description"
-          content="Examples of common UX functionality built with Alpine JS."
+          content="Examples of common snippets functionality built with Alpine JS."
           key="twitter:description"
         />
         <meta name="twitter:image" content="https://hyperui.dev/og.png" />
