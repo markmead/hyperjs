@@ -4,7 +4,7 @@ export default function Example({ src }) {
   let [code, setCode] = useState("");
 
   useEffect(async () => {
-    const response = await fetch(`/${src}.html`);
+    const response = await fetch(`/examples/${src}.html`);
     const text = await response.text();
 
     setCode(text);
@@ -14,7 +14,7 @@ export default function Example({ src }) {
     <>
       <h2>Example</h2>
 
-      <div className="not-prose border-4 border-gray-100 rounded-md p-4">
+      <div className="p-4 border-4 border-gray-100 rounded-md not-prose">
         <div dangerouslySetInnerHTML={{ __html: code }}></div>
       </div>
 

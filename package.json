@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "dev:watch": "next-remote-watch ./posts",
+    "dev:watch": "next-remote-watch ./examples",
     "build": "next build",
     "start": "next start"
   },

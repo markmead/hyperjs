@@ -26,6 +26,11 @@ function MyApp({ Component, pageProps }) {
 
         <script
           defer
+          src="https://unpkg.com/alpinejs-sticky@1.x.x/dist/sticky.min.js"
+        ></script>
+
+        <script
+          defer
           src="https://unpkg.com/alpinejs-slug@1.x.x/dist/slug.min.js"
         ></script>
 
