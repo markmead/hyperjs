@@ -1,0 +1,38 @@
+<div class="space-y-4">
+  <div x-data="{ activeAccordion: false }">
+    <h2
+      class="p-3 bg-gray-300 rounded-lg cursor-pointer"
+      @click="activeAccordion = !activeAccordion"
+    >
+      Lorem ipsum dolor sit amet?
+    </h2>
+
+    <div class="mt-4" x-show="activeAccordion" x-collapse>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorum
+        tenetur aut doloribus iste? Recusandae ipsam quod modi eligendi
+        perspiciatis voluptatibus fugit, similique tenetur quos quasi impedit
+        totam beatae iure, dolor unde voluptas a veniam adipisci quibusdam qui
+        harum vel! Dolorem quaerat delectus in dignissimos libero, beatae itaque
+        repudiandae! Velit?
+      </p>
+    </div>
+  </div>
+
+  <div x-data="{ activeAccordion: false }">
+    <h2
+      class="p-3 bg-gray-300 rounded-lg cursor-pointer"
+      @click="activeAccordion = !activeAccordion"
+    >
+      Lorem ipsum dolor sit amet?
+    </h2>
+
+    <div class="mt-4" x-show="activeAccordion" x-collapse>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis vitae
+        cum non labore itaque veniam exercitationem excepturi dolorum
+        repellendus praesentium!
+      </p>
+    </div>
+  </div>
+</div>
