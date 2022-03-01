@@ -1,0 +1,67 @@
+<form x-data="{ formStep: 1 }">
+  <div x-show="formStep === 1">
+    <p class="text-xl font-bold">Step 1</p>
+
+    <button
+      class="p-3 mt-4 bg-gray-300 rounded-lg"
+      type="button"
+      @click="formStep += 1"
+    >
+      Next Step
+    </button>
+  </div>
+
+  <div class="space-y-4" x-show="formStep === 2">
+    <button
+      class="p-3 bg-gray-300 rounded-lg"
+      type="button"
+      @click="formStep -= 1"
+    >
+      Back
+    </button>
+
+    <p class="text-xl font-bold">Step 2</p>
+
+    <button
+      class="p-3 bg-gray-300 rounded-lg"
+      type="button"
+      @click="formStep += 1"
+    >
+      Next Step
+    </button>
+  </div>
+
+  <div class="space-y-4" x-show="formStep === 3">
+    <button
+      class="p-3 bg-gray-300 rounded-lg"
+      type="button"
+      @click="formStep -= 1"
+    >
+      Back
+    </button>
+
+    <p class="text-xl font-bold">Step 3</p>
+
+    <button
+      class="p-3 bg-gray-300 rounded-lg"
+      type="button"
+      @click="formStep += 1"
+    >
+      Next Step
+    </button>
+  </div>
+
+  <div class="space-y-4" x-show="formStep === 4">
+    <button
+      class="p-3 bg-gray-300 rounded-lg"
+      type="button"
+      @click="formStep -= 1"
+    >
+      Back
+    </button>
+
+    <p class="text-xl font-bold">Final Step</p>
+
+    <button class="p-3 bg-gray-300 rounded-lg" type="button">Submit</button>
+  </div>
+</form>
