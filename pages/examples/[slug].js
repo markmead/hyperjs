@@ -19,7 +19,7 @@ export default function ExamplePage({ source, frontMatter }) {
         <title>{frontMatter.title} | Alpine JS Snippets | HyperJS</title>
       </Head>
 
-      <header class="text-center">
+      <header className="text-center">
         <nav>
           <Link href="/">
             <a className="text-sm font-medium">👈 Go Back</a>
@@ -27,7 +27,7 @@ export default function ExamplePage({ source, frontMatter }) {
         </nav>
       </header>
 
-      <article class="prose prose-lg mx-auto">
+      <article className="mx-auto prose prose-lg">
         <h1>{frontMatter.title}</h1>
 
         <MDXRemote {...source} components={components} />

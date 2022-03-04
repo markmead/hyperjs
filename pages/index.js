@@ -7,21 +7,28 @@ import { exampleFilePaths, EXAMPLES_PATH } from "../utils/mdxUtils";
 export default function Index({ examples }) {
   return (
     <>
-      <article class="prose mx-auto prose-lg">
+      <article className="mx-auto prose prose-lg">
         <h1>Alpine JS Snippets</h1>
 
-        <ul>
-          {examples.map((example) => (
-            <li key={example.filePath}>
-              <Link
-                as={`/examples/${example.filePath.replace(/\.mdx?$/, "")}`}
-                href={`/examples/[slug]`}
+        <div className="not-prose">
+          <ul className="grid grid-cols-2 gap-4">
+            {examples.map((example) => (
+              <li
+                className="border-2 border-gray-100 rounded-lg"
+                key={example.filePath}
               >
-                <a>{example.data.title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                <Link
+                  as={`/examples/${example.filePath.replace(/\.mdx?$/, "")}`}
+                  href={`/examples/[slug]`}
+                >
+                  <a className="block p-4 text-sm font-bold hover:bg-gray-50 focus:outline-none focus:ring">
+                    {example.data.title}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </article>
     </>
   );
