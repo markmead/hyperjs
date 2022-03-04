@@ -1,0 +1,12 @@
+<div x-data="{ showAlert: true }">
+  <div
+    class="relative p-4 overflow-hidden text-white bg-red-500 rounded"
+    role="alert"
+    x-show="showAlert"
+    x-cloak
+    x-init="setTimeout(() => showAlert = false, 5000)"
+  >
+    <span class="absolute inset-x-0 top-0 h-1.5 bg-red-700 animate-life"></span>
+    Alert
+  </div>
+</div>

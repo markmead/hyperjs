@@ -7,7 +7,17 @@ module.exports = {
     "./public/examples/*.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        life: {
+          "0%": { width: "100%" },
+          "100%": { width: "0%" },
+        },
+      },
+      animation: {
+        life: "life 4750ms linear forwards",
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/typography"),
