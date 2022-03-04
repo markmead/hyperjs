@@ -16,7 +16,7 @@ export default function ExamplePage({ source, frontMatter }) {
   return (
     <>
       <Head>
-        <title>{frontMatter.title} | Alpine JS Snippets</title>
+        <title>{frontMatter.title} | Alpine JS Snippets | HyperJS</title>
       </Head>
 
       <header class="text-center">

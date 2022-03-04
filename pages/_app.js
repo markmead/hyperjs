@@ -49,17 +49,17 @@ function MyApp({ Component, pageProps }) {
           src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
 
-        <title>Examples | Alpine JS Snippets</title>
+        <title>Examples | Alpine JS Snippets | HyperJS</title>
         <meta
           name="description"
           content="Examples of common snippets functionality built with Alpine JS."
           key="description"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://alpinejs.hyperui.dev/" />
+        <meta property="og:url" content="https://www.hyperjs.dev" />
         <meta
           property="og:title"
-          content="Examples | Alpine JS Snippets"
+          content="Examples | Alpine JS Snippets | HyperJS"
           key="og:title"
         />
         <meta
@@ -67,15 +67,12 @@ function MyApp({ Component, pageProps }) {
           content="Examples of common snippets functionality built with Alpine JS."
           key="og:description"
         />
-        <meta
-          property="og:image"
-          content="https://alpinejs.hyperui.dev/og.png"
-        />
+        <meta property="og:image" content="https://www.hyperjs.dev/og.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://alpinejs.hyperui.dev/" />
+        <meta name="twitter:url" content="https://www.hyperjs.dev" />
         <meta
           name="twitter:title"
-          content="Examples | Alpine JS Snippets"
+          content="Examples | Alpine JS Snippets | HyperJS"
           key="twitter:title"
         />
         <meta
@@ -83,7 +80,7 @@ function MyApp({ Component, pageProps }) {
           content="Examples of common snippets functionality built with Alpine JS."
           key="twitter:description"
         />
-        <meta name="twitter:image" content="https://hyperui.dev/og.png" />
+        <meta name="twitter:image" content="https://www.hyperjs.dev/og.png" />
       </Head>
 
       <Layout>
