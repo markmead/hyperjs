@@ -11,7 +11,7 @@ export default function Index({ examples }) {
         <h1>Alpine JS Snippets</h1>
 
         <div className="not-prose">
-          <ul className="grid grid-cols-2 gap-4">
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {examples.map((example) => (
               <li
                 className="border-2 border-gray-100 rounded-lg"
