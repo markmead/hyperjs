@@ -26,7 +26,7 @@ export default function Example({ src }) {
 
       <div className="relative p-8 bg-black rounded-3xl not-prose">
         <span className="absolute inset-0 bg-pink-100 border-4 border-black -rotate-1 rounded-3xl"></span>
-        <pre className="relative overflow-auto font-bold text-black">
+        <pre className="relative overflow-auto font-bold text-black max-h-[500px]">
           {code}
         </pre>
       </div>
