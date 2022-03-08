@@ -1,9 +1,17 @@
 <div x-data="{ productPrice: 49999 }">
-  <p x-money="productPrice" data-lang="ja-JP" data-currency="JPY"></p>
+  <input
+    x-model="productPrice"
+    class="w-full p-3 border-2 border-black rounded-lg"
+    aria-label="Product Price"
+  />
 
-  <p x-money="productPrice" data-lang="de-DE" data-currency="EUR"></p>
+  <ul class="mt-4">
+    <li x-money="productPrice" data-lang="ja-JP" data-currency="JPY"></li>
 
-  <p x-money="productPrice" data-lang="en-UK" data-currency="GBP"></p>
+    <li x-money="productPrice" data-lang="de-DE" data-currency="EUR"></li>
 
-  <p x-money="productPrice" data-lang="en-US" data-currency="USD"></p>
+    <li x-money="productPrice" data-lang="en-UK" data-currency="GBP"></li>
+
+    <li x-money="productPrice" data-lang="en-US" data-currency="USD"></li>
+  </ul>
 </div>

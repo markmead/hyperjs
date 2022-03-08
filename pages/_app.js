@@ -3,6 +3,8 @@ import "../styles/globals.css";
 import Head from "next/head";
 
 import Layout from "../components/Layout";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -83,9 +85,13 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:image" content="https://www.hyperjs.dev/og.png" />
       </Head>
 
+      <Header />
+
       <Layout>
         <Component {...pageProps} />
       </Layout>
+
+      <Footer />
     </>
   );
 }

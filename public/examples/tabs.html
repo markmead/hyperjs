@@ -6,10 +6,10 @@
     <ul class="flex space-x-4">
       <li>
         <a
-          class="block p-3 bg-gray-300 rounded-lg"
-          href="#productDetails"
           @click="activeTab = 'productDetails'"
           :class="{ 'font-bold': activeTab === 'productDetails' }"
+          class="p-3 text-white bg-black rounded-lg"
+          href="#productDetails"
         >
           Product Details
         </a>
@@ -17,10 +17,10 @@
 
       <li>
         <a
-          class="block p-3 bg-gray-300 rounded-lg"
-          href="#productSpecs"
           @click="activeTab = 'productSpecs'"
           :class="{ 'font-bold': activeTab === 'productSpecs' }"
+          class="p-3 text-white bg-black rounded-lg"
+          href="#productSpecs"
         >
           Product Specs
         </a>
@@ -28,10 +28,10 @@
 
       <li>
         <a
-          class="block p-3 bg-gray-300 rounded-lg"
-          href="#productReviews"
           @click="activeTab = 'productReviews'"
           :class="{ 'font-bold': activeTab === 'productReviews' }"
+          class="p-3 text-white bg-black rounded-lg"
+          href="#productReviews"
         >
           Product Reviews
         </a>
@@ -39,32 +39,17 @@
     </ul>
   </nav>
 
-  <div class="p-4 mt-4 border rounded-lg">
+  <div class="p-6 mt-4 text-white bg-black rounded-lg">
     <div x-show="activeTab === 'productDetails'">
-      <h2 class="text-lg font-bold">Product Details</h2>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
-        quisquam.
-      </p>
+      <h2>Product Details</h2>
     </div>
 
     <div x-show="activeTab === 'productSpecs'">
-      <h2 class="text-lg font-bold">Product Specs</h2>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
-        quisquam.
-      </p>
+      <h2>Product Specs</h2>
     </div>
 
     <div x-show="activeTab === 'productReviews'">
-      <h2 class="text-lg font-bold">Product Reviews</h2>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
-        quisquam.
-      </p>
+      <h2>Product Reviews</h2>
     </div>
   </div>
 </div>

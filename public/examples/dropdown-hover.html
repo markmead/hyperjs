@@ -1,19 +1,22 @@
 <div x-data="{ showDropdown: false }">
-  <button
-    class="p-3 bg-gray-300 rounded-lg"
+  <a
     @mouseover="showDropdown = true"
     @mouseleave="showDropdown = false"
+    class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
+    href="#"
   >
-    Toggle Dropdown
-  </button>
+    <h2>Lorem, ipsum dolor!</h2>
+
+    <span aria-hidden="true"> 👇 </span>
+  </a>
 
   <div
-    class="pt-4"
     x-show="showDropdown"
     @mouseover="showDropdown = true"
     @mouseleave="showDropdown = false"
+    class="pt-4"
   >
-    <ul class="p-4 border-2 border-gray-100">
+    <ul class="p-6 text-white bg-black rounded-lg">
       <li>Item 1</li>
       <li>Item 2</li>
       <li>Item 3</li>

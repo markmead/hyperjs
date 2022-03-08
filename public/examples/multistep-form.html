@@ -3,19 +3,19 @@
     <p class="text-xl font-bold">Step 1</p>
 
     <button
-      class="p-3 mt-4 bg-gray-300 rounded-lg"
-      type="button"
       @click="formStep += 1"
+      class="p-3 mt-4 text-white bg-black rounded-lg"
+      type="button"
     >
       Next Step
     </button>
   </div>
 
-  <div class="space-y-4" x-show="formStep === 2">
+  <div x-show="formStep === 2" class="space-y-4">
     <button
-      class="p-3 bg-gray-300 rounded-lg"
-      type="button"
       @click="formStep -= 1"
+      class="p-3 text-white bg-black rounded-lg"
+      type="button"
     >
       Back
     </button>
@@ -23,19 +23,19 @@
     <p class="text-xl font-bold">Step 2</p>
 
     <button
-      class="p-3 bg-gray-300 rounded-lg"
-      type="button"
       @click="formStep += 1"
+      class="p-3 text-white bg-black rounded-lg"
+      type="button"
     >
       Next Step
     </button>
   </div>
 
-  <div class="space-y-4" x-show="formStep === 3">
+  <div x-show="formStep === 3" class="space-y-4">
     <button
-      class="p-3 bg-gray-300 rounded-lg"
-      type="button"
       @click="formStep -= 1"
+      class="p-3 text-white bg-black rounded-lg"
+      type="button"
     >
       Back
     </button>
@@ -43,25 +43,27 @@
     <p class="text-xl font-bold">Step 3</p>
 
     <button
-      class="p-3 bg-gray-300 rounded-lg"
-      type="button"
       @click="formStep += 1"
+      class="p-3 text-white bg-black rounded-lg"
+      type="button"
     >
       Next Step
     </button>
   </div>
 
-  <div class="space-y-4" x-show="formStep === 4">
+  <div x-show="formStep === 4" class="space-y-4">
     <button
-      class="p-3 bg-gray-300 rounded-lg"
-      type="button"
       @click="formStep -= 1"
+      class="p-3 text-white bg-black rounded-lg"
+      type="button"
     >
       Back
     </button>
 
     <p class="text-xl font-bold">Final Step</p>
 
-    <button class="p-3 bg-gray-300 rounded-lg" type="button">Submit</button>
+    <button class="p-3 text-white bg-black rounded-lg" type="submit">
+      Submit
+    </button>
   </div>
 </form>

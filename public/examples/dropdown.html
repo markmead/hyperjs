@@ -1,14 +1,19 @@
 <div x-data="{ showDropdown: false }">
-  <button
-    class="p-3 bg-gray-300 rounded-lg"
+  <a
     @click="showDropdown = !showDropdown"
+    class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
+    href="#"
   >
-    Toggle Dropdown
-  </button>
+    <h2>Lorem, ipsum dolor!</h2>
 
-  <ul x-show="showDropdown">
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-  </ul>
+    <span aria-hidden="true"> 👇 </span>
+  </a>
+
+  <div x-show="showDropdown" class="pt-4">
+    <ul class="p-6 text-white bg-black rounded-lg">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
 </div>

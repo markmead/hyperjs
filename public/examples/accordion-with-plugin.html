@@ -1,13 +1,21 @@
 <div class="space-y-4">
   <div x-data="{ activeAccordion: false }">
-    <h2
-      class="p-3 bg-gray-300 rounded-lg cursor-pointer"
+    <button
       @click="activeAccordion = !activeAccordion"
+      class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
     >
-      Lorem ipsum dolor sit amet?
-    </h2>
+      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit?</h2>
 
-    <div class="mt-4" x-show="activeAccordion" x-collapse>
+      <span
+        :class="{ '-rotate-180': activeAccordion }"
+        class="transition"
+        aria-hidden="true"
+      >
+        👇
+      </span>
+    </button>
+
+    <div x-show="activeAccordion" x-collapse class="mt-4">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorum
         tenetur aut doloribus iste? Recusandae ipsam quod modi eligendi
@@ -20,14 +28,22 @@
   </div>
 
   <div x-data="{ activeAccordion: false }">
-    <h2
-      class="p-3 bg-gray-300 rounded-lg cursor-pointer"
+    <button
       @click="activeAccordion = !activeAccordion"
+      class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
     >
-      Lorem ipsum dolor sit amet?
-    </h2>
+      <h2>Lorem ipsum dolor sit amet?</h2>
 
-    <div class="mt-4" x-show="activeAccordion" x-collapse>
+      <span
+        :class="{ '-rotate-180': activeAccordion }"
+        class="transition"
+        aria-hidden="true"
+      >
+        👇
+      </span>
+    </button>
+
+    <div x-show="activeAccordion" x-collapse class="mt-4">
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis vitae
         cum non labore itaque veniam exercitationem excepturi dolorum
