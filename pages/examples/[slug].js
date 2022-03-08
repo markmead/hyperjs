@@ -4,8 +4,8 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import Link from "next/link";
 import path from "path";
+import BannerSimple from "../../components/BannerSimple";
 import { exampleFilePaths, EXAMPLES_PATH } from "../../utils/mdxUtils";
 
 const components = {
@@ -19,17 +19,12 @@ export default function ExamplePage({ source, frontMatter }) {
         <title>{frontMatter.title} | Alpine JS Snippets | HyperJS</title>
       </Head>
 
-      <header className="text-center">
-        <nav>
-          <Link href="/">
-            <a className="text-sm font-medium">👈 Go Back</a>
-          </Link>
-        </nav>
-      </header>
+      <BannerSimple
+        title={frontMatter.title}
+        description={frontMatter.description}
+      />
 
       <article className="mx-auto prose prose-lg">
-        <h1>{frontMatter.title}</h1>
-
         <MDXRemote {...source} components={components} />
       </article>
     </>

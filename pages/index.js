@@ -1,35 +1,32 @@
 import fs from "fs";
 import matter from "gray-matter";
-import Link from "next/link";
 import path from "path";
+import Banner from "../components/Banner";
+import Card from "../components/Card";
+import { mdx } from "../utils/fileToUrl";
 import { exampleFilePaths, EXAMPLES_PATH } from "../utils/mdxUtils";
 
 export default function Index({ examples }) {
   return (
     <>
-      <article className="mx-auto prose prose-lg">
-        <h1>Alpine JS Snippets</h1>
+      <Banner />
 
-        <div className="not-prose">
+      <section>
+        <div class="max-w-screen-xl px-4 mx-auto">
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {examples.map((example) => (
-              <li
-                className="border-2 border-gray-100 rounded-lg"
-                key={example.filePath}
-              >
-                <Link
-                  as={`/examples/${example.filePath.replace(/\.mdx?$/, "")}`}
-                  href={`/examples/[slug]`}
-                >
-                  <a className="block p-4 text-sm font-bold hover:bg-gray-50 focus:outline-none focus:ring">
-                    {example.data.title}
-                  </a>
-                </Link>
+              <li key={example.filePath}>
+                <Card
+                  title={example.data.title}
+                  description={example.data.description}
+                  path={mdx(example.filePath)}
+                  emoji={example.data.emoji}
+                />
               </li>
             ))}
           </ul>
         </div>
-      </article>
+      </section>
     </>
   );
 }
