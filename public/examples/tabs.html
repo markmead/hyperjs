@@ -9,7 +9,7 @@
           class="block p-3 bg-gray-300 rounded-lg"
           href="#productDetails"
           @click="activeTab = 'productDetails'"
-          :class="{ 'text-blue-500': activeTab === 'productDetails' }"
+          :class="{ 'font-bold': activeTab === 'productDetails' }"
         >
           Product Details
         </a>
@@ -20,7 +20,7 @@
           class="block p-3 bg-gray-300 rounded-lg"
           href="#productSpecs"
           @click="activeTab = 'productSpecs'"
-          :class="{ 'text-blue-500': activeTab === 'productSpecs' }"
+          :class="{ 'font-bold': activeTab === 'productSpecs' }"
         >
           Product Specs
         </a>
@@ -31,7 +31,7 @@
           class="block p-3 bg-gray-300 rounded-lg"
           href="#productReviews"
           @click="activeTab = 'productReviews'"
-          :class="{ 'text-blue-500': activeTab === 'productReviews' }"
+          :class="{ 'font-bold': activeTab === 'productReviews' }"
         >
           Product Reviews
         </a>
@@ -39,38 +39,32 @@
     </ul>
   </nav>
 
-  <div class="p-4 mt-4 border rounded-lg" id="tabTarget"></div>
-
-  <template x-teleport="#tabTarget">
+  <div class="p-4 mt-4 border rounded-lg">
     <div x-show="activeTab === 'productDetails'">
-      <h2>Product Details</h2>
+      <h2 class="text-lg font-bold">Product Details</h2>
 
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
         quisquam.
       </p>
     </div>
-  </template>
 
-  <template x-teleport="#tabTarget">
     <div x-show="activeTab === 'productSpecs'">
-      <h2>Product Specs</h2>
+      <h2 class="text-lg font-bold">Product Specs</h2>
 
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
         quisquam.
       </p>
     </div>
-  </template>
 
-  <template x-teleport="#tabTarget">
     <div x-show="activeTab === 'productReviews'">
-      <h2>Product Reviews</h2>
+      <h2 class="text-lg font-bold">Product Reviews</h2>
 
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
         quisquam.
       </p>
     </div>
-  </template>
+  </div>
 </div>
