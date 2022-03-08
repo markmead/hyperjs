@@ -1,13 +1,25 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <nav className="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
-        <a class="font-bold text-lg" href="/">
-          HyperJS
-          <span aria-hidden="true" class="ml-1.5" role="img">
-            👾
-          </span>
-        </a>
+      <div className="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
+        <nav className="flex items-center">
+          <Link href="/">
+            <a class="font-bold text-lg">
+              HyperJS
+              <span aria-hidden="true" class="ml-1.5" role="img">
+                👾
+              </span>
+            </a>
+          </Link>
+
+          <span className="w-[2px] bg-black h-6 rounded-full mx-8"></span>
+
+          <Link href="/#exampleGrid">
+            <a class="font-medium text-sm hover:opacity-75">Examples</a>
+          </Link>
+        </nav>
 
         <div className="flex items-center">
           <a
@@ -48,7 +60,7 @@ export default function Header() {
             </svg>
           </a>
         </div>
-      </nav>
+      </div>
     </header>
   );
 }
