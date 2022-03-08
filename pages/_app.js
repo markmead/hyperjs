@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <script
-          src="https://www.googletagmanager.com/gtag/js?id=G-PNNXTVTRYX"
+          src="https://www.googletagmanager.com/gtag/js?id=G-NDHZV38TSJ"
           async
         ></script>
 
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-PNNXTVTRYX');
+              gtag('config', 'G-NDHZV38TSJ');
             `,
           }}
         />
