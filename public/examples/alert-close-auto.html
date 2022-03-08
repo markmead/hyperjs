@@ -1,10 +1,10 @@
 <div x-data="{ showAlert: true }">
   <div
+    x-cloak
+    x-show="showAlert"
+    x-init="setTimeout(() => showAlert = false, 5000)"
     class="p-6 text-white bg-red-700 rounded-lg"
     role="alert"
-    x-show="showAlert"
-    x-cloak
-    x-init="setTimeout(() => showAlert = false, 5000)"
   >
     Lorem ipsum dolor sit amet consectetur!
   </div>

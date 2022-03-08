@@ -3,7 +3,6 @@
     @mouseover="showDropdown = true"
     @mouseleave="showDropdown = false"
     class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
-    type="button"
     href="#"
   >
     <h2>Lorem, ipsum dolor!</h2>
@@ -12,10 +11,10 @@
   </a>
 
   <div
-    class="pt-4"
     x-show="showDropdown"
     @mouseover="showDropdown = true"
     @mouseleave="showDropdown = false"
+    class="pt-4"
   >
     <ul class="p-6 text-white bg-black rounded-lg">
       <li>Item 1</li>

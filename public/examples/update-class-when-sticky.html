@@ -1,22 +1,17 @@
 <div class="h-[2000px]">
   <div
-    class="sticky top-0 p-3 bg-gray-300 rounded-lg sticky-element"
-    x-sticky="bg-blue-300"
+    x-sticky="!bg-pink-600"
+    class="sticky top-0 flex items-center justify-between w-full p-6 text-white bg-black rounded-lg sticky-element"
   >
-    Sticky Element
+    <p>Sticky Element</p>
 
-    <p
-      class="hidden p-3 bg-red-300 rounded-lg"
-      x-sticky.sticky-element="!block"
-    >
-      Child Element
-    </p>
+    <p x-sticky.sticky-element="!block" class="hidden">Show When Stuck</p>
   </div>
 
   <div
-    class="p-3 mt-12 bg-gray-300 rounded-lg"
     x-sticky.sticky-element="text-5xl"
+    class="p-6 mt-24 text-white bg-black rounded-lg"
   >
-    Random Element
+    Expand When Stuck
   </div>
 </div>

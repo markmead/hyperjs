@@ -1,11 +1,13 @@
 <div
   x-data="{ inputName: '' }"
-  x-init="$watch('inputName', (value) => inputName = value.toUpperCase())"
+  x-init="
+    inputName = inputName.toUpperCase()
+    $watch('inputName', (value) => inputName = value.toUpperCase())
+  "
 >
   <input
-    class="p-3 mx-3 border-2 border-gray-200 rounded-lg"
-    type="text"
     x-model="inputName"
+    class="w-full p-3 border-2 border-black rounded-lg"
     aria-label="Name"
   />
 </div>
