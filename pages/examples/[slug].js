@@ -24,7 +24,7 @@ export default function ExamplePage({ source, frontMatter }) {
         description={frontMatter.description}
       />
 
-      <article className="mx-auto prose prose-lg">
+      <article className="mx-auto prose prose-pre:p-8 prose-pre:bg-pink-100 prose-pre:rounded-3xl prose-pre:font-bold prose-pre:text-black prose-pre:max-h-[500px] prose-pre:shadow-[8px_8px_0_0_#000] prose-pre:border-4 prose-pre:border-black prose-code:text-lg">
         <MDXRemote {...source} components={components} />
       </article>
     </>
