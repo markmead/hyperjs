@@ -14,19 +14,17 @@ export default function Example({ src }) {
     <>
       <h2>Example</h2>
 
-      <div className="relative p-8 bg-black rounded-3xl not-prose">
-        <span className="absolute inset-0 bg-pink-100 border-4 border-black rotate-1 rounded-3xl"></span>
+      <div className="not-prose">
         <div
-          className="relative"
+          className="p-8 rounded-3xl bg-pink-100 border-4 border-black shadow-[8px_8px_0_0_#000]"
           dangerouslySetInnerHTML={{ __html: code }}
         ></div>
       </div>
 
       <h2>Code</h2>
 
-      <div className="relative p-8 bg-black rounded-3xl not-prose">
-        <span className="absolute inset-0 bg-pink-100 border-4 border-black -rotate-1 rounded-3xl"></span>
-        <pre className="relative overflow-auto font-bold text-black max-h-[500px]">
+      <div className="not-prose">
+        <pre className="p-8 bg-pink-100 rounded-3xl font-bold text-black max-h-[500px] shadow-[8px_8px_0_0_#000] border-4 border-black overflow-auto text-lg">
           {code}
         </pre>
       </div>

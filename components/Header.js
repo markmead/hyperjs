@@ -41,7 +41,7 @@ export default function Header() {
 
           <a
             class="p-2 rounded hover:opacity-75"
-            href="https://github.com/markmead/hyperui"
+            href="https://github.com/markmead/hyperjs"
             rel="noopener noreferrer"
             target="_blank"
             aria-label="GitHub"
