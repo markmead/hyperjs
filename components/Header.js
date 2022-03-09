@@ -14,10 +14,12 @@ export default function Header() {
             </a>
           </Link>
 
-          <span className="w-[2px] bg-black h-6 rounded-full mx-8"></span>
+          <span className="hidden sm:block w-[2px] bg-black h-6 rounded-full mx-8"></span>
 
           <Link href="/#exampleGrid">
-            <a class="font-medium text-sm hover:opacity-75">Examples</a>
+            <a class="hidden sm:block font-medium text-sm hover:opacity-75">
+              Examples
+            </a>
           </Link>
         </nav>
 
