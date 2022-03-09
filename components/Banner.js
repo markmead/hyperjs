@@ -34,7 +34,7 @@ export default function Banner() {
             </a>
 
             <a
-              className="flex items-center w-full px-12 py-4 font-bold text-pink-600 rounded-lg shadow sm:w-auto hover:text-pink-700 active:text-pink-500 focus:outline-none focus:ring"
+              className="flex items-center justify-center w-full px-12 py-4 font-bold text-pink-600 rounded-lg shadow sm:w-auto hover:text-pink-700 active:text-pink-500 focus:outline-none focus:ring"
               href="https://alpinejs.dev/start-here"
               target="_blank"
               rel="noopener noreferrer"
