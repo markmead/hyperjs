@@ -23,7 +23,7 @@ export default function Footer() {
 
             <a
               className="text-gray-900 hover:text-opacity-75"
-              href="https://github.com/markmead/hyperui"
+              href="https://github.com/markmead"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"

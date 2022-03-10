@@ -17,6 +17,9 @@ module.exports = {
       animation: {
         life: "life 4750ms linear forwards",
       },
+      boxShadow: {
+        offset: "8px 8px 0 0 var(--tw-shadow-color)",
+      },
     },
   },
   plugins: [

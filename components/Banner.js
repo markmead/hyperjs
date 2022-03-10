@@ -14,7 +14,7 @@ export default function Banner() {
         <div className="max-w-xl mx-auto text-center">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
             Enjoy the DOM.
-            <strong className="block font-extrabold text-pink-700">
+            <strong className="block font-extrabold text-pink-600">
               Write Alpine JS.
             </strong>
           </h1>
@@ -27,14 +27,14 @@ export default function Banner() {
 
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a
-              className="block w-full px-12 py-4 font-bold text-white bg-pink-600 rounded-lg sm:w-auto active:bg-pink-500 hover:bg-pink-700 focus:outline-none focus:ring"
+              className="block w-full px-12 py-4 font-bold text-white transition bg-pink-600 rounded-lg sm:w-auto active:bg-pink-500 hover:bg-pink-700 focus:outline-none focus:ring"
               href="#exampleGrid"
             >
               Get Started
             </a>
 
             <a
-              className="flex items-center justify-center w-full px-12 py-4 font-bold text-pink-600 rounded-lg shadow sm:w-auto hover:text-pink-700 active:text-pink-500 focus:outline-none focus:ring"
+              className="flex items-center justify-center w-full px-12 py-4 font-bold text-pink-600 transition rounded-lg shadow sm:w-auto hover:text-pink-700 active:text-pink-500 focus:outline-none focus:ring"
               href="https://alpinejs.dev/start-here"
               target="_blank"
               rel="noopener noreferrer"
