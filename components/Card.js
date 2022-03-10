@@ -4,8 +4,8 @@ export default function Card({ title, description, path, emoji }) {
   return (
     <Link as={`/examples/${path}`} href={`/examples/[slug]`}>
       <a class="relative block group h-56">
-        <div class="relative flex items-end h-full transition bg-white border-4 border-black group-hover:-translate-x-2 group-hover:-translate-y-2 rounded-3xl group-hover:shadow-[8px_8px_0_0_#000]">
-          <div class="px-8 pb-8 transition group-hover:opacity-0 group-hover:absolute">
+        <div class="relative flex items-end h-full transition bg-white border-4 border-black group-hover:-translate-x-2 group-hover:-translate-y-2 rounded-3xl group-hover:shadow-offset shadow-black">
+          <div class="px-8 pb-8 group-hover:opacity-0 group-hover:absolute">
             <span className="text-4xl" role="img" aria-hidden="true">
               {emoji}
             </span>
@@ -13,7 +13,7 @@ export default function Card({ title, description, path, emoji }) {
             <h2 class="mt-4 text-2xl font-bold">{title}</h2>
           </div>
 
-          <div class="absolute p-8 transition opacity-0 group-hover:opacity-100 group-hover:relative">
+          <div class="absolute p-8 opacity-0 group-hover:opacity-100 group-hover:relative">
             <h2 class="mt-4 text-2xl font-bold">{title}</h2>
 
             <p class="mt-4 text-lg font-medium leading-relaxed">
