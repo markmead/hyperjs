@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <script
-          src="https://www.googletagmanager.com/gtag/js?id=G-NDHZV38TSJ"
           async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NDHZV38TSJ"
         ></script>
 
         <script
@@ -25,6 +25,12 @@ function MyApp({ Component, pageProps }) {
             `,
           }}
         />
+
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+        />
+        <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
         <script
           defer
