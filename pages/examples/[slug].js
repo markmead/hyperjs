@@ -24,7 +24,10 @@ export default function ExamplePage({ source, frontMatter }) {
         description={frontMatter.description}
       />
 
-      <article className="mx-auto px-4 prose prose-pre:p-8 prose-pre:bg-pink-100 prose-pre:rounded-3xl prose-pre:font-bold prose-pre:text-black prose-pre:max-h-[500px] prose-pre:shadow-offset shadow-black prose-pre:border-4 prose-pre:border-black prose-pre:text-lg">
+      <article
+        className="mx-auto px-4 prose prose-pre:p-8 prose-pre:bg-pink-100 prose-pre:rounded-3xl prose-pre:font-bold prose-pre:text-black prose-pre:max-h-[500px] prose-pre:shadow-offset shadow-black prose-pre:border-4 prose-pre:border-black prose-pre:text-lg"
+        id="mainContent"
+      >
         <MDXRemote {...source} components={components} />
       </article>
     </>

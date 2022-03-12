@@ -25,7 +25,7 @@ export default function Example({ src }) {
 
       <div className="not-prose">
         <div
-          className="p-8 bg-pink-100 border-4 border-black rounded-3xl shadow-offset shadow-black"
+          className="p-6 bg-pink-100 border-4 border-black rounded-3xl shadow-offset shadow-black"
           dangerouslySetInnerHTML={{ __html: code }}
         ></div>
       </div>
@@ -33,7 +33,7 @@ export default function Example({ src }) {
       <h2>Code</h2>
 
       <div className="not-prose">
-        <pre className="p-8 bg-pink-100 rounded-3xl font-bold text-black max-h-[500px] shadow-offset shadow-black border-4 border-black overflow-auto text-lg">
+        <pre className="p-6 bg-pink-100 rounded-3xl font-bold text-black max-h-[500px] shadow-offset shadow-black border-4 border-black overflow-auto text-lg">
           {code}
         </pre>
       </div>

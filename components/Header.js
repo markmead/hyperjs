@@ -7,8 +7,8 @@ export default function Header() {
 
   useEffect(() => {
     function handleScroll() {
-      const exampleGrid = document.getElementById("exampleGrid");
-      const isAtTop = exampleGrid.getBoundingClientRect().top <= 64;
+      const mainContent = document.getElementById("mainContent");
+      const isAtTop = mainContent.getBoundingClientRect().top <= 64;
 
       setScolled(isAtTop);
     }

@@ -12,7 +12,7 @@ export default function Index({ examples }) {
       <Banner />
 
       <section id="exampleGrid">
-        <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="max-w-screen-xl px-4 mx-auto" id="mainContent">
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {examples.map((example) => (
               <li key={example.filePath}>
