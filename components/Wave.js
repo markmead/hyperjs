@@ -3,7 +3,7 @@ export default function Wave() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1440 320"
-      class="h-32 sm:h-auto"
+      class="h-64 sm:h-auto"
     >
       <path
         fill="#bd195d"
