@@ -26,17 +26,18 @@ function MyApp({ Component, pageProps }) {
           }}
         />
 
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-        />
-        <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        {/* Alpine Official Plugins */}
+        <script
+          defer
+          src="https://unpkg.com/@alpinejs/mask@3.x.x/dist/cdn.min.js"
+        ></script>
 
         <script
           defer
           src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
         ></script>
 
+        {/* Alpine Community Plugins */}
         <script
           defer
           src="https://unpkg.com/alpinejs-money@1.0.0/dist/money.min.js"
@@ -52,10 +53,18 @@ function MyApp({ Component, pageProps }) {
           src="https://unpkg.com/alpinejs-slug@1.x.x/dist/slug.min.js"
         ></script>
 
+        {/* Alpine Core */}
         <script
           defer
           src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
+
+        {/* Flatpickr */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+        />
+        <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
         <title>Examples | Alpine JS Snippets | HyperJS</title>
         <meta
