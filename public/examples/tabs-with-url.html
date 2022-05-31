@@ -1,9 +1,12 @@
-<div x-data="{ activeTab: 'productDetails' }">
+<div
+  x-data="{ activeTab: 'productDetails' }"
+  x-init="activeTab = window.location.hash ? window.location.hash.replace('#', '') : 'productDetails'"
+>
   <nav>
     <ul class="flex flex-wrap gap-4">
       <li>
         <a
-          @click.prevent="activeTab = 'productDetails'"
+          @click="activeTab = 'productDetails'"
           :class="{ 'font-bold': activeTab === 'productDetails' }"
           class="block p-3 text-white bg-black rounded-lg"
           href="#productDetails"
@@ -14,7 +17,7 @@
 
       <li>
         <a
-          @click.prevent="activeTab = 'productSpecs'"
+          @click="activeTab = 'productSpecs'"
           :class="{ 'font-bold': activeTab === 'productSpecs' }"
           class="block p-3 text-white bg-black rounded-lg"
           href="#productSpecs"
@@ -25,7 +28,7 @@
 
       <li>
         <a
-          @click.prevent="activeTab = 'productReviews'"
+          @click="activeTab = 'productReviews'"
           :class="{ 'font-bold': activeTab === 'productReviews' }"
           class="block p-3 text-white bg-black rounded-lg"
           href="#productReviews"
