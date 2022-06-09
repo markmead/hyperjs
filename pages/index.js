@@ -9,78 +9,88 @@ import { exampleFilePaths, EXAMPLES_PATH } from "../utils/mdxUtils";
 import { useEffect, useState } from "react";
 
 export default function Index({ examples }) {
-  let [simple, setSimple] = useState(true);
+  let [basic, setBasic] = useState(true);
   let [accessible, setAccessible] = useState(true);
   let [components, setComponents] = useState(examples);
 
   useEffect(() => {
     const filteredComponents = examples.filter((component) => {
-      if (simple && accessible) {
+      if (basic && accessible) {
         return true;
       }
 
-      if (simple && !accessible) {
-        return component.data.simple;
+      if (basic && !accessible) {
+        return component.data.basic;
       }
 
-      if (accessible && !simple) {
+      if (accessible && !basic) {
         return component.data.accessible;
       }
     });
 
     setComponents(filteredComponents);
-  }, [simple, accessible]);
+  }, [basic, accessible]);
+
+  let basicCount = examples.filter((example) => example.data.basic).length;
+
+  let accessibleCount = examples.filter(
+    (example) => example.data.accessible
+  ).length;
 
   return (
     <>
       <Banner />
 
-      <div>
-        <div className="max-w-screen-xl px-4 mx-auto">
-          <strong className="text-lg font-medium">Filter Examples</strong>
+      <div id="mainContent" className="pt-16 -mt-16">
+        <div className="max-w-screen-xl px-4 mx-auto space-y-12">
+          <section>
+            <strong className="text-lg font-medium">Filter Examples</strong>
 
-          <div className="flex flex-wrap gap-4 mt-4">
-            <button
-              type="button"
-              className={`px-5 py-3 text-sm font-medium border-2 border-black rounded-lg ${
-                simple && "bg-black text-white"
-              }`}
-              onClick={() => setSimple(!simple)}
-            >
-              Simple
-            </button>
+            <div className="flex flex-wrap gap-4 mt-4">
+              <button
+                type="button"
+                className={`px-5 py-3 text-sm font-medium border-2 border-black rounded-lg ${
+                  basic && "bg-black text-white"
+                }`}
+                onClick={() => setBasic(!basic)}
+              >
+                Basic
+                <sup className="ml-0.5">({basicCount})</sup>
+              </button>
 
-            <button
-              type="button"
-              className={`px-5 py-3 text-sm font-medium border-2 border-black rounded-lg ${
-                accessible && "bg-black text-white"
-              }`}
-              onClick={() => setAccessible(!accessible)}
-            >
-              Accessible
-            </button>
-          </div>
+              <button
+                type="button"
+                className={`px-5 py-3 text-sm font-medium border-2 border-black rounded-lg ${
+                  accessible && "bg-black text-white"
+                }`}
+                onClick={() => setAccessible(!accessible)}
+              >
+                Accessible
+                <sup className="ml-0.5">({accessibleCount})</sup>
+              </button>
+            </div>
+          </section>
+
+          <section>
+            {components.length ? (
+              <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {components.map((component) => (
+                  <li key={component.filePath}>
+                    <Card
+                      data={component.data}
+                      path={mdx(component.filePath)}
+                    />
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-lg font-medium text-center">
+                No examples found. Try a different filter.
+              </p>
+            )}
+          </section>
         </div>
       </div>
-
-      <section id="exampleGrid" className="mt-12">
-        <div className="max-w-screen-xl px-4 mx-auto" id="mainContent">
-          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {components.map((component) => (
-              <li key={component.filePath}>
-                <Card
-                  title={component.data.title}
-                  description={component.data.description}
-                  path={mdx(component.filePath)}
-                  emoji={component.data.emoji}
-                  simple={component.data.simple}
-                  accessible={component.data.accessible}
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
     </>
   );
 }

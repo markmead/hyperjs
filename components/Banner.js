@@ -28,7 +28,7 @@ export default function Banner() {
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a
               className="block w-full px-12 py-4 font-bold text-white transition bg-pink-600 rounded-lg sm:w-auto active:bg-pink-500 hover:bg-pink-700 focus:outline-none focus:ring"
-              href="#exampleGrid"
+              href="#mainContent"
             >
               Get Started
             </a>

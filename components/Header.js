@@ -8,7 +8,7 @@ export default function Header() {
   useEffect(() => {
     function handleScroll() {
       const mainContent = document.getElementById("mainContent");
-      const isAtTop = mainContent.getBoundingClientRect().top <= 64;
+      const isAtTop = mainContent.getBoundingClientRect().top <= 0;
 
       setScolled(isAtTop);
     }
