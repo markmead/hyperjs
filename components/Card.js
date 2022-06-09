@@ -6,7 +6,7 @@ export default function Card({ data, path }) {
 
   return (
     <Link as={`/examples/${path}`} href={`/examples/[slug]`}>
-      <a className="flex flex-col justify-between h-full p-8 transition bg-white border-4 border-black group rounded-xl hover:bg-pink-100 hover:shadow-[4px_4px_0_0_#000]">
+      <a className="flex flex-col justify-between h-full p-8 transition bg-white border-4 border-black group rounded-xl hover:bg-pink-100 hover:shadow-offset hover:shadow-black">
         <div className="flex justify-end">
           <CardTag basic={basic} accessible={accessible} />
         </div>

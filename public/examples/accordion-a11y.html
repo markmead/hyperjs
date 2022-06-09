@@ -22,8 +22,7 @@
     <section
       id="accordion-panel-1"
       aria-labelledby="accordion-header-1"
-      x-show="activeAccordion"
-      x-collapse
+      :hidden="! activeAccordion"
       class="mt-4"
     >
       <p>
@@ -60,9 +59,8 @@
     <section
       id="accordion-panel-2"
       aria-labelledby="accordion-header-2"
-      x-show="activeAccordion"
-      x-collapse
       class="mt-4"
+      :hidden="! activeAccordion"
     >
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorum
