@@ -2,8 +2,10 @@
   <button
     @click="activeAccordions = !activeAccordions"
     class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
+    :aria-expanded="activeAccordions"
   >
-    Open All Accordions
+    <span x-show="activeAccordions">Close All Accordions</span>
+    <span x-show="! activeAccordions">Show All Accordions</span>
 
     <span
       :class="{ '-rotate-180': activeAccordions }"
