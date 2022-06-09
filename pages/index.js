@@ -73,6 +73,8 @@ export default function Index({ examples }) {
                   description={component.data.description}
                   path={mdx(component.filePath)}
                   emoji={component.data.emoji}
+                  simple={component.data.simple}
+                  accessible={component.data.accessible}
                 />
               </li>
             ))}
