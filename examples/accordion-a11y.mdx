@@ -1,0 +1,17 @@
+---
+title: Accordion (Accessible)
+description: Create an accordion with Alpine JS keeping accessibility in mind.
+emoji: 📖
+accessible: true
+---
+
+There's no smooth transition as it causes layout recalculations at each frame, therefore it becomes a [non-performant animation](https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/) which is bad for accessibility.
+
+We are making use of `<section>` as they are **region landmarks** which allows them to appear for screen readers that support navigation by landmarks. If there are more than 6 accordions on a page, then it's advised to use a `<div>` instead of a `<section>` to avoid a lot of region landmarks.
+
+**Sources**
+
+- https://www.aditus.io/patterns/accordion/
+- https://design-system.service.gov.uk/components/accordion/
+
+<Example src="accordion-a11y" />

@@ -25,21 +25,17 @@ export default function Example({ src }) {
 
       <div className="not-prose">
         <div
-          className="p-6 bg-pink-100 border-4 border-black rounded-3xl shadow-offset shadow-black"
+          className="p-6 border-4 border-black rounded-xl shadow-offset shadow-black"
           dangerouslySetInnerHTML={{ __html: code }}
         ></div>
       </div>
 
       <h2>Code</h2>
 
-      <div className="not-prose">
-        <pre className="p-6 bg-pink-100 rounded-3xl font-bold text-black max-h-[500px] shadow-offset shadow-black border-4 border-black overflow-auto text-lg">
-          {code}
-        </pre>
-      </div>
+      <pre>{code}</pre>
 
       <CopyToClipboard text={code} onCopy={() => toggleCopyText()}>
-        <button className="flex items-center justify-center px-8 py-4 mt-8 font-bold text-black transition bg-pink-100 border-4 border-black rounded-xl focus:outline-none focus:ring shadow-offset shadow-black hover:shadow-none">
+        <button className="flex items-center justify-center px-8 py-4 mt-8 font-bold text-black transition border-4 border-black rounded-xl focus:outline-none focus:ring hover:bg-pink-100 hover:shadow-offset hover:shadow-black">
           {copied ? "Copied... Now Paste" : "Copy to Clipboard"}
 
           <span aria-hidden="true" className="ml-1.5" role="img">

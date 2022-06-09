@@ -1,24 +1,26 @@
 import Link from "next/link";
+import CardTag from "./CardTag";
 
-export default function Card({ title, description, path, emoji }) {
+export default function Card({ data, path }) {
+  const { title, description, emoji, basic, accessible } = data;
+
   return (
     <Link as={`/examples/${path}`} href={`/examples/[slug]`}>
-      <a class="block h-56 group" href="/blog">
-        <div class="relative flex items-end h-full transition bg-white border-4 border-black group-hover:-translate-x-2 group-hover:-translate-y-2 rounded-3xl group-hover:shadow-[8px_8px_0_0_#000] p-8">
-          <div class="lg:group-hover:opacity-0 lg:group-hover:absolute">
-            <span class="text-3xl sm:text-4xl" role="img" aria-hidden="true">
-              {emoji}
-            </span>
-            <p class="mt-4 text-xl font-bold sm:text-2xl">{title}</p>
-          </div>
+      <a className="flex flex-col justify-between h-full p-8 transition bg-white border-4 border-black group rounded-xl hover:bg-pink-100 hover:shadow-offset hover:shadow-black">
+        <div className="flex justify-end">
+          <CardTag basic={basic} accessible={accessible} />
+        </div>
 
-          <div class="absolute opacity-0 lg:group-hover:opacity-100 lg:group-hover:relative">
-            <p class="text-2xl font-bold">{title}</p>
+        <div className="mt-8">
+          <span role="img" aria-hidden="true" className="text-3xl">
+            {emoji}
+          </span>
 
-            <p class="mt-4 text-lg font-medium leading-relaxed">
-              {description}
-            </p>
-          </div>
+          <h5 className="mt-4 text-2xl font-bold">{title}</h5>
+
+          <p className="mt-1 text-lg font-medium leading-relaxed">
+            {description}
+          </p>
         </div>
       </a>
     </Link>

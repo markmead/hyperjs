@@ -1,7 +1,35 @@
 ---
 title: Accordion
-description: Create accordion functionality with smooth a transition.
+description: Create an accordion with Alpine JS and the x-collapse plugin to provide a smooth transition.
 emoji: 📖
+basic: true
 ---
+
+This uses the [x-collapse](https://alpinejs.dev/plugins/collapse) plugin.
+
+It's pretty easy to create a smooth transition yourself, but it adds extra complexity to your HTML markup which feels pointless when the x-collapse plugin does all the work for you and comes with extra functionality.
+
+Here's a small example of creating the smooth transition yourself:
+
+```html
+<div
+  x-data="{ activeAccordion: false, maxHeight: 0 }"
+  x-init="maxHeight = `${$refs.accordionContent.scrollHeight}px`"
+  class="overflow-hidden"
+>
+  <h3>
+    <button @click="activeAccordion = !activeAccordion">Toggle...</button>
+  </h3>
+
+  <div
+    x-ref="accordionContent"
+    :class="{ 'mt-4': activeAccordion }"
+    :style="activeAccordion && { 'max-height': maxHeight }"
+    class="transition-all max-h-0"
+  >
+    <p>Content...</p>
+  </div>
+</div>
+```
 
 <Example src="accordion" />

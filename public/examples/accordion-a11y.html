@@ -1,7 +1,9 @@
 <div class="space-y-4">
-  <div x-data="{ activeAccordion: false }">
+  <div x-data="{ activeAccordion: true }">
     <h3>
       <button
+        :aria-expanded="activeAccordion"
+        aria-controls="accordion-panel-1"
         @click="activeAccordion = !activeAccordion"
         class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
       >
@@ -17,7 +19,12 @@
       </button>
     </h3>
 
-    <div x-show="activeAccordion" x-collapse class="mt-4">
+    <section
+      id="accordion-panel-1"
+      aria-labelledby="accordion-header-1"
+      :hidden="! activeAccordion"
+      class="mt-4"
+    >
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorum
         tenetur aut doloribus iste? Recusandae ipsam quod modi eligendi
@@ -26,16 +33,18 @@
         harum vel! Dolorem quaerat delectus in dignissimos libero, beatae itaque
         repudiandae! Velit?
       </p>
-    </div>
+    </section>
   </div>
 
   <div x-data="{ activeAccordion: false }">
     <h3>
       <button
+        :aria-expanded="activeAccordion"
+        aria-controls="accordion-panel-2"
         @click="activeAccordion = !activeAccordion"
         class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
       >
-        <h2>Lorem ipsum dolor sit amet?</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit?</h2>
 
         <span
           :class="{ '-rotate-180': activeAccordion }"
@@ -47,12 +56,20 @@
       </button>
     </h3>
 
-    <div x-show="activeAccordion" x-collapse class="mt-4">
+    <section
+      id="accordion-panel-2"
+      aria-labelledby="accordion-header-2"
+      class="mt-4"
+      :hidden="! activeAccordion"
+    >
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis vitae
-        cum non labore itaque veniam exercitationem excepturi dolorum
-        repellendus praesentium!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorum
+        tenetur aut doloribus iste? Recusandae ipsam quod modi eligendi
+        perspiciatis voluptatibus fugit, similique tenetur quos quasi impedit
+        totam beatae iure, dolor unde voluptas a veniam adipisci quibusdam qui
+        harum vel! Dolorem quaerat delectus in dignissimos libero, beatae itaque
+        repudiandae! Velit?
       </p>
-    </div>
+    </section>
   </div>
 </div>

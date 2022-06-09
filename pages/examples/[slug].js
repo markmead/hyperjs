@@ -25,7 +25,7 @@ export default function ExamplePage({ source, frontMatter }) {
       />
 
       <article
-        className="mx-auto px-4 prose prose-pre:p-8 prose-pre:bg-pink-100 prose-pre:rounded-3xl prose-pre:font-bold prose-pre:text-black prose-pre:max-h-[500px] prose-pre:shadow-offset shadow-black prose-pre:border-4 prose-pre:border-black prose-pre:text-lg"
+        className="px-4 mx-auto prose prose-p:text-black prose-headings:text-black prose-pre:max-h-[500px] prose-pre:rounded-xl prose-pre:p-6 prose-pre:bg-black prose-pre:text-white/90"
         id="mainContent"
       >
         <MDXRemote {...source} components={components} />

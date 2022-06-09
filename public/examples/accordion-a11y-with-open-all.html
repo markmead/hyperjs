@@ -1,0 +1,98 @@
+<div class="space-y-4" x-data="{ activeAccordions: false }">
+  <button
+    @click="activeAccordions = !activeAccordions"
+    class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
+    :aria-expanded="activeAccordions"
+  >
+    <span x-show="activeAccordions">Close All Accordions</span>
+    <span x-show="! activeAccordions">Show All Accordions</span>
+
+    <span
+      :class="{ '-rotate-180': activeAccordions }"
+      class="transition"
+      aria-hidden="true"
+    >
+      👇
+    </span>
+  </button>
+
+  <div
+    x-data="{ activeAccordion: false }"
+    x-effect="activeAccordion = activeAccordions"
+  >
+    <h3>
+      <button
+        :aria-expanded="activeAccordion"
+        aria-controls="accordion-panel-1"
+        @click="activeAccordion = !activeAccordion"
+        class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
+      >
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit?</h2>
+
+        <span
+          :class="{ '-rotate-180': activeAccordion }"
+          class="transition"
+          aria-hidden="true"
+        >
+          👇
+        </span>
+      </button>
+    </h3>
+
+    <section
+      id="accordion-panel-1"
+      aria-labelledby="accordion-header-1"
+      :hidden="! activeAccordion"
+      class="mt-4"
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorum
+        tenetur aut doloribus iste? Recusandae ipsam quod modi eligendi
+        perspiciatis voluptatibus fugit, similique tenetur quos quasi impedit
+        totam beatae iure, dolor unde voluptas a veniam adipisci quibusdam qui
+        harum vel! Dolorem quaerat delectus in dignissimos libero, beatae itaque
+        repudiandae! Velit?
+      </p>
+    </section>
+  </div>
+
+  <div
+    x-data="{ activeAccordion: false }"
+    x-effect="activeAccordion = activeAccordions"
+  >
+    <h3>
+      <button
+        :aria-expanded="activeAccordion"
+        aria-controls="accordion-panel-2"
+        @click="activeAccordion = !activeAccordion"
+        class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
+      >
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit?</h2>
+
+        <span
+          :class="{ '-rotate-180': activeAccordion }"
+          class="transition"
+          aria-hidden="true"
+        >
+          👇
+        </span>
+      </button>
+    </h3>
+
+    <section
+      id="accordion-panel-2"
+      aria-labelledby="accordion-header-2"
+      class="mt-4"
+      :hidden="! activeAccordion"
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorum
+        tenetur aut doloribus iste? Recusandae ipsam quod modi eligendi
+        perspiciatis voluptatibus fugit, similique tenetur quos quasi impedit
+        totam beatae iure, dolor unde voluptas a veniam adipisci quibusdam qui
+        harum vel! Dolorem quaerat delectus in dignissimos libero, beatae itaque
+        repudiandae! Velit?
+      </p>
+    </section>
+  </div>
+</div>
