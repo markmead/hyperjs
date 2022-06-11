@@ -53,6 +53,11 @@ function MyApp({ Component, pageProps }) {
           src="https://unpkg.com/alpinejs-slug@1.x.x/dist/slug.min.js"
         ></script>
 
+        <script
+          defer
+          src="https://unpkg.com/alpinejs-textarea-grow@1.0.0/dist/grow.min.js"
+        ></script>
+
         {/* Alpine Core */}
         <script
           defer

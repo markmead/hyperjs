@@ -1,0 +1,14 @@
+<div>
+  <textarea
+    x-data="{
+    resize: () => {
+      $el.style.height = 'auto';
+      $el.style.height = `${$el.scrollHeight}px`
+    }
+  }"
+    x-init="resize()"
+    @input="resize()"
+    class="w-full p-3 border-2 border-black rounded-lg"
+    placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
+  ></textarea>
+</div>
