@@ -1,11 +1,15 @@
-import fs from "fs";
-import matter from "gray-matter";
-import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+
+import fs from "fs";
+import matter from "gray-matter";
 import path from "path";
+
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+
 import BannerSimple from "../../components/BannerSimple";
+
 import { exampleFilePaths, EXAMPLES_PATH } from "../../utils/mdxUtils";
 
 const components = {

@@ -1,12 +1,15 @@
+import { useEffect, useState } from "react";
+
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
+
 import Banner from "../components/Banner";
 import Card from "../components/Card";
-import { mdx } from "../utils/fileToUrl";
-import { exampleFilePaths, EXAMPLES_PATH } from "../utils/mdxUtils";
 
-import { useEffect, useState } from "react";
+import { mdx } from "../utils/fileToUrl";
+
+import { exampleFilePaths, EXAMPLES_PATH } from "../utils/mdxUtils";
 
 export default function Index({ examples }) {
   let [basic, setBasic] = useState(true);
@@ -44,7 +47,7 @@ export default function Index({ examples }) {
       <div id="mainContent" className="pt-16 -mt-16">
         <div className="max-w-screen-xl px-4 mx-auto space-y-12">
           <section>
-            <strong className="text-lg font-medium">Filter Examples</strong>
+            <strong className="text-lg font-medium">Filter Components</strong>
 
             <div className="flex flex-wrap gap-4 mt-4">
               <button
@@ -85,7 +88,7 @@ export default function Index({ examples }) {
               </ul>
             ) : (
               <p className="text-lg font-medium text-center">
-                No examples found. Try a different filter.
+                No components found. Try a different filter.
               </p>
             )}
           </section>
