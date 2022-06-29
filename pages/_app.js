@@ -71,7 +71,7 @@ function MyApp({ Component, pageProps }) {
         />
         <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-        <title>Alpine JS Components | HyperUI</title>
+        <title>Alpine JS Components | HyperJS</title>
         <meta
           name="description"
           content="Reusable Alpine JS components for typical web functionality."
@@ -81,7 +81,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:url" content="https://www.hyperjs.dev" />
         <meta
           property="og:title"
-          content="Alpine JS Components | HyperUI"
+          content="Alpine JS Components | HyperJS"
           key="og:title"
         />
         <meta
@@ -94,7 +94,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:url" content="https://www.hyperjs.dev" />
         <meta
           name="twitter:title"
-          content="Alpine JS Components | HyperUI"
+          content="Alpine JS Components | HyperJS"
           key="twitter:title"
         />
         <meta
