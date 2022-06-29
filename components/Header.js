@@ -35,9 +35,9 @@ export default function Header() {
 
           <span className="hidden sm:block w-[2px] bg-black h-6 rounded-full mx-8"></span>
 
-          <Link href="/#exampleGrid">
+          <Link href="/#mainContent">
             <a className="hidden text-sm font-medium sm:block hover:opacity-75">
-              Examples
+              Components
             </a>
           </Link>
         </nav>
