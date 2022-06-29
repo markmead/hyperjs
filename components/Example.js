@@ -13,7 +13,7 @@ export default function Example({ src }) {
   }
 
   useEffect(async () => {
-    const response = await fetch(`/examples/${src}.html`);
+    const response = await fetch(`/components/${src}.html`);
     const text = await response.text();
 
     setCode(text);
