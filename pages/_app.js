@@ -37,7 +37,17 @@ function MyApp({ Component, pageProps }) {
           src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
         ></script>
 
+        <script
+          defer
+          src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"
+        ></script>
+
         {/* Alpine Community Plugins */}
+        <script
+          defer
+          src="https://unpkg.com/alpinejs-persist-extended@1.0.0/dist/storage.min.js"
+        ></script>
+
         <script
           defer
           src="https://unpkg.com/alpinejs-money@1.0.0/dist/money.min.js"

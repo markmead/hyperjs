@@ -1,0 +1,26 @@
+<div
+  x-data="{ inputName: $persist('') }"
+  x-on:storage-delete-input-name.window="inputName = $storage('_x_inputName', 'GET')"
+>
+  <input
+    x-model="inputName"
+    class="w-full p-3 border-2 border-black rounded-lg"
+    type="text"
+  />
+
+  <div class="flex flex-wrap gap-4 mt-4">
+    <button
+      x-on:click="alert($storage('_x_inputName', 'GET'))"
+      class="block p-3 text-white bg-black rounded-lg"
+    >
+      Alert Name
+    </button>
+
+    <button
+      x-on:click="$storage('_x_inputName', 'DELETE')"
+      class="block p-3 text-white bg-black rounded-lg"
+    >
+      Delete Name
+    </button>
+  </div>
+</div>
