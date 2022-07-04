@@ -45,12 +45,12 @@ function MyApp({ Component, pageProps }) {
         {/* Alpine Community Plugins */}
         <script
           defer
-          src="https://unpkg.com/alpinejs-persist-extended@1.0.0/dist/storage.min.js"
+          src="https://unpkg.com/alpinejs-persist-extended@1.x.x/dist/storage.min.js"
         ></script>
 
         <script
           defer
-          src="https://unpkg.com/alpinejs-money@1.0.0/dist/money.min.js"
+          src="https://unpkg.com/alpinejs-money@1.x.x/dist/money.min.js"
         ></script>
 
         <script
@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }) {
 
         <script
           defer
-          src="https://unpkg.com/alpinejs-textarea-grow@1.0.0/dist/grow.min.js"
+          src="https://unpkg.com/alpinejs-textarea-grow@1.x.x/dist/grow.min.js"
         ></script>
 
         {/* Alpine Core */}
@@ -79,6 +79,7 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
         />
+
         <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
         <title>Alpine JS Components | HyperJS</title>
