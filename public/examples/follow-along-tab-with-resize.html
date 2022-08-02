@@ -1,0 +1,77 @@
+<div
+  x-data="{
+    optionA: false,
+    activeEl: false,
+    previousEl: false,
+    elData: {
+      topPos: 0,
+      leftPos: 0,
+      widthSize: 0,
+      heightSize: 0,
+    },
+    findElData() {
+      if (! this.activeEl) {
+          return
+      }
+
+      this.elData.widthSize = `${this.activeEl.getBoundingClientRect().width}px` || 0
+      this.elData.heightSize = `${this.activeEl.getBoundingClientRect().height}px` || 0
+      this.elData.topPos = `${this.activeEl.offsetTop}px` || 0
+      this.elData.leftPos = `${this.activeEl.offsetLeft}px` || 0
+    }
+  }"
+  x-init="
+    previousEl = optionA ? $refs.optionA : $refs.optionB
+    activeEl = previousEl
+  "
+  x-effect="findElData"
+  class="relative"
+>
+  <span
+    class="bg-amber-100 border border-amber-200 absolute transition-all duration-300 rounded-full"
+    :style="{
+      top: elData.topPos,
+      left: elData.leftPos,
+      width: elData.widthSize,
+      height: elData.heightSize
+    }"
+  ></span>
+
+  <div class="flex items-center gap-2 text-sm font-medium">
+    <button
+      class="rounded-full px-4 py-2 relative transition"
+      x-on:click="
+        optionA = true
+        previousEl = $el
+        activeEl = $el
+      "
+      :class="{
+        'text-amber-700': activeEl == $el,
+        'text-gray-500 hover:text-amber-700': activeEl !== $el
+      }"
+      x-on:mouseover="activeEl = $el"
+      x-on:mouseleave="activeEl = previousEl"
+      x-ref="optionA"
+    >
+      Option A
+    </button>
+
+    <button
+      class="rounded-full px-4 py-2 relative transition"
+      x-on:click="
+        optionA = false
+        previousEl = $el
+        activeEl = $el
+      "
+      :class="{
+        'text-amber-700':activeEl === $el,
+        'text-gray-500 hover:text-amber-700': activeEl !== $el
+      }"
+      x-on:mouseover="activeEl = $el"
+      x-on:mouseleave="activeEl = previousEl"
+      x-ref="optionB"
+    >
+      Option B (Long Name)
+    </button>
+  </div>
+</div>
