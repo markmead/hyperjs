@@ -116,13 +116,11 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:image" content="https://www.hyperjs.dev/og.png" />
       </Head>
 
-      <Header />
+      {/* <Header /> */}
 
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

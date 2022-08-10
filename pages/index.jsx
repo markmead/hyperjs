@@ -4,6 +4,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 
+import Layout from '../components/Layout'
 import Banner from '../components/Banner'
 import Card from '../components/Card'
 
@@ -41,7 +42,7 @@ export default function Index({ examples }) {
   ).length
 
   return (
-    <>
+    <Layout examples={examples}>
       <Banner />
 
       <div id="mainContent" className="pt-16 -mt-16">
@@ -94,7 +95,7 @@ export default function Index({ examples }) {
           </section>
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 

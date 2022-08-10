@@ -1,48 +1,59 @@
-import dynamic from "next/dynamic";
-import Head from "next/head";
+import dynamic from 'next/dynamic'
+import Head from 'next/head'
 
-import fs from "fs";
-import matter from "gray-matter";
-import path from "path";
+import fs from 'fs'
+import matter from 'gray-matter'
+import path from 'path'
 
-import { MDXRemote } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
 
-import BannerSimple from "../../components/BannerSimple";
+import Layout from '../../components/Layout'
+import BannerSimple from '../../components/BannerSimple'
 
-import { exampleFilePaths, EXAMPLES_PATH } from "../../utils/mdxUtils";
+import { exampleFilePaths, EXAMPLES_PATH } from '../../utils/mdxUtils'
 
 const components = {
-  Example: dynamic(() => import("../../components/Example")),
-};
+  Example: dynamic(() => import('../../components/Example')),
+}
 
-export default function ExamplePage({ source, frontMatter }) {
+export default function ExamplePage({ examples, source, frontMatter }) {
   return (
     <>
       <Head>
         <title>{frontMatter.title} | Alpine JS Snippets | HyperJS</title>
       </Head>
 
-      <BannerSimple
-        title={frontMatter.title}
-        description={frontMatter.description}
-      />
+      <Layout examples={examples}>
+        <BannerSimple
+          title={frontMatter.title}
+          description={frontMatter.description}
+        />
 
-      <article
-        className="px-4 mx-auto prose prose-p:text-black prose-headings:text-black prose-pre:max-h-[500px] prose-pre:rounded-xl prose-pre:p-6 prose-pre:bg-black prose-pre:text-white/90"
-        id="mainContent"
-      >
-        <MDXRemote {...source} components={components} />
-      </article>
+        <article className="max-w-none prose">
+          <MDXRemote {...source} components={components} />
+        </article>
+      </Layout>
     </>
-  );
+  )
 }
 
 export const getStaticProps = async ({ params }) => {
-  const exampleFilePath = path.join(EXAMPLES_PATH, `${params.slug}.mdx`);
-  const source = fs.readFileSync(exampleFilePath);
+  const exampleFilePath = path.join(EXAMPLES_PATH, `${params.slug}.mdx`)
+  const source = fs.readFileSync(exampleFilePath)
 
-  const { content, data } = matter(source);
+  const { content, data } = matter(source)
+
+  const examples = exampleFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(EXAMPLES_PATH, filePath))
+    const { content, data } = matter(source)
+
+    return {
+      content,
+      data,
+      filePath,
+    }
+  })
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
@@ -50,23 +61,24 @@ export const getStaticProps = async ({ params }) => {
       rehypePlugins: [],
     },
     scope: data,
-  });
+  })
 
   return {
     props: {
+      examples,
       source: mdxSource,
       frontMatter: data,
     },
-  };
-};
+  }
+}
 
 export const getStaticPaths = async () => {
   const paths = exampleFilePaths
-    .map((path) => path.replace(/\.mdx?$/, ""))
-    .map((slug) => ({ params: { slug } }));
+    .map((path) => path.replace(/\.mdx?$/, ''))
+    .map((slug) => ({ params: { slug } }))
 
   return {
     paths,
     fallback: false,
-  };
-};
+  }
+}

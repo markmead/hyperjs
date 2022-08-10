@@ -19,28 +19,13 @@ export default function Header() {
   })
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 ${scrolled ? 'bg-white' : ''}`}
-    >
+    <header>
       <div className="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
-        <nav className="flex items-center">
-          <Link href="/">
-            <a className="text-lg font-bold">
-              HyperJS
-              <span aria-hidden="true" className="ml-1.5" role="img">
-                👾
-              </span>
-            </a>
-          </Link>
-
-          <span className="hidden sm:block w-[2px] bg-black h-6 rounded-full mx-8"></span>
-
-          <Link href="/#mainContent">
-            <a className="hidden text-sm font-medium sm:block hover:opacity-75">
-              Components
-            </a>
-          </Link>
-        </nav>
+        <Link href="/#mainContent">
+          <a className="hidden text-sm font-medium sm:block hover:opacity-75">
+            Components
+          </a>
+        </Link>
 
         <div className="flex items-center">
           <a
