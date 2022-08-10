@@ -1,15 +1,28 @@
 import { useState, useEffect } from 'react'
 
-import { CopyToClipboard } from 'react-copy-to-clipboard'
-
 export default function Example({ src }) {
   let [code, setCode] = useState('')
-  let [copied, setCopied] = useState(false)
+  let [text, setText] = useState('Copy')
+  let [emoji, setEmoji] = useState('📋')
+  let [error, setError] = useState(false)
 
-  function toggleCopyText() {
-    setCopied(true)
+  function copyToClipboard() {
+    navigator.clipboard.writeText(code).then(
+      function () {
+        setError(false)
 
-    setTimeout(() => setCopied(false), 2000)
+        setEmoji('✅')
+        setText('Copied')
+
+        setTimeout(() => {
+          setEmoji('📋')
+          setText('Copy')
+        }, 3000)
+      },
+      function () {
+        setError(true)
+      }
+    )
   }
 
   useEffect(async () => {
@@ -34,15 +47,22 @@ export default function Example({ src }) {
 
       <pre>{code}</pre>
 
-      <CopyToClipboard text={code} onCopy={() => toggleCopyText()}>
-        <button className="flex items-center justify-center px-8 py-4 mt-8 font-bold text-black transition border-4 border-black rounded-xl focus:outline-none focus:ring hover:bg-pink-100 hover:shadow-offset hover:shadow-black">
-          {copied ? 'Copied... Now Paste' : 'Copy to Clipboard'}
+      <button
+        className="flex items-center justify-center px-8 py-4 mt-8 font-bold text-black transition border-4 border-black rounded-xl focus:outline-none focus:ring hover:bg-pink-100 hover:shadow-offset hover:shadow-black"
+        onClick={copyToClipboard}
+      >
+        {text}
 
-          <span aria-hidden="true" className="ml-1.5" role="img">
-            📋
-          </span>
-        </button>
-      </CopyToClipboard>
+        <span aria-hidden="true" className="ml-1.5" role="img">
+          {emoji}
+        </span>
+      </button>
+
+      {error && (
+        <span className="text-xs text-red-600 font-medium">
+          🚨 Failed copying to clipboard 🚨
+        </span>
+      )}
     </>
   )
 }
