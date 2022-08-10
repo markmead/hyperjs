@@ -1,9 +1,8 @@
 module.exports = {
   content: [
-    './posts/*.mdx',
-    './pages/*.js',
-    './pages/**/*.js',
-    './components/*.js',
+    './pages/*.jsx',
+    './pages/**/*.jsx',
+    './components/*.jsx',
     './public/examples/*.html',
   ],
   theme: {
