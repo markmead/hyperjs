@@ -1,44 +1,44 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
-import fs from "fs";
-import matter from "gray-matter";
-import path from "path";
+import fs from 'fs'
+import matter from 'gray-matter'
+import path from 'path'
 
-import Banner from "../components/Banner";
-import Card from "../components/Card";
+import Banner from '../components/Banner'
+import Card from '../components/Card'
 
-import { mdx } from "../utils/fileToUrl";
+import { mdx } from '../utils/fileToUrl'
 
-import { exampleFilePaths, EXAMPLES_PATH } from "../utils/mdxUtils";
+import { exampleFilePaths, EXAMPLES_PATH } from '../utils/mdxUtils'
 
 export default function Index({ examples }) {
-  let [basic, setBasic] = useState(true);
-  let [accessible, setAccessible] = useState(true);
-  let [components, setComponents] = useState(examples);
+  let [basic, setBasic] = useState(true)
+  let [accessible, setAccessible] = useState(true)
+  let [components, setComponents] = useState(examples)
 
   useEffect(() => {
     const filteredComponents = examples.filter((component) => {
       if (basic && accessible) {
-        return true;
+        return true
       }
 
       if (basic && !accessible) {
-        return component.data.basic;
+        return component.data.basic
       }
 
       if (accessible && !basic) {
-        return component.data.accessible;
+        return component.data.accessible
       }
-    });
+    })
 
-    setComponents(filteredComponents);
-  }, [basic, accessible]);
+    setComponents(filteredComponents)
+  }, [basic, accessible])
 
-  let basicCount = examples.filter((example) => example.data.basic).length;
+  let basicCount = examples.filter((example) => example.data.basic).length
 
   let accessibleCount = examples.filter(
     (example) => example.data.accessible
-  ).length;
+  ).length
 
   return (
     <>
@@ -53,7 +53,7 @@ export default function Index({ examples }) {
               <button
                 type="button"
                 className={`px-5 py-3 text-sm font-medium border-2 border-black rounded-lg ${
-                  basic && "bg-black text-white"
+                  basic && 'bg-black text-white'
                 }`}
                 onClick={() => setBasic(!basic)}
               >
@@ -64,7 +64,7 @@ export default function Index({ examples }) {
               <button
                 type="button"
                 className={`px-5 py-3 text-sm font-medium border-2 border-black rounded-lg ${
-                  accessible && "bg-black text-white"
+                  accessible && 'bg-black text-white'
                 }`}
                 onClick={() => setAccessible(!accessible)}
               >
@@ -95,20 +95,20 @@ export default function Index({ examples }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export function getStaticProps() {
   const examples = exampleFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(EXAMPLES_PATH, filePath));
-    const { content, data } = matter(source);
+    const source = fs.readFileSync(path.join(EXAMPLES_PATH, filePath))
+    const { content, data } = matter(source)
 
     return {
       content,
       data,
       filePath,
-    };
-  });
+    }
+  })
 
-  return { props: { examples } };
+  return { props: { examples } }
 }

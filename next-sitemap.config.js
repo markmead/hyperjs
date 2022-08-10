@@ -1,5 +1,5 @@
 module.exports = {
-  exclude: ["/examples/*.html"],
+  exclude: ['/examples/*.html'],
   generateRobotsTxt: true,
-  siteUrl: "https://www.hyperjs.dev",
-};
+  siteUrl: 'https://www.hyperjs.dev',
+}

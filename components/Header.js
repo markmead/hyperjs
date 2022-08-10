@@ -1,26 +1,26 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 export default function Header() {
-  let [scrolled, setScolled] = useState(false);
+  let [scrolled, setScolled] = useState(false)
 
   useEffect(() => {
     function handleScroll() {
-      const mainContent = document.getElementById("mainContent");
-      const isAtTop = mainContent.getBoundingClientRect().top <= 0;
+      const mainContent = document.getElementById('mainContent')
+      const isAtTop = mainContent.getBoundingClientRect().top <= 0
 
-      setScolled(isAtTop);
+      setScolled(isAtTop)
     }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+    return () => window.removeEventListener('scroll', handleScroll)
+  })
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 ${scrolled ? "bg-white" : ""}`}
+      className={`fixed inset-x-0 top-0 z-50 ${scrolled ? 'bg-white' : ''}`}
     >
       <div className="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
         <nav className="flex items-center">
@@ -83,5 +83,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }

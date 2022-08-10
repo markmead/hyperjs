@@ -1,4 +1,4 @@
-import Wave from "./Wave";
+import Wave from './Wave'
 
 export default function Banner({ title, description }) {
   return (
@@ -20,5 +20,5 @@ export default function Banner({ title, description }) {
         </div>
       </div>
     </section>
-  );
+  )
 }

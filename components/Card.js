@@ -1,8 +1,8 @@
-import Link from "next/link";
-import CardTag from "./CardTag";
+import Link from 'next/link'
+import CardTag from './CardTag'
 
 export default function Card({ data, path }) {
-  const { title, description, emoji, basic, accessible } = data;
+  const { title, description, emoji, basic, accessible } = data
 
   return (
     <Link as={`/components/${path}`} href={`/components/[slug]`}>
@@ -24,5 +24,5 @@ export default function Card({ data, path }) {
         </div>
       </a>
     </Link>
-  );
+  )
 }

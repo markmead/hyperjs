@@ -1,10 +1,10 @@
-import "../styles/globals.css";
+import '../styles/globals.css'
 
-import Head from "next/head";
+import Head from 'next/head'
 
-import Layout from "../components/Layout";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Layout from '../components/Layout'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -124,7 +124,7 @@ function MyApp({ Component, pageProps }) {
 
       <Footer />
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

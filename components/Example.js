@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 export default function Example({ src }) {
-  let [code, setCode] = useState("");
-  let [copied, setCopied] = useState(false);
+  let [code, setCode] = useState('')
+  let [copied, setCopied] = useState(false)
 
   function toggleCopyText() {
-    setCopied(true);
+    setCopied(true)
 
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), 2000)
   }
 
   useEffect(async () => {
-    const response = await fetch(`/examples/${src}.html`);
-    const text = await response.text();
+    const response = await fetch(`/examples/${src}.html`)
+    const text = await response.text()
 
-    setCode(text);
-  }, [src]);
+    setCode(text)
+  }, [src])
 
   return (
     <>
@@ -36,7 +36,7 @@ export default function Example({ src }) {
 
       <CopyToClipboard text={code} onCopy={() => toggleCopyText()}>
         <button className="flex items-center justify-center px-8 py-4 mt-8 font-bold text-black transition border-4 border-black rounded-xl focus:outline-none focus:ring hover:bg-pink-100 hover:shadow-offset hover:shadow-black">
-          {copied ? "Copied... Now Paste" : "Copy to Clipboard"}
+          {copied ? 'Copied... Now Paste' : 'Copy to Clipboard'}
 
           <span aria-hidden="true" className="ml-1.5" role="img">
             📋
@@ -44,5 +44,5 @@ export default function Example({ src }) {
         </button>
       </CopyToClipboard>
     </>
-  );
+  )
 }
