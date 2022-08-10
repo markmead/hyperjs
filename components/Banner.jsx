@@ -1,15 +1,6 @@
-import Wave from './Wave'
-
 export default function Banner() {
   return (
     <section className="relative pt-16">
-      <div
-        className="absolute inset-x-0 top-0 rotate-180 pointer-events-none"
-        aria-hidden="true"
-      >
-        <Wave />
-      </div>
-
       <div className="max-w-screen-xl px-4 py-12 mx-auto sm:py-24 lg:py-36">
         <div className="max-w-xl mx-auto text-center">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
