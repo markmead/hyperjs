@@ -38,30 +38,33 @@ export default function Example({ src }) {
 
       <div className="not-prose">
         <div
-          className="p-6 border-4 border-black rounded-xl shadow-offset shadow-black"
+          className="p-4 border border-stone-100 bg-stone-50 rounded-xl"
           dangerouslySetInnerHTML={{ __html: code }}
         ></div>
       </div>
 
-      <h2>Code</h2>
+      <h2 className="flex items-center justify-between">
+        <span>Code</span>
 
-      <pre>{code}</pre>
+        <button
+          onClick={copyToClipboard}
+          className="inline-flex items-center gap-4 px-5 py-3 bg-stone-50 text-stone-700 border border-stone-100 rounded-lg text-sm"
+          title="Copy to clipboard"
+        >
+          <span>{text}</span>
 
-      <button
-        className="flex items-center justify-center px-8 py-4 mt-8 font-bold text-black transition border-4 border-black rounded-xl focus:outline-none focus:ring hover:bg-pink-100 hover:shadow-offset hover:shadow-black"
-        onClick={copyToClipboard}
-      >
-        {text}
+          <span aria-hidden="true" role="img">
+            {emoji}
+          </span>
+        </button>
+      </h2>
 
-        <span aria-hidden="true" className="ml-1.5" role="img">
-          {emoji}
-        </span>
-      </button>
+      <pre className="max-h-[600px]">{code}</pre>
 
       {error && (
-        <span className="text-xs text-red-600 font-medium">
+        <p className="text-xs text-red-600 font-medium">
           🚨 Failed copying to clipboard 🚨
-        </span>
+        </p>
       )}
     </>
   )

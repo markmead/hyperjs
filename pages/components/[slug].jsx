@@ -9,7 +9,6 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 
 import Layout from '../../components/Layout'
-import BannerSimple from '../../components/BannerSimple'
 
 import { exampleFilePaths, EXAMPLES_PATH } from '../../utils/mdxUtils'
 
@@ -25,12 +24,11 @@ export default function ExamplePage({ examples, source, frontMatter }) {
       </Head>
 
       <Layout examples={examples}>
-        <BannerSimple
-          title={frontMatter.title}
-          description={frontMatter.description}
-        />
-
         <article className="max-w-none prose">
+          <h1>{frontMatter.title}</h1>
+
+          <p>{frontMatter.description}</p>
+
           <MDXRemote {...source} components={components} />
         </article>
       </Layout>
