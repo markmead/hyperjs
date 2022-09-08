@@ -1,31 +1,15 @@
-import "../styles/globals.css";
+import '../styles/globals.css'
 
-import Head from "next/head";
+import Head from 'next/head'
 
-import Layout from "../components/Layout";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Layout from '../components/Layout'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-NDHZV38TSJ"
-        ></script>
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-NDHZV38TSJ');
-            `,
-          }}
-        />
-
         {/* Alpine Official Plugins */}
         <script
           defer
@@ -124,7 +108,7 @@ function MyApp({ Component, pageProps }) {
 
       <Footer />
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
