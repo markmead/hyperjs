@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 export default function Example({ src }) {
   const [code, setCode] = useState('')
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`/components/${src}.html`);
-      const text = await response.text();
+      const response = await fetch(`/components/${src}.html`)
+      const text = await response.text()
 
-      setCode(text);
+      setCode(text)
     }
 
-    fetchData();
-  }, [src]);
+    fetchData()
+  }, [src])
 
   return (
     <>
@@ -29,5 +29,5 @@ export default function Example({ src }) {
 
       <pre>{code}</pre>
     </>
-  );
+  )
 }

@@ -102,7 +102,6 @@ function MyApp({ Component, pageProps }) {
       <Header />
 
       <main>
-
         <Component {...pageProps} />
       </main>
 
