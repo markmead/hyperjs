@@ -32,7 +32,7 @@ export default function Example({ src }) {
       <h2>Code</h2>
 
       <pre>
-        <code class="language-html">{code}</code>
+        <code className="language-html">{code}</code>
       </pre>
     </>
   )
