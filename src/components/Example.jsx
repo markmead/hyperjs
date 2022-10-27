@@ -7,7 +7,7 @@ export default function Example({ src }) {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`/components/${src}.html`)
+      const response = await fetch(`/code/${src}.html`)
       const text = await response.text()
 
       setCode(text)
