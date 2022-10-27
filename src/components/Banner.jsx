@@ -11,7 +11,7 @@ export default function Banner() {
 
           <p className="mt-4 font-medium text-slate-300 sm:leading-relaxed sm:text-xl">
             Alpine JS allows you to write DOM manipulation all in your HTML,
-            Liquid, Blade etc. Here is a collection of snippets that you can
+            Liquid, Blade etc. Here is a collection of components that you can
             copy and paste into your project.
           </p>
         </div>

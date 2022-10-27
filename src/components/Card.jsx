@@ -5,7 +5,7 @@ export default function Card({ data, path }) {
 
   return (
     <Link as={`/components/${path}`} href={`/components/[slug]`}>
-      <a className="flex items-end h-full p-8 pt-12 min-h-[250px] transition border-2 border-teal-400 rounded-lg bg-slate-900 hover:relative hover:bg-teal-400/5">
+      <a className="flex items-end h-full p-8 pt-12 min-h-[250px] transition border-2 border-teal-400 rounded-xl bg-slate-900 hover:relative hover:bg-teal-400/5">
         <div>
           <span role="img" aria-hidden="true" className="text-3xl">
             {emoji}
