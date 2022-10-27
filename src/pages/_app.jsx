@@ -1,10 +1,9 @@
-import '../styles/globals.css'
+import '@/styles/tailwind.css'
 
 import Head from 'next/head'
 
-import Layout from '../components/Layout'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -102,9 +101,10 @@ function MyApp({ Component, pageProps }) {
 
       <Header />
 
-      <Layout>
+      <main>
+
         <Component {...pageProps} />
-      </Layout>
+      </main>
 
       <Footer />
     </>

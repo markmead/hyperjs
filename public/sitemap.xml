@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-        <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        <sitemap><loc>https://www.hyperjs.dev/sitemap-0.xml</loc></sitemap>
-        </sitemapindex>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="https://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="https://www.w3.org/1999/xhtml" xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="https://www.google.com/schemas/sitemap-image/1.1" xmlns:video="https://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://www.js.hyperui.dev</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/accordion-a11y-with-open-all</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/accordion-a11y</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/accordion-singular</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/accordion</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/alert-close-auto-life</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/alert-close-auto</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/alert-close</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/datepicker-clear</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/datepicker</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/dropdown-hover</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/dropdown</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/follow-along-tab-with-resize</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/format-money</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/input-card-expiry-date</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/input-card-number-dynamic</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/input-card-number</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/input-lowercase</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/input-positive-number</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/input-quantity</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/input-slug</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/input-uppercase</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/laravel-pass-alpine-data</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/local-storage-plugin-extended</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/local-storage-plugin</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/modal</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/multistep-form</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/slide-out</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/tabs-with-accordion</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/tabs-with-url</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/tabs</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/textarea-autogrow-plugin</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/textarea-autogrow</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.js.hyperui.dev/components/update-class-when-sticky</loc><lastmod>2022-10-27T13:34:52.234Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>

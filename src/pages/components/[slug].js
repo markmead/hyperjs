@@ -10,7 +10,7 @@ import { serialize } from "next-mdx-remote/serialize";
 
 import BannerSimple from "../../components/BannerSimple";
 
-import { exampleFilePaths, EXAMPLES_PATH } from "../../utils/mdxUtils";
+import { componentFilePaths, COMPONENTS_PATH } from "../../utils/mdxUtils";
 
 const components = {
   Example: dynamic(() => import("../../components/Example")),
@@ -23,24 +23,31 @@ export default function ExamplePage({ source, frontMatter }) {
         <title>{frontMatter.title} | Alpine JS Snippets | HyperJS</title>
       </Head>
 
+      <div className="bg-slate-900">
+
       <BannerSimple
         title={frontMatter.title}
         description={frontMatter.description}
       />
 
+<div className="max-w-screen-xl mx-auto px-4 pb-12">
+
       <article
-        className="px-4 mx-auto prose prose-p:text-black prose-headings:text-black prose-pre:max-h-[500px] prose-pre:rounded-xl prose-pre:p-6 prose-pre:bg-black prose-pre:text-white/90"
-        id="mainContent"
+        className="mx-auto prose prose-invert prose-pre:bg-slate-800 prose-pre:p-6 prose-pre:max-h-[600px]"
       >
         <MDXRemote {...source} components={components} />
       </article>
+
+</div>
+      </div>
+
     </>
   );
 }
 
 export const getStaticProps = async ({ params }) => {
-  const exampleFilePath = path.join(EXAMPLES_PATH, `${params.slug}.mdx`);
-  const source = fs.readFileSync(exampleFilePath);
+  const componentFilePath = path.join(COMPONENTS_PATH, `${params.slug}.mdx`);
+  const source = fs.readFileSync(componentFilePath);
 
   const { content, data } = matter(source);
 
@@ -61,7 +68,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = exampleFilePaths
+  const paths = componentFilePaths
     .map((path) => path.replace(/\.mdx?$/, ""))
     .map((slug) => ({ params: { slug } }));
 
