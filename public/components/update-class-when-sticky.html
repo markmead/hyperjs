@@ -1,17 +1,13 @@
-<div class="h-[500px]">
-  <div
-    x-sticky="!bg-pink-600"
-    class="sticky top-0 flex items-center justify-between w-full p-6 text-white bg-black rounded-lg sticky-element"
-  >
-    <p>Sticky Element</p>
-
-    <p x-sticky.sticky-element="!block" class="hidden">Show When Sticky</p>
+<div x-data class="min-h-[300px]">
+  <div x-sticky="bg-teal-900" class="sticky sticky-element content !mt-0 top-0">
+    Sticky Element
   </div>
 
   <div
-    x-sticky.sticky-element="text-5xl"
-    class="p-6 mt-24 text-white bg-black rounded-lg"
+    class="content !mt-8"
+    x-sticky.sticky-element="block"
+    x-sticky-inactive="hidden"
   >
-    Enlarge When Sticky
+    Show When Sticky
   </div>
 </div>

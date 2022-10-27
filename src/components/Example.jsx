@@ -14,7 +14,7 @@ export default function Example({ src }) {
     }
 
     fetchData()
-  }, [src])
+  }, [])
 
   useEffect(() => Prism.highlightAll())
 
