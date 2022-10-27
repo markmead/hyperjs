@@ -30,7 +30,7 @@ export default function ExamplePage({ source, frontMatter }) {
         />
 
         <div className="max-w-screen-xl px-4 pb-12 mx-auto">
-          <article className="mx-auto prose prose-invert prose-pre:bg-slate-800 prose-pre:p-6 prose-pre:max-h-[600px]">
+          <article className="mx-auto prose prose-invert">
             <MDXRemote {...source} components={components} />
           </article>
         </div>

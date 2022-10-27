@@ -2,7 +2,7 @@ export default function Banner({ title, description }) {
   return (
     <section>
       <div className="max-w-screen-xl px-4 py-16 mx-auto">
-        <div className="max-w-xl mx-auto text-center">
+        <div className="mx-auto text-center max-w-prose">
           <h1 className="text-3xl font-black text-white sm:text-5xl">
             {title}
           </h1>

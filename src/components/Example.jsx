@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import Prism from 'prismjs'
+
 export default function Example({ src }) {
   const [code, setCode] = useState('')
 
@@ -14,6 +16,8 @@ export default function Example({ src }) {
     fetchData()
   }, [src])
 
+  useEffect(() => Prism.highlightAll())
+
   return (
     <>
       <h2>Example</h2>
@@ -27,7 +31,9 @@ export default function Example({ src }) {
 
       <h2>Code</h2>
 
-      <pre>{code}</pre>
+      <pre>
+        <code class="language-html">{code}</code>
+      </pre>
     </>
   )
 }
