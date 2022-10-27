@@ -1,12 +1,13 @@
-<div x-data="{ showAlert: true }">
-  <div
-    x-cloak
-    x-show="showAlert"
-    class="flex items-center justify-between p-6 text-white bg-red-700 rounded-lg"
-    role="alert"
-  >
-    Lorem ipsum dolor sit amet consectetur!
+<div
+  x-cloak
+  x-show="showAlert"
+  x-data="{ showAlert: true }"
+  role="alert"
+  class="alert"
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-    <button @click="showAlert = false" aria-label="Close">🙅‍♂️</button>
-  </div>
+  <button x-on:click="showAlert = false" class="button !bg-slate-900">
+    Close
+  </button>
 </div>

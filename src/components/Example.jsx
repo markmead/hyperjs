@@ -24,7 +24,7 @@ export default function Example({ src }) {
 
       <div className="not-prose">
         <div
-          className="p-6 bg-slate-800 rounded-xl"
+          className="p-4 bg-slate-800 rounded-xl"
           dangerouslySetInnerHTML={{ __html: code }}
         ></div>
       </div>

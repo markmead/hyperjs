@@ -1,5 +1,5 @@
 pre[class*='language-'] {
-  @apply !p-6 !m-0 !rounded-xl !bg-slate-800 !max-h-[600px] [&::-webkit-scrollbar]:hidden;
+  @apply !p-4 !m-0 !rounded-xl !bg-slate-800 !max-h-[600px] [&::-webkit-scrollbar]:hidden;
 }
 
 .token:is(.property, .tag, .constant, .symbol, .deleted) {

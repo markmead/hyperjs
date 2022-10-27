@@ -28,7 +28,7 @@
   class="relative"
 >
   <span
-    class="bg-amber-100 border border-amber-200 absolute transition-all duration-300 rounded-full"
+    class="absolute transition-all duration-300 rounded-full bg-slate-900"
     :style="{
       top: elData.topPos,
       left: elData.leftPos,
@@ -37,17 +37,17 @@
     }"
   ></span>
 
-  <div class="flex items-center gap-2 text-sm font-medium">
+  <div class="flex">
     <button
-      class="rounded-full px-4 py-2 relative transition"
+      class="relative px-3 py-1.5 rounded-full"
       x-on:click="
         optionA = true
         previousEl = $el
         activeEl = $el
       "
       :class="{
-        'text-amber-700': activeEl == $el,
-        'text-gray-500 hover:text-amber-700': activeEl !== $el
+        'text-teal-400': activeEl === $el,
+        'text-slate-300 hover:text-white': activeEl !== $el
       }"
       x-on:mouseover="activeEl = $el"
       x-on:mouseleave="activeEl = previousEl"
@@ -57,15 +57,15 @@
     </button>
 
     <button
-      class="rounded-full px-4 py-2 relative transition"
+      class="relative px-3 py-1.5 rounded-full"
       x-on:click="
         optionA = false
         previousEl = $el
         activeEl = $el
       "
       :class="{
-        'text-amber-700':activeEl === $el,
-        'text-gray-500 hover:text-amber-700': activeEl !== $el
+        'text-teal-400': activeEl === $el,
+        'text-slate-300 hover:text-white': activeEl !== $el
       }"
       x-on:mouseover="activeEl = $el"
       x-on:mouseleave="activeEl = previousEl"

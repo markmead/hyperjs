@@ -1,12 +1,12 @@
-<div x-data="{ activeTab: 'allTabs' }">
+<div x-data="{ activeTab: 'all' }">
   <nav>
     <ul class="flex flex-wrap gap-4">
       <li>
         <a
-          @click.prevent="activeTab = 'allTabs'"
-          :class="{ 'font-bold': activeTab === 'allTabs' }"
-          class="block p-3 text-white bg-black rounded-lg"
-          href="#allTabs"
+          x-on:click.prevent="activeTab = 'all'"
+          :class="{ 'button-active': activeTab === 'all' }"
+          href="#all"
+          class="button"
         >
           All
         </a>
@@ -14,34 +14,34 @@
 
       <li>
         <a
-          @click.prevent="activeTab = 'productDetails'"
-          :class="{ 'font-bold': activeTab === 'productDetails' }"
-          class="block p-3 text-white bg-black rounded-lg"
-          href="#productDetails"
+          x-on:click.prevent="activeTab = 'details'"
+          :class="{ 'button-active': activeTab === 'details' }"
+          href="#details"
+          class="button"
         >
-          Product Details
+          Details
         </a>
       </li>
 
       <li>
         <a
-          @click.prevent="activeTab = 'productSpecs'"
-          :class="{ 'font-bold': activeTab === 'productSpecs' }"
-          class="block p-3 text-white bg-black rounded-lg"
-          href="#productSpecs"
+          x-on:click.prevent="activeTab = 'specs'"
+          :class="{ 'button-active': activeTab === 'specs' }"
+          href="#specs"
+          class="button"
         >
-          Product Specs
+          Specs
         </a>
       </li>
 
       <li>
         <a
-          @click.prevent="activeTab = 'productReviews'"
-          :class="{ 'font-bold': activeTab === 'productReviews' }"
-          class="block p-3 text-white bg-black rounded-lg"
-          href="#productReviews"
+          x-on:click.prevent="activeTab = 'reviews'"
+          :class="{ 'button-active': activeTab === 'reviews' }"
+          href="#reviews"
+          class="button"
         >
-          Product Reviews
+          Reviews
         </a>
       </li>
     </ul>
@@ -50,124 +50,85 @@
   <div class="mt-4 space-y-4">
     <div
       x-data="{ activeAccordion: false }"
-      x-show="activeTab === 'productDetails' || activeTab === 'allTabs'"
+      x-show="activeTab === 'details' || activeTab === 'all'"
     >
       <h3>
         <button
-          @click="activeAccordion = !activeAccordion"
-          class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
+          x-on:click="activeAccordion = !activeAccordion"
+          :class="{ 'button-active': activeAccordion }"
+          class="button"
         >
-          <h2>Product Details - Lorem ipsum dolor sit amet consectetur?</h2>
-
-          <span
-            :class="{ '-rotate-180': activeAccordion }"
-            class="transition"
-            aria-hidden="true"
-          >
-            👇
-          </span>
+          Details #1
         </button>
       </h3>
 
-      <div x-show="activeAccordion" x-collapse class="mt-4">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorum
-          tenetur aut doloribus iste? Recusandae ipsam quod modi eligendi
-          perspiciatis voluptatibus fugit, similique tenetur quos quasi impedit
-          totam beatae iure, dolor unde voluptas a veniam adipisci quibusdam qui
-          harum vel! Dolorem quaerat delectus in dignissimos libero, beatae
-          itaque repudiandae! Velit?
-        </p>
+      <div x-show="activeAccordion" x-collapse>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
       </div>
     </div>
 
     <div
       x-data="{ activeAccordion: false }"
-      x-show="activeTab === 'productSpecs' || activeTab === 'allTabs'"
+      x-show="activeTab === 'specs' || activeTab === 'all'"
     >
       <h3>
         <button
-          @click="activeAccordion = !activeAccordion"
-          class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
+          x-on:click="activeAccordion = !activeAccordion"
+          :class="{ 'button-active': activeAccordion }"
+          class="button"
         >
-          <h2>Product Specs - Lorem ipsum dolor sit amet consectetur?</h2>
-
-          <span
-            :class="{ '-rotate-180': activeAccordion }"
-            class="transition"
-            aria-hidden="true"
-          >
-            👇
-          </span>
+          Specs #1
         </button>
       </h3>
 
-      <div x-show="activeAccordion" x-collapse class="mt-4">
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis
-          vitae cum non labore itaque veniam exercitationem excepturi dolorum
-          repellendus praesentium!
-        </p>
+      <div x-show="activeAccordion" x-collapse>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
       </div>
     </div>
 
     <div
       x-data="{ activeAccordion: false }"
-      x-show="activeTab === 'productSpecs' || activeTab === 'allTabs'"
+      x-show="activeTab === 'specs' || activeTab === 'all'"
     >
       <h3>
         <button
-          @click="activeAccordion = !activeAccordion"
-          class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
+          x-on:click="activeAccordion = !activeAccordion"
+          :class="{ 'button-active': activeAccordion }"
+          class="button"
         >
-          <h2>Product Specs - Lorem ipsum dolor sit amet consectetur?</h2>
-
-          <span
-            :class="{ '-rotate-180': activeAccordion }"
-            class="transition"
-            aria-hidden="true"
-          >
-            👇
-          </span>
+          Specs #2
         </button>
       </h3>
 
-      <div x-show="activeAccordion" x-collapse class="mt-4">
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis
-          vitae cum non labore itaque veniam exercitationem excepturi dolorum
-          repellendus praesentium!
-        </p>
+      <div x-show="activeAccordion" x-collapse>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
       </div>
     </div>
 
     <div
       x-data="{ activeAccordion: false }"
-      x-show="activeTab === 'productReviews' || activeTab === 'allTabs'"
+      x-show="activeTab === 'reviews' || activeTab === 'all'"
     >
       <h3>
         <button
-          @click="activeAccordion = !activeAccordion"
-          class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
+          x-on:click="activeAccordion = !activeAccordion"
+          :class="{ 'button-active': activeAccordion }"
+          class="button"
         >
-          <h2>Product Reviews - Lorem ipsum dolor sit amet consectetur?</h2>
-
-          <span
-            :class="{ '-rotate-180': activeAccordion }"
-            class="transition"
-            aria-hidden="true"
-          >
-            👇
-          </span>
+          Reviews #1
         </button>
       </h3>
 
-      <div x-show="activeAccordion" x-collapse class="mt-4">
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis
-          vitae cum non labore itaque veniam exercitationem excepturi dolorum
-          repellendus praesentium!
-        </p>
+      <div x-show="activeAccordion" x-collapse>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
       </div>
     </div>
   </div>

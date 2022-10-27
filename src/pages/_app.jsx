@@ -64,6 +64,12 @@ function MyApp({ Component, pageProps }) {
           href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
         />
 
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://npmcdn.com/flatpickr/dist/themes/dark.css"
+        />
+
         <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
         <title>Alpine JS Components | HyperJS</title>

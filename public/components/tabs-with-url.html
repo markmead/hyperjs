@@ -1,55 +1,53 @@
 <div
-  x-data="{ activeTab: 'productDetails' }"
-  x-init="activeTab = window.location.hash ? window.location.hash.replace('#', '') : 'productDetails'"
+  x-data="{ activeTab: 'details' }"
+  x-init="activeTab = window.location.hash ? window.location.hash.replace('#', '') : 'details'"
 >
-  <nav>
-    <ul class="flex flex-wrap gap-4">
-      <li>
-        <a
-          @click="activeTab = 'productDetails'"
-          :class="{ 'font-bold': activeTab === 'productDetails' }"
-          class="block p-3 text-white bg-black rounded-lg"
-          href="#productDetails"
-        >
-          Product Details
-        </a>
-      </li>
+  <ul class="flex flex-wrap gap-4">
+    <li>
+      <a
+        x-on:click="activeTab = 'details'"
+        :class="{ 'button-active': activeTab === 'details' }"
+        href="#details"
+        class="button"
+      >
+        Details
+      </a>
+    </li>
 
-      <li>
-        <a
-          @click="activeTab = 'productSpecs'"
-          :class="{ 'font-bold': activeTab === 'productSpecs' }"
-          class="block p-3 text-white bg-black rounded-lg"
-          href="#productSpecs"
-        >
-          Product Specs
-        </a>
-      </li>
+    <li>
+      <a
+        x-on:click="activeTab = 'specs'"
+        :class="{ 'button-active': activeTab === 'specs' }"
+        href="#specs"
+        class="button"
+      >
+        Specs
+      </a>
+    </li>
 
-      <li>
-        <a
-          @click="activeTab = 'productReviews'"
-          :class="{ 'font-bold': activeTab === 'productReviews' }"
-          class="block p-3 text-white bg-black rounded-lg"
-          href="#productReviews"
-        >
-          Product Reviews
-        </a>
-      </li>
-    </ul>
-  </nav>
+    <li>
+      <a
+        x-on:click="activeTab = 'reviews'"
+        :class="{ 'button-active': activeTab === 'reviews' }"
+        href="#reviews"
+        class="button"
+      >
+        Reviews
+      </a>
+    </li>
+  </ul>
 
-  <div class="p-6 mt-4 text-white bg-black rounded-lg">
-    <div x-show="activeTab === 'productDetails'">
-      <h2>Product Details</h2>
+  <div class="content">
+    <div x-show="activeTab === 'details'">
+      <h2>Details</h2>
     </div>
 
-    <div x-show="activeTab === 'productSpecs'">
-      <h2>Product Specs</h2>
+    <div x-show="activeTab === 'specs'">
+      <h2>Specs</h2>
     </div>
 
-    <div x-show="activeTab === 'productReviews'">
-      <h2>Product Reviews</h2>
+    <div x-show="activeTab === 'reviews'">
+      <h2>Reviews</h2>
     </div>
   </div>
 </div>

@@ -1,9 +1,9 @@
 <div x-data="{ cardNumber: '' }">
   <input
     x-model="cardNumber"
-    class="w-full p-3 border-2 border-black rounded-lg"
-    aria-label="Card Number"
-    type="text"
     x-mask:dynamic="$input.startsWith('34') || $input.startsWith('37') ? '9999 999999 99999' : '9999 9999 9999 9999'"
+    type="text"
+    placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
+    class="form-input"
   />
 </div>

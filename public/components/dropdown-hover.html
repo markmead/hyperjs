@@ -1,25 +1,20 @@
 <div x-data="{ showDropdown: false }">
   <a
-    @mouseover="showDropdown = true"
-    @mouseleave="showDropdown = false"
-    class="flex items-center justify-between w-full p-6 text-white bg-black rounded-lg"
+    x-on:mouseover="showDropdown = true"
+    x-on:mouseleave="showDropdown = false"
     href="#"
+    class="button"
   >
-    <h2>Lorem, ipsum dolor!</h2>
-
-    <span aria-hidden="true"> 👇 </span>
+    Dropdown
   </a>
 
   <div
+    x-cloak
     x-show="showDropdown"
-    @mouseover="showDropdown = true"
-    @mouseleave="showDropdown = false"
-    class="pt-4"
+    x-on:mouseover="showDropdown = true"
+    x-on:mouseleave="showDropdown = false"
+    class="pt-2"
   >
-    <ul class="p-6 text-white bg-black rounded-lg">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
+    <div class="content !mt-0">Menu</div>
   </div>
 </div>

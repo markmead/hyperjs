@@ -10,20 +10,19 @@
       }
     })
   "
-  class="flex items-center gap-4"
+  class="flex gap-2"
 >
   <input
     x-ref="dateInput"
-    aria-label="Datepicker"
-    class="w-full p-3 border-2 border-black rounded-lg"
-    placeholder="YYYY-MM-DD"
     type="text"
+    placeholder="YYYY-MM-DD"
+    class="form-input"
   />
 
   <button
-    @click="currentDate = ''; flatpickrInstance.clear()"
-    aria-label="Clear"
+    x-on:click="currentDate = ''; flatpickrInstance.clear()"
+    class="button"
   >
-    ❌
+    Clear
   </button>
 </div>

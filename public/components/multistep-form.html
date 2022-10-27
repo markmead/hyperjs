@@ -1,69 +1,26 @@
-<form x-data="{ formStep: 1 }">
-  <div x-show="formStep === 1">
-    <p class="text-xl font-bold">Step 1</p>
+<form x-data="{ formStep: 1 }" class="space-y-2">
+  <button
+    x-show="formStep > 1"
+    x-on:click="formStep -= 1"
+    type="button"
+    class="button"
+  >
+    Back
+  </button>
 
-    <button
-      @click="formStep += 1"
-      class="p-3 mt-4 text-white bg-black rounded-lg"
-      type="button"
-    >
-      Next Step
-    </button>
-  </div>
+  <div x-show="formStep === 1">Step 1</div>
+  <div x-show="formStep === 2">Step 2</div>
+  <div x-show="formStep === 3">Step 3</div>
+  <div x-show="formStep === 4">Final Step</div>
 
-  <div x-show="formStep === 2" class="space-y-4">
-    <button
-      @click="formStep -= 1"
-      class="p-3 text-white bg-black rounded-lg"
-      type="button"
-    >
-      Back
-    </button>
+  <button
+    x-show="formStep < 4"
+    x-on:click="formStep += 1"
+    type="button"
+    class="button"
+  >
+    Next Step
+  </button>
 
-    <p class="text-xl font-bold">Step 2</p>
-
-    <button
-      @click="formStep += 1"
-      class="p-3 text-white bg-black rounded-lg"
-      type="button"
-    >
-      Next Step
-    </button>
-  </div>
-
-  <div x-show="formStep === 3" class="space-y-4">
-    <button
-      @click="formStep -= 1"
-      class="p-3 text-white bg-black rounded-lg"
-      type="button"
-    >
-      Back
-    </button>
-
-    <p class="text-xl font-bold">Step 3</p>
-
-    <button
-      @click="formStep += 1"
-      class="p-3 text-white bg-black rounded-lg"
-      type="button"
-    >
-      Next Step
-    </button>
-  </div>
-
-  <div x-show="formStep === 4" class="space-y-4">
-    <button
-      @click="formStep -= 1"
-      class="p-3 text-white bg-black rounded-lg"
-      type="button"
-    >
-      Back
-    </button>
-
-    <p class="text-xl font-bold">Final Step</p>
-
-    <button class="p-3 text-white bg-black rounded-lg" type="submit">
-      Submit
-    </button>
-  </div>
+  <button x-show="formStep === 4" class="button" type="submit">Submit</button>
 </form>
