@@ -1,12 +1,12 @@
 <div x-data="{ showDropdown: false }">
-  <a
+  <button
     x-on:mouseover="showDropdown = true"
     x-on:mouseleave="showDropdown = false"
-    href="#"
+    x-on:click="showDropdown = !showDropdown"
     class="button"
   >
     Dropdown
-  </a>
+  </button>
 
   <div
     x-cloak

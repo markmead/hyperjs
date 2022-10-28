@@ -1,5 +1,6 @@
 <form x-data="{ formStep: 1 }" class="space-y-2">
   <button
+    x-cloak
     x-show="formStep > 1"
     x-on:click="formStep -= 1"
     type="button"
@@ -8,12 +9,13 @@
     Back
   </button>
 
-  <div x-show="formStep === 1">Step 1</div>
-  <div x-show="formStep === 2">Step 2</div>
-  <div x-show="formStep === 3">Step 3</div>
-  <div x-show="formStep === 4">Final Step</div>
+  <div x-cloak x-show="formStep === 1">Step 1</div>
+  <div x-cloak x-show="formStep === 2">Step 2</div>
+  <div x-cloak x-show="formStep === 3">Step 3</div>
+  <div x-cloak x-show="formStep === 4">Final Step</div>
 
   <button
+    x-cloak
     x-show="formStep < 4"
     x-on:click="formStep += 1"
     type="button"
@@ -22,5 +24,7 @@
     Next Step
   </button>
 
-  <button x-show="formStep === 4" class="button" type="submit">Submit</button>
+  <button x-cloak x-show="formStep === 4" class="button" type="submit">
+    Submit
+  </button>
 </form>

@@ -1,133 +1,127 @@
 <div x-data="{ activeTab: 'all' }">
-  <nav>
-    <ul class="flex flex-wrap gap-4">
-      <li>
-        <a
-          x-on:click.prevent="activeTab = 'all'"
-          :class="{ 'button-active': activeTab === 'all' }"
-          href="#all"
-          class="button"
-        >
-          All
-        </a>
-      </li>
+  <ul class="flex flex-wrap gap-2">
+    <li>
+      <a
+        x-on:click.prevent="activeTab = 'all'"
+        :class="{ 'button-active': activeTab === 'all' }"
+        href="#all"
+        class="button"
+      >
+        All
+      </a>
+    </li>
 
-      <li>
-        <a
-          x-on:click.prevent="activeTab = 'details'"
-          :class="{ 'button-active': activeTab === 'details' }"
-          href="#details"
-          class="button"
-        >
-          Details
-        </a>
-      </li>
+    <li>
+      <a
+        x-on:click.prevent="activeTab = 'details'"
+        :class="{ 'button-active': activeTab === 'details' }"
+        href="#details"
+        class="button"
+      >
+        Details
+      </a>
+    </li>
 
-      <li>
-        <a
-          x-on:click.prevent="activeTab = 'specs'"
-          :class="{ 'button-active': activeTab === 'specs' }"
-          href="#specs"
-          class="button"
-        >
-          Specs
-        </a>
-      </li>
+    <li>
+      <a
+        x-on:click.prevent="activeTab = 'specs'"
+        :class="{ 'button-active': activeTab === 'specs' }"
+        href="#specs"
+        class="button"
+      >
+        Specs
+      </a>
+    </li>
 
-      <li>
-        <a
-          x-on:click.prevent="activeTab = 'reviews'"
-          :class="{ 'button-active': activeTab === 'reviews' }"
-          href="#reviews"
-          class="button"
-        >
-          Reviews
-        </a>
-      </li>
-    </ul>
-  </nav>
+    <li>
+      <a
+        x-on:click.prevent="activeTab = 'reviews'"
+        :class="{ 'button-active': activeTab === 'reviews' }"
+        href="#reviews"
+        class="button"
+      >
+        Reviews
+      </a>
+    </li>
+  </ul>
 
-  <div class="mt-4 space-y-4">
+  <div class="mt-2 space-y-2">
     <div
       x-data="{ activeAccordion: false }"
+      x-cloak
       x-show="activeTab === 'details' || activeTab === 'all'"
     >
-      <h3>
-        <button
-          x-on:click="activeAccordion = !activeAccordion"
-          :class="{ 'button-active': activeAccordion }"
-          class="button"
-        >
-          Details #1
-        </button>
-      </h3>
+      <button
+        x-on:click="activeAccordion = !activeAccordion"
+        :class="{ 'button-active': activeAccordion }"
+        class="button"
+      >
+        Details #1
+      </button>
 
-      <div x-show="activeAccordion" x-collapse>
+      <div x-cloak x-show="activeAccordion" x-collapse>
         <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         </div>
       </div>
     </div>
 
     <div
       x-data="{ activeAccordion: false }"
+      x-cloak
       x-show="activeTab === 'specs' || activeTab === 'all'"
     >
-      <h3>
-        <button
-          x-on:click="activeAccordion = !activeAccordion"
-          :class="{ 'button-active': activeAccordion }"
-          class="button"
-        >
-          Specs #1
-        </button>
-      </h3>
+      <button
+        x-on:click="activeAccordion = !activeAccordion"
+        :class="{ 'button-active': activeAccordion }"
+        class="button"
+      >
+        Specs #1
+      </button>
 
-      <div x-show="activeAccordion" x-collapse>
+      <div x-cloak x-show="activeAccordion" x-collapse>
         <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         </div>
       </div>
     </div>
 
     <div
       x-data="{ activeAccordion: false }"
+      x-cloak
       x-show="activeTab === 'specs' || activeTab === 'all'"
     >
-      <h3>
-        <button
-          x-on:click="activeAccordion = !activeAccordion"
-          :class="{ 'button-active': activeAccordion }"
-          class="button"
-        >
-          Specs #2
-        </button>
-      </h3>
+      <button
+        x-on:click="activeAccordion = !activeAccordion"
+        :class="{ 'button-active': activeAccordion }"
+        class="button"
+      >
+        Specs #2
+      </button>
 
-      <div x-show="activeAccordion" x-collapse>
+      <div x-cloak x-show="activeAccordion" x-collapse>
         <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         </div>
       </div>
     </div>
 
     <div
       x-data="{ activeAccordion: false }"
+      x-cloak
       x-show="activeTab === 'reviews' || activeTab === 'all'"
     >
-      <h3>
-        <button
-          x-on:click="activeAccordion = !activeAccordion"
-          :class="{ 'button-active': activeAccordion }"
-          class="button"
-        >
-          Reviews #1
-        </button>
-      </h3>
+      <button
+        x-on:click="activeAccordion = !activeAccordion"
+        :class="{ 'button-active': activeAccordion }"
+        class="button"
+      >
+        Reviews #1
+      </button>
 
-      <div x-show="activeAccordion" x-collapse>
+      <div x-cloak x-show="activeAccordion" x-collapse>
         <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         </div>
       </div>
     </div>

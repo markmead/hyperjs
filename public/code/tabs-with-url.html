@@ -38,16 +38,10 @@
   </ul>
 
   <div class="content">
-    <div x-show="activeTab === 'details'">
-      <h2>Details</h2>
-    </div>
+    <div x-cloak x-show="activeTab === 'details'">Details</div>
 
-    <div x-show="activeTab === 'specs'">
-      <h2>Specs</h2>
-    </div>
+    <div x-cloak x-show="activeTab === 'specs'">Specs</div>
 
-    <div x-show="activeTab === 'reviews'">
-      <h2>Reviews</h2>
-    </div>
+    <div x-cloak x-show="activeTab === 'reviews'">Reviews</div>
   </div>
 </div>
