@@ -23,6 +23,8 @@ export default function Header() {
             rel="noreferrer"
             className="text-white transition hover:text-white/75"
           >
+            <span className="sr-only">Twitter</span>
+
             <IconTwitter className="w-6 h-6" />
           </a>
 
@@ -32,6 +34,8 @@ export default function Header() {
             rel="noreferrer"
             className="text-white transition hover:text-white/75"
           >
+            <span className="sr-only">GitHub</span>
+
             <IconGithub className="w-6 h-6" />
           </a>
         </div>
