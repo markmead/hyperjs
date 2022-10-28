@@ -1,7 +1,7 @@
 # HyperJS
 
-HyperJS is a collection of Alpine JS snippets that replicate common JavaScript functionality.
+![HyperJS](https://js.hyperui.dev/og.jpg)
 
-On the website you can preview how the snippets, view and copy the source code.
+HyperJS is a collection of Alpine JS components for reusable and common JavaScript functionality.
 
-<img width="1512" alt="HyperJS Website Preview" src="https://user-images.githubusercontent.com/50486078/158019658-f91cda5f-e4e0-4dfc-b3a3-669d84d2c0c5.png">
+On the website you can preview the components and view the code.
