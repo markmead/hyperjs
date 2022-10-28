@@ -8,12 +8,12 @@ import path from 'path'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 
-import BannerSimple from '../../components/BannerSimple'
+import { componentFilePaths, COMPONENTS_PATH } from '@/utils/mdxUtils'
 
-import { componentFilePaths, COMPONENTS_PATH } from '../../utils/mdxUtils'
+import BannerSimple from '@/components//BannerSimple'
 
 const components = {
-  Example: dynamic(() => import('../../components/Example')),
+  Example: dynamic(() => import('@/components/Example')),
 }
 
 export default function ExamplePage({ source, frontMatter }) {

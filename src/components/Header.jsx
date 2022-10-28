@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import IconGithub from './IconGithub'
-import IconTwitter from './IconTwitter'
+
+import IconGithub from '@/components/IconGithub'
+import IconTwitter from '@/components/IconTwitter'
 
 export default function Header() {
   return (

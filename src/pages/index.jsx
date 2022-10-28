@@ -2,12 +2,11 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 
+import { mdx } from '@/utils/fileToUrl'
+import { componentFilePaths, COMPONENTS_PATH } from '@/utils/mdxUtils'
+
 import Banner from '@/components/Banner'
 import Card from '@/components/Card'
-
-import { mdx } from '@/utils/fileToUrl'
-
-import { componentFilePaths, COMPONENTS_PATH } from '@/utils/mdxUtils'
 
 export default function Index({ components }) {
   return (
