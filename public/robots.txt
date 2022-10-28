@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.js.hyperui.dev
-
-# Sitemaps
-Sitemap: https://www.js.hyperui.dev/sitemap.xml

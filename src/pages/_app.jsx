@@ -72,38 +72,38 @@ function MyApp({ Component, pageProps }) {
 
         <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-        <title>Alpine JS Components | HyperJS</title>
+        <title>Free Open Source Alpine JS Components | HyperJS</title>
         <meta
           name="description"
-          content="Reusable Alpine JS components for typical web functionality."
+          content="Free Alpine JS components that provide reusable and common functionality that can be used in your next project."
           key="description"
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.hyperjs.dev" />
         <meta
           property="og:title"
-          content="Alpine JS Components | HyperJS"
+          content="Free Open Source Alpine JS Components | HyperJS"
           key="og:title"
         />
         <meta
           property="og:description"
-          content="Reusable Alpine JS components for typical web functionality."
+          content="Free Alpine JS components that provide reusable and common functionality that can be used in your next project."
           key="og:description"
         />
-        <meta property="og:image" content="https://www.hyperjs.dev/og.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.hyperjs.dev" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://js.hyperui.dev/" />
+        <meta property="og:image" content="https://js.hyperui.dev/og.jpg" />
         <meta
           name="twitter:title"
-          content="Alpine JS Components | HyperJS"
+          content="Free Open Source Alpine JS Components | HyperJS"
           key="twitter:title"
         />
         <meta
           name="twitter:description"
-          content="Reusable Alpine JS components for typical web functionality."
+          content="Free Alpine JS components that provide reusable and common functionality that can be used in your next project."
           key="twitter:description"
         />
-        <meta name="twitter:image" content="https://www.hyperjs.dev/og.png" />
+        <meta name="twitter:image" content="https://js.hyperui.dev/og.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://js.hyperui.dev/" />
       </Head>
 
       <Header />

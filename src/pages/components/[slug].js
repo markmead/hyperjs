@@ -20,7 +20,32 @@ export default function ExamplePage({ source, frontMatter }) {
   return (
     <>
       <Head>
-        <title>{frontMatter.title} | Alpine JS Snippets | HyperJS</title>
+        <title>{frontMatter.title} Alpine JS Component | HyperJS</title>
+        <meta
+          name="description"
+          content={frontMatter.description}
+          key="description"
+        />
+        <meta
+          property="og:title"
+          content={`${frontMatter.title} | HyperUI`}
+          key="og:title"
+        />
+        <meta
+          property="og:description"
+          content={frontMatter.description}
+          key="og:description"
+        />
+        <meta
+          name="twitter:title"
+          content={`${frontMatter.title} | HyperUI`}
+          key="twitter:title"
+        />
+        <meta
+          name="twitter:description"
+          content={frontMatter.description}
+          key="twitter:description"
+        />
       </Head>
 
       <div className="bg-slate-900">
