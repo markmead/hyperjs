@@ -29,6 +29,11 @@ function MyApp({ Component, pageProps }) {
         {/* Alpine Community Plugins */}
         <script
           defer
+          src="https://unpkg.com/alpinejs-masonry@latest/dist/masonry.min.js"
+        ></script>
+
+        <script
+          defer
           src="https://unpkg.com/alpinejs-persist-extended@1.x.x/dist/storage.min.js"
         ></script>
 
