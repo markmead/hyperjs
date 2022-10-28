@@ -1,3 +1,3 @@
-export function mdx(string) {
-  return string.replace(/\.mdx?$/, '')
+export function fileToUrl(fileName) {
+  return fileName.replace(/\.mdx?$/, '')
 }

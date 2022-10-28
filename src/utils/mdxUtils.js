@@ -5,4 +5,4 @@ export const COMPONENTS_PATH = path.join(process.cwd(), '/src/data/components')
 
 export const componentFilePaths = fs
   .readdirSync(COMPONENTS_PATH)
-  .filter((path) => /\.mdx?$/.test(path))
+  .filter((filePath) => /\.mdx?$/.test(filePath))

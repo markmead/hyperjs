@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react'
 
 import Prism from 'prismjs'
 
-export default function Example({ src }) {
+export default function Preview({ componentId }) {
   const [code, setCode] = useState('')
   const [buttonEmoji, setButtonEmoji] = useState('📋')
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`/code/${src}.html`)
+      const response = await fetch(`/code/${componentId}.html`)
       const text = await response.text()
 
       setCode(text)

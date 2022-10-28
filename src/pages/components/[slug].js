@@ -10,13 +10,13 @@ import { serialize } from 'next-mdx-remote/serialize'
 
 import { componentFilePaths, COMPONENTS_PATH } from '@/utils/mdxUtils'
 
-import BannerSimple from '@/components//BannerSimple'
+import Banner from '@/components/BannerSimple'
 
-const components = {
-  Example: dynamic(() => import('@/components/Example')),
+const mdxComponents = {
+  Preview: dynamic(() => import('@/components/Preview')),
 }
 
-export default function ExamplePage({ source, frontMatter }) {
+export default function Component({ componentSource, frontMatter }) {
   return (
     <>
       <Head>
@@ -49,14 +49,14 @@ export default function ExamplePage({ source, frontMatter }) {
       </Head>
 
       <div className="bg-slate-900">
-        <BannerSimple
-          title={frontMatter.title}
-          description={frontMatter.description}
+        <Banner
+          bannerTitle={frontMatter.title}
+          bannerText={frontMatter.description}
         />
 
         <div className="max-w-screen-xl px-4 pb-12 mx-auto">
           <article className="mx-auto prose prose-invert">
-            <MDXRemote {...source} components={components} />
+            <MDXRemote {...componentSource} components={mdxComponents} />
           </article>
         </div>
       </div>
@@ -66,9 +66,8 @@ export default function ExamplePage({ source, frontMatter }) {
 
 export const getStaticProps = async ({ params }) => {
   const componentFilePath = path.join(COMPONENTS_PATH, `${params.slug}.mdx`)
-  const source = fs.readFileSync(componentFilePath)
-
-  const { content, data } = matter(source)
+  const componentSource = fs.readFileSync(componentFilePath)
+  const { content, data } = matter(componentSource)
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
@@ -80,19 +79,19 @@ export const getStaticProps = async ({ params }) => {
 
   return {
     props: {
-      source: mdxSource,
+      componentSource: mdxSource,
       frontMatter: data,
     },
   }
 }
 
 export const getStaticPaths = async () => {
-  const paths = componentFilePaths
-    .map((path) => path.replace(/\.mdx?$/, ''))
-    .map((slug) => ({ params: { slug } }))
+  const componentPaths = componentFilePaths
+    .map((filePath) => filePath.replace(/\.mdx?$/, ''))
+    .map((componentSlug) => ({ params: { slug: componentSlug } }))
 
   return {
-    paths,
+    paths: componentPaths,
     fallback: false,
   }
 }
