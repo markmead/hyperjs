@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@import './prism.css';
+@tailwind utilities;
+
+@layer components {
+  .button {
+    @apply px-5 py-3 text-sm rounded-lg bg-teal-900 text-white font-medium inline-block;
+  }
+
+  .button-active {
+    @apply bg-teal-700;
+  }
+
+  .content {
+    @apply p-4 bg-slate-700 rounded-lg text-white mt-2;
+  }
+
+  .alert {
+    @apply p-4 bg-red-700 rounded-lg text-white flex justify-between items-center;
+  }
+}
+
+.form-input {
+  @apply bg-slate-900 border-slate-800 text-white w-full rounded-lg p-4 placeholder-slate-500;
+}
+
+.form-textarea {
+  @apply bg-slate-900 border-slate-800 text-white w-full resize-none rounded-lg p-4 placeholder-slate-500;
+}

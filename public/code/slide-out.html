@@ -1,0 +1,25 @@
+<div x-data="{ slideOut: false }" x-on:keydown.window.escape="slideOut = false">
+  <button x-on:click="slideOut = !slideOut" class="button">
+    Toggle Slide Out
+  </button>
+
+  <div
+    x-cloak
+    x-show="slideOut"
+    x-transition.opacity
+    class="fixed inset-0 bg-slate-900/75"
+  ></div>
+
+  <div
+    x-cloak
+    x-show="slideOut"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="translate-x-full"
+    x-on:click.away="slideOut = false"
+    class="fixed inset-y-0 right-0 z-50 w-screen max-w-lg bg-teal-400"
+  ></div>
+</div>

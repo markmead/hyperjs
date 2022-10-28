@@ -1,0 +1,28 @@
+<div
+  x-data="{ currentDate: '', flatpickrInstance: null }"
+  x-init="
+    flatpickrInstance = flatpickr($refs.dateInput, {
+      altInput: true,
+      altFormat: 'F j, Y',
+      dateFormat: 'Y-m-d',
+      onChange: (selectedDates, dateStr, instance) => {
+        currentDate = dateStr;
+      }
+    })
+  "
+  class="flex gap-2"
+>
+  <input
+    x-ref="dateInput"
+    type="text"
+    placeholder="YYYY-MM-DD"
+    class="form-input"
+  />
+
+  <button
+    x-on:click="currentDate = ''; flatpickrInstance.clear()"
+    class="button"
+  >
+    Clear
+  </button>
+</div>

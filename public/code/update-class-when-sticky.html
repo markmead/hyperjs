@@ -1,0 +1,13 @@
+<div x-data class="min-h-[300px]">
+  <div x-sticky="bg-teal-900" class="sticky sticky-element content !mt-0 top-0">
+    Sticky Element
+  </div>
+
+  <div
+    class="content !mt-8"
+    x-sticky.sticky-element="block"
+    x-sticky-inactive="hidden"
+  >
+    Show When Sticky
+  </div>
+</div>

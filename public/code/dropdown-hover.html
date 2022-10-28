@@ -1,0 +1,20 @@
+<div x-data="{ showDropdown: false }">
+  <button
+    x-on:mouseover="showDropdown = true"
+    x-on:mouseleave="showDropdown = false"
+    x-on:click="showDropdown = !showDropdown"
+    class="button"
+  >
+    Dropdown
+  </button>
+
+  <div
+    x-cloak
+    x-show="showDropdown"
+    x-on:mouseover="showDropdown = true"
+    x-on:mouseleave="showDropdown = false"
+    class="pt-2"
+  >
+    <div class="content !mt-0">Menu</div>
+  </div>
+</div>

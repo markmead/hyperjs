@@ -1,0 +1,11 @@
+<div
+  x-data="{ inputQuantity: 1 }"
+  x-init="$watch('inputQuantity', (value) => inputQuantity = value < 0 ? 0 : value)"
+>
+  <input
+    x-model="inputQuantity"
+    type="number"
+    placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
+    class="form-input"
+  />
+</div>
