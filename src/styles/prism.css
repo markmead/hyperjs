@@ -29,3 +29,7 @@ pre[class*='language-'] {
 .token.keyword {
   @apply !text-cyan-400;
 }
+
+.token.namespace {
+  @apply !opacity-100;
+}

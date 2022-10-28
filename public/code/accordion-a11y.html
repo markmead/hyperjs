@@ -1,11 +1,8 @@
 <div class="space-y-2">
-  <div
-    x-data="{ activeAccordion: true }"
-    :aria-expanded="activeAccordion"
-    class="group"
-  >
+  <div x-data="{ activeAccordion: true }" class="group">
     <button
       x-on:click="activeAccordion = !activeAccordion"
+      :aria-expanded="activeAccordion"
       aria-controls="accordion-panel-1"
       class="button group-aria-expanded:button-active"
     >
@@ -13,9 +10,9 @@
     </button>
 
     <section
+      :hidden="!activeAccordion"
       id="accordion-panel-1"
       aria-labelledby="accordion-header-1"
-      class="hidden group-aria-expanded:block"
     >
       <div class="content">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -23,13 +20,10 @@
     </section>
   </div>
 
-  <div
-    x-data="{ activeAccordion: false }"
-    :aria-expanded="activeAccordion"
-    class="group"
-  >
+  <div x-data="{ activeAccordion: false }" class="group">
     <button
       x-on:click="activeAccordion = !activeAccordion"
+      :aria-expanded="activeAccordion"
       aria-controls="accordion-panel-2"
       class="button group-aria-expanded:button-active"
     >
@@ -37,9 +31,9 @@
     </button>
 
     <section
+      :hidden="!activeAccordion"
       id="accordion-panel-2"
       aria-labelledby="accordion-header-2"
-      class="hidden group-aria-expanded:block"
     >
       <div class="content">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
