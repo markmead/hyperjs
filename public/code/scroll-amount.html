@@ -5,13 +5,13 @@
 >
   <div
     class="fixed inset-x-0 top-0 h-1 z-50 bg-teal-400 ease-[linear] transition-[width]"
-    :style="{ width: `${scrollPos.percent}%` }"
+    :style="{ width: `${scrollPos.scrollPercent}%` }"
   ></div>
 
   <div
     x-cloak
     x-transition
-    x-show="scrollPos.end"
+    x-show="scrollPos.atEnd"
     class="fixed inset-x-0 bottom-4"
   >
     <div role="alert" class="max-w-lg mx-auto alert !bg-teal-700">Finished</div>
