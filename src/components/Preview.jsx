@@ -35,7 +35,7 @@ export default function Preview({ componentId }) {
 
       <div className="not-prose">
         <div
-          className="p-4 bg-slate-800 rounded-xl"
+          className="p-4 bg-slate-800 rounded-xl max-h-[600px] overflow-auto"
           dangerouslySetInnerHTML={{ __html: code }}
         ></div>
       </div>
