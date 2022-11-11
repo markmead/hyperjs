@@ -29,6 +29,11 @@ function MyApp({ Component, pageProps }) {
         {/* Alpine Community Plugins */}
         <script
           defer
+          src="https://unpkg.com/alpinejs-form-data@latest/dist/form-data.min.js"
+        ></script>
+
+        <script
+          defer
           src="https://unpkg.com/alpinejs-scroll-amount@latest/dist/scroll-amount.min.js"
         ></script>
 
