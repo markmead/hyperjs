@@ -44,27 +44,32 @@ function MyApp({ Component, pageProps }) {
 
         <script
           defer
-          src="https://unpkg.com/alpinejs-persist-extended@1.x.x/dist/storage.min.js"
+          src="https://unpkg.com/alpinejs-persist-extended@latest/dist/storage.min.js"
         ></script>
 
         <script
           defer
-          src="https://unpkg.com/alpinejs-money@1.x.x/dist/money.min.js"
+          src="https://unpkg.com/alpinejs-money@latest/dist/money.min.js"
         ></script>
 
         <script
           defer
-          src="https://unpkg.com/alpinejs-sticky@1.x.x/dist/sticky.min.js"
+          src="https://unpkg.com/alpinejs-sticky@latest/dist/sticky.min.js"
         ></script>
 
         <script
           defer
-          src="https://unpkg.com/alpinejs-slug@1.x.x/dist/slug.min.js"
+          src="https://unpkg.com/alpinejs-slug@latest/dist/slug.min.js"
         ></script>
 
         <script
           defer
-          src="https://unpkg.com/alpinejs-textarea-grow@1.x.x/dist/grow.min.js"
+          src="https://unpkg.com/alpinejs-textarea-grow@latest/dist/grow.min.js"
+        ></script>
+
+        <script
+          defer
+          src="https://unpkg.com/alpinejs-overlap@latest/dist/overlap.min.js"
         ></script>
 
         {/* Alpine Core */}
