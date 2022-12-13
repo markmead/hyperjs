@@ -1,4 +1,4 @@
-export default function Banner() {
+export default function Banner({ children }) {
   return (
     <section>
       <div className="max-w-screen-xl px-4 py-16 mx-auto">
@@ -14,6 +14,8 @@ export default function Banner() {
             Liquid, Blade etc. Here is a collection of components that you can
             copy and paste into your project.
           </p>
+
+          {children && <div className="mt-6">{children}</div>}
         </div>
       </div>
     </section>
