@@ -16,9 +16,12 @@ function Search({ handleSetComponentSearch, handleSetComponentsSearched }) {
 
   useEffect(() => {
     const filteredResults = initialResults.filter(function (initialResult) {
-      const { title } = initialResult
+      const { title, description } = initialResult
 
-      return title.toLowerCase().includes(searchQuery.toLowerCase())
+      return (
+        title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        description.toLowerCase().includes(searchQuery.toLowerCase())
+      )
     })
 
     handleSetComponentSearch(searchQuery)
