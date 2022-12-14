@@ -35,7 +35,7 @@ function Search({ handleSetComponentSearch, handleSetComponentsSearched }) {
   }, [nextRouter.asPath])
 
   return (
-    <form role="search" className="relative">
+    <form role="search">
       <label htmlFor="SiteSearch" className="sr-only">
         Search Components
       </label>
@@ -46,18 +46,11 @@ function Search({ handleSetComponentSearch, handleSetComponentsSearched }) {
         value={searchQuery}
         placeholder="Search Components..."
         id="SiteSearch"
-        className="h-16 text-white rounded-md placeholder-slate-300 border-slate-800 bg-slate-900 form-input"
+        className="form-input !border-slate-700 !bg-slate-800/50"
       />
 
-      <button
-        tabIndex={-1}
-        className="absolute inset-y-0 right-0 grid w-16 h-16 transition place-content-center rounded-r-md hover:bg-teal-400/5"
-      >
-        <span className="sr-only">Submit</span>
-
-        <span role="img" aria-hidden="true" className="text-2xl">
-          🔍
-        </span>
+      <button tabIndex={-1} className="sr-only">
+        Submit
       </button>
     </form>
   )
