@@ -2,8 +2,8 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 import fs from 'fs'
+import { join } from 'path'
 import matter from 'gray-matter'
-import path from 'path'
 
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -65,7 +65,7 @@ export default function Component({ componentSource, frontMatter }) {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const componentFilePath = path.join(COMPONENTS_PATH, `${params.slug}.mdx`)
+  const componentFilePath = join(COMPONENTS_PATH, `${params.slug}.mdx`)
   const componentSource = fs.readFileSync(componentFilePath)
   const { content, data } = matter(componentSource)
 

@@ -5,7 +5,7 @@ export default function handler(apiRequest, apiResponse) {
     return
   }
 
-  const searchData = componentFilePaths.flatMap(function (filePath) {
+  const searchData = componentFilePaths.map(function (filePath) {
     return getComponentBySlug(filePath, ['title', 'description', 'slug'])
   })
 

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 
 import fs from 'fs'
-import matter from 'gray-matter'
 import { join } from 'path'
+import matter from 'gray-matter'
 
 import { fileToUrl } from '@/utils/fileToUrl'
 import { componentFilePaths, COMPONENTS_PATH } from '@/utils/mdxUtils'
@@ -21,7 +21,7 @@ export default function Index({ componentItems }) {
     const noResults = !componentSearch && !componentResults.length
 
     noResults && setComponentResults(componentItems)
-  })
+  }, [componentSearch, componentResults, componentItems])
 
   useEffect(() => {
     if (componentResults.length) {
@@ -41,7 +41,7 @@ export default function Index({ componentItems }) {
     )
 
     setComponentResults(filteredResults)
-  }, [componentsSearched])
+  }, [componentItems, componentsSearched])
 
   return (
     <div className="bg-slate-900">
