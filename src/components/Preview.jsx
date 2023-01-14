@@ -21,12 +21,9 @@ export default function Preview({ componentId }) {
   useEffect(() => Prism.highlightAll())
 
   function copyToClipboard() {
-    navigator.clipboard.writeText(code).then(function () {
+    navigator.clipboard.writeText(code).then(() => {
       setButtonEmoji('✅')
-
-      setTimeout(() => {
-        setButtonEmoji('📋')
-      }, 3000)
+      setTimeout(() => setButtonEmoji('📋'), 3000)
     })
   }
 
@@ -36,7 +33,7 @@ export default function Preview({ componentId }) {
 
       <div className="not-prose">
         <div
-          className="p-4 bg-slate-800 rounded-xl max-h-[600px] overflow-auto"
+          className="p-4 bg-slate-800 rounded-xl max-h-[600px] overflow-auto space-y-4"
           dangerouslySetInnerHTML={{ __html: code }}
         ></div>
       </div>

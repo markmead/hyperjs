@@ -8,10 +8,28 @@
 
   <div class="content">
     <ul>
-      <li x-money="productPrice" data-lang="ja-JP" data-currency="JPY"></li>
-      <li x-money="productPrice" data-lang="de-DE" data-currency="EUR"></li>
-      <li x-money="productPrice" data-lang="en-UK" data-currency="GBP"></li>
-      <li x-money="productPrice" data-lang="en-US" data-currency="USD"></li>
+      <li x-money.js-JP.JPY="productPrice"></li>
+      <li x-money.de-DE.EUR="productPrice"></li>
+      <li x-money.en-GB.GBP="productPrice"></li>
+      <li x-money.en-US.USD="productPrice"></li>
+    </ul>
+  </div>
+</div>
+
+<div x-data="{ productPrice: 49.999 }">
+  <input
+    x-model="productPrice"
+    type="text"
+    placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
+    class="form-input"
+  />
+
+  <div class="content">
+    <ul>
+      <li x-money.js-JP.JPY.decimal="productPrice"></li>
+      <li x-money.de-DE.EUR.decimal="productPrice"></li>
+      <li x-money.en-GB.GBP.decimal="productPrice"></li>
+      <li x-money.en-US.USD.decimal="productPrice"></li>
     </ul>
   </div>
 </div>
