@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@import './prism.css';
 @tailwind utilities;
 
 @layer components {

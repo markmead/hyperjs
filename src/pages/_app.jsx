@@ -1,7 +1,9 @@
 import Head from 'next/head'
 
-import '@/styles/tailwind.css'
 import 'prismjs/themes/prism-okaidia.css'
+
+import '@/styles/tailwind.css'
+import '@/styles/prism.css'
 
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
