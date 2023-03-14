@@ -27,3 +27,7 @@
 .form-textarea {
   @apply bg-slate-900 border-slate-800 text-white w-full resize-none rounded-lg p-4 placeholder-slate-500;
 }
+
+.form-select {
+  @apply bg-slate-900 border-slate-800 text-white w-full rounded-lg py-4 pl-4;
+}

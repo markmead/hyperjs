@@ -1,0 +1,22 @@
+<div
+  x-data="{
+      items: [
+        { title: 'Post D' },
+        { title: 'Post A' },
+        { title: 'Post C' },
+        { title: 'Post B' }
+      ],
+      type: 'asc.title'
+    }"
+>
+  <select x-model="type" class="form-select">
+    <option value="asc.title">Asc</option>
+    <option value="desc.title">Desc</option>
+  </select>
+
+  <ul x-sort.items="type" class="content">
+    <template x-for="item in items">
+      <li x-text="item.title"></li>
+    </template>
+  </ul>
+</div>
