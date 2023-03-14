@@ -29,5 +29,5 @@
 }
 
 .form-select {
-  @apply bg-slate-900 border-slate-800 text-white w-full rounded-lg py-4 pl-4 placeholder-slate-500;
+  @apply bg-slate-900 border-slate-800 text-white w-full rounded-lg py-4 pl-4;
 }
