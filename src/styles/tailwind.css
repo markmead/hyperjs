@@ -18,10 +18,6 @@
   .alert {
     @apply p-4 bg-red-700 rounded-lg text-white flex justify-between items-center;
   }
-
-  .title {
-    @apply text-white font-bold mb-2;
-  }
 }
 
 .form-input {
