@@ -1,6 +1,6 @@
 <div
   x-data="{ inputName: $persist('') }"
-  x-on:ls-delete.window="inputName = ''"
+  @persist:delete.window="inputName = 'Deleted'"
 >
   <input
     x-model="inputName"
@@ -10,11 +10,11 @@
   />
 
   <div class="flex flex-wrap gap-2 mt-2">
-    <button x-on:click="alert($storage('inputName'))" class="button">
+    <button @click="alert($persistGet('inputName'))" class="button">
       Alert Name
     </button>
 
-    <button x-on:click="$storage('inputName', 'DELETE')" class="button">
+    <button @click="$persistDelete('inputName')" class="button">
       Delete Name
     </button>
   </div>
