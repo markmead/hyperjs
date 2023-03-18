@@ -1,10 +1,5 @@
-<div
-  x-data="{ showModal: false }"
-  x-on:keydown.window.escape="showModal = false"
->
-  <button x-on:click="showModal = !showModal" class="button">
-    Toggle Modal
-  </button>
+<div x-data="{ showModal: false }" @keydown.window.escape="showModal = false">
+  <button @click="showModal = !showModal" class="button">Toggle Modal</button>
 
   <div
     x-cloak
@@ -20,7 +15,7 @@
     class="fixed inset-0 z-50 flex items-center justify-center"
   >
     <div
-      x-on:click.away="showModal = false"
+      @click.away="showModal = false"
       class="w-screen max-w-xl mx-auto bg-teal-400 rounded-lg h-96"
     ></div>
   </div>

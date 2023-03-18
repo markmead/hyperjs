@@ -1,7 +1,5 @@
 <div x-data="{ showDropdown: false }">
-  <button x-on:click="showDropdown = !showDropdown" class="button">
-    Dropdown
-  </button>
+  <button @click="showDropdown = !showDropdown" class="button">Dropdown</button>
 
   <div x-cloak x-show="showDropdown" class="content">Menu</div>
 </div>

@@ -2,7 +2,7 @@
   <ul class="flex flex-wrap gap-2">
     <li>
       <a
-        x-on:click.prevent="activeTab = 'all'"
+        @click.prevent="activeTab = 'all'"
         :class="{ 'button-active': activeTab === 'all' }"
         href="#all"
         class="button"
@@ -13,7 +13,7 @@
 
     <li>
       <a
-        x-on:click.prevent="activeTab = 'details'"
+        @click.prevent="activeTab = 'details'"
         :class="{ 'button-active': activeTab === 'details' }"
         href="#details"
         class="button"
@@ -24,7 +24,7 @@
 
     <li>
       <a
-        x-on:click.prevent="activeTab = 'specs'"
+        @click.prevent="activeTab = 'specs'"
         :class="{ 'button-active': activeTab === 'specs' }"
         href="#specs"
         class="button"
@@ -35,7 +35,7 @@
 
     <li>
       <a
-        x-on:click.prevent="activeTab = 'reviews'"
+        @click.prevent="activeTab = 'reviews'"
         :class="{ 'button-active': activeTab === 'reviews' }"
         href="#reviews"
         class="button"
@@ -52,7 +52,7 @@
       x-show="activeTab === 'details' || activeTab === 'all'"
     >
       <button
-        x-on:click="activeAccordion = !activeAccordion"
+        @click="activeAccordion = !activeAccordion"
         :class="{ 'button-active': activeAccordion }"
         class="button"
       >
@@ -72,7 +72,7 @@
       x-show="activeTab === 'specs' || activeTab === 'all'"
     >
       <button
-        x-on:click="activeAccordion = !activeAccordion"
+        @click="activeAccordion = !activeAccordion"
         :class="{ 'button-active': activeAccordion }"
         class="button"
       >
@@ -92,7 +92,7 @@
       x-show="activeTab === 'specs' || activeTab === 'all'"
     >
       <button
-        x-on:click="activeAccordion = !activeAccordion"
+        @click="activeAccordion = !activeAccordion"
         :class="{ 'button-active': activeAccordion }"
         class="button"
       >
@@ -112,7 +112,7 @@
       x-show="activeTab === 'reviews' || activeTab === 'all'"
     >
       <button
-        x-on:click="activeAccordion = !activeAccordion"
+        @click="activeAccordion = !activeAccordion"
         :class="{ 'button-active': activeAccordion }"
         class="button"
       >

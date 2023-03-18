@@ -1,5 +1,5 @@
 <div x-data="{ formData: {} }">
-  <form x-on:submit.prevent="formData = $formData" class="space-y-1">
+  <form @submit.prevent="formData = $formData" class="space-y-1">
     <input
       type="text"
       name="FirstName"

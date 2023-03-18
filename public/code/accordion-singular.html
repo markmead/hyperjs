@@ -1,7 +1,7 @@
 <div class="space-y-2" x-data="{ activeAccordion: 0 }">
   <div>
     <button
-      x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
+      @click="activeAccordion = activeAccordion === 0 ? false : 0"
       :class="{ 'button-active': activeAccordion === 0 }"
       class="button"
     >
@@ -17,7 +17,7 @@
 
   <div>
     <button
-      x-on:click="activeAccordion = activeAccordion === 1 ? false : 1"
+      @click="activeAccordion = activeAccordion === 1 ? false : 1"
       :class="{ 'button-active': activeAccordion === 1 }"
       class="button"
     >

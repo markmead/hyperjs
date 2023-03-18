@@ -5,7 +5,7 @@
   <ul class="flex flex-wrap gap-4">
     <li>
       <a
-        x-on:click="activeTab = 'details'"
+        @click="activeTab = 'details'"
         :class="{ 'button-active': activeTab === 'details' }"
         href="#details"
         class="button"
@@ -16,7 +16,7 @@
 
     <li>
       <a
-        x-on:click="activeTab = 'specs'"
+        @click="activeTab = 'specs'"
         :class="{ 'button-active': activeTab === 'specs' }"
         href="#specs"
         class="button"
@@ -27,7 +27,7 @@
 
     <li>
       <a
-        x-on:click="activeTab = 'reviews'"
+        @click="activeTab = 'reviews'"
         :class="{ 'button-active': activeTab === 'reviews' }"
         href="#reviews"
         class="button"

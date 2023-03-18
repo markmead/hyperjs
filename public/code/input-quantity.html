@@ -1,17 +1,11 @@
 <div x-data="{ inputQuantity: 1 }" class="flex gap-4">
-  <button
-    x-on:click="inputQuantity--"
-    class="p-3 text-white bg-black rounded-lg"
-  >
+  <button @click="inputQuantity--" class="p-3 text-white bg-black rounded-lg">
     Decrease
   </button>
 
   <input x-model="inputQuantity" type="number" class="form-input" />
 
-  <button
-    x-on:click="inputQuantity++"
-    class="p-3 text-white bg-black rounded-lg"
-  >
+  <button @click="inputQuantity++" class="p-3 text-white bg-black rounded-lg">
     Increase
   </button>
 </div>

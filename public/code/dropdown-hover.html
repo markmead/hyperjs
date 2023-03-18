@@ -1,8 +1,8 @@
 <div x-data="{ showDropdown: false }">
   <button
-    x-on:mouseover="showDropdown = true"
-    x-on:mouseleave="showDropdown = false"
-    x-on:click="showDropdown = !showDropdown"
+    @mouseover="showDropdown = true"
+    @mouseleave="showDropdown = false"
+    @click="showDropdown = !showDropdown"
     class="button"
   >
     Dropdown
@@ -11,8 +11,8 @@
   <div
     x-cloak
     x-show="showDropdown"
-    x-on:mouseover="showDropdown = true"
-    x-on:mouseleave="showDropdown = false"
+    @mouseover="showDropdown = true"
+    @mouseleave="showDropdown = false"
     class="pt-2"
   >
     <div class="content !mt-0">Menu</div>

@@ -2,7 +2,7 @@
   <button
     x-cloak
     x-show="formStep > 1"
-    x-on:click="formStep -= 1"
+    @click="formStep -= 1"
     type="button"
     class="button"
   >
@@ -17,7 +17,7 @@
   <button
     x-cloak
     x-show="formStep < 4"
-    x-on:click="formStep += 1"
+    @click="formStep += 1"
     type="button"
     class="button"
   >

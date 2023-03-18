@@ -1,7 +1,7 @@
 <div
   x-data="{ scrollPos: {} }"
   x-init="scrollPos = $scrollAmount"
-  x-on:scroll.window="scrollPos = $scrollAmount"
+  @scroll.window="scrollPos = $scrollAmount"
 >
   <div
     class="fixed inset-x-0 top-0 h-1 z-50 bg-teal-400 ease-[linear] transition-[width]"
