@@ -46,6 +46,11 @@ function MyApp({ Component, pageProps }) {
 
         <script
           defer
+          src="https://unpkg.com/alpinejs-manage@latest/dist/manage.min.js"
+        ></script>
+
+        <script
+          defer
           src="https://unpkg.com/alpinejs-sort@latest/dist/sort.min.js"
         ></script>
 
