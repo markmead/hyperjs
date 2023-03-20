@@ -1,0 +1,19 @@
+<p>Area A</p>
+
+<div x-data class="content">
+  <button @click="$emit('#TargetEl', { isChecked: false })" class="button">
+    Uncheck ❌
+  </button>
+</div>
+
+<p>Area B</p>
+
+<div
+  x-data="{ isChecked: false }"
+  id="TargetEl"
+  class="content flex gap-4 items-center"
+>
+  <button x-on:click="isChecked = !isChecked" class="button">Toggle</button>
+
+  <span x-text="isChecked ? 'Checked ✅' : 'Unchecked ❌'"></span>
+</div>
