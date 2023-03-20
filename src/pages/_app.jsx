@@ -31,6 +31,11 @@ function MyApp({ Component, pageProps }) {
         {/* Alpine Community Plugins */}
         <script
           defer
+          src="https://unpkg.com/alpinejs-tash@latest/dist/tash.min.js"
+        ></script>
+
+        <script
+          defer
           src="https://unpkg.com/alpinejs-sort@latest/dist/sort.min.js"
         ></script>
 
