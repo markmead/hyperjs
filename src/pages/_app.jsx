@@ -61,6 +61,11 @@ function MyApp({ Component, pageProps }) {
 
         <script
           defer
+          src="https://unpkg.com/alpinejs-form-captcha@latest/dist/captcha.min.js"
+        ></script>
+
+        <script
+          defer
           src="https://unpkg.com/alpinejs-notify@latest/dist/notify.min.js"
         ></script>
 

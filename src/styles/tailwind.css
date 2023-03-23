@@ -5,6 +5,7 @@
 @layer components {
   .button {
     @apply px-5 py-3 text-sm rounded-lg bg-teal-900 text-white font-medium inline-block;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   .button-active {
