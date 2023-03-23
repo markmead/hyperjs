@@ -40,11 +40,3 @@
 .form-select {
   @apply bg-slate-900 border-slate-800 text-white w-full rounded-lg py-4 pl-4;
 }
-
-[x-validation-valid='false'] {
-  @apply border-red-500;
-}
-
-[x-validation-valid='true'] {
-  @apply border-green-500;
-}

@@ -13,7 +13,7 @@
   id="TargetEl"
   class="content flex gap-4 items-center"
 >
-  <button x-on:click="isChecked = !isChecked" class="button">Toggle</button>
+  <button @click="isChecked = !isChecked" class="button">Toggle</button>
 
   <span x-text="isChecked ? 'Checked ✅' : 'Unchecked ❌'"></span>
 </div>

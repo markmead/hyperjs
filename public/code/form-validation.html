@@ -4,7 +4,7 @@
 >
   <div
     x-data="{ required: false }"
-    x-on:error="required = !$json($event.detail).required"
+    @error="required = !$json($event.detail).required"
     class="content"
   >
     <label for="contactName" class="form-label">Name</label>
@@ -22,7 +22,7 @@
 
   <div
     x-data="{ minAge: false, maxAge: false }"
-    x-on:error="
+    @error="
       minAge = !$json($event.detail).min
       maxAge = !$json($event.detail).max
     "
@@ -45,7 +45,7 @@
 
   <div
     x-data="{ minLetters: false, maxLetters: false }"
-    x-on:error="
+    @error="
       minLetters = !$json($event.detail).minLength
       maxLetters = !$json($event.detail).maxLength
     "
@@ -67,7 +67,7 @@
 
   <div
     x-data="{ isAccepted: false }"
-    x-on:error="isAccepted = !$json($event.detail).checked"
+    @error="isAccepted = !$json($event.detail).checked"
     class="content"
   >
     <label for="contactTerms" class="form-label">Terms</label>
@@ -86,3 +86,13 @@
 
   <button class="button mt-4">Submit</button>
 </form>
+
+<style>
+  [x-validation-valid='false'] {
+    border-color: rgb(239 68 68);
+  }
+
+  [x-validation-valid='true'] {
+    border-color: rgb(34 197 94);
+  }
+</style>

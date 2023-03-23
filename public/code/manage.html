@@ -1,10 +1,7 @@
 <p>Area A</p>
 
 <div x-data class="content">
-  <button
-    x-on:click="$manage('#TargetEl').fullName = 'John Cena'"
-    class="button"
-  >
+  <button @click="$manage('#TargetEl').fullName = 'John Cena'" class="button">
     Change Name
   </button>
 </div>

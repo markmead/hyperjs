@@ -10,7 +10,7 @@
   ></div>
 
   <button
-    x-on:click="$notify('Nihil distinctio suscipit iste impedit magnam eius iure culpa mollitia tenetur', {
+    @click="$notify('Nihil distinctio suscipit iste impedit magnam eius iure culpa mollitia tenetur', {
       wrapperId: 'notificationWrapperBottomLeft',
       templateId: 'notificationAlert',
       autoRemove: 3000
@@ -21,7 +21,7 @@
   </button>
 
   <button
-    x-on:click="$notify('Earum aliquid quaerat officiis.', {
+    @click="$notify('Earum aliquid quaerat officiis.', {
       wrapperId: 'notificationWrapperBottomLeft',
       templateId: 'notificationAlertClose',
     })"
@@ -31,7 +31,7 @@
   </button>
 
   <button
-    x-on:click="$notify('Lorem ipsum dolor, sit amet consectetur adipisicing elit', {
+    @click="$notify('Lorem ipsum dolor, sit amet consectetur adipisicing elit', {
     wrapperId: 'notificationWrapperTopRight',
     templateId: 'notificationAlertAnimated',
     autoClose: 5000,
@@ -57,7 +57,7 @@
       {notificationText}
 
       <button
-        x-on:click="$root.setAttribute('data-notify-show', false)"
+        @click="$root.setAttribute('data-notify-show', false)"
         class="button"
       >
         Close
