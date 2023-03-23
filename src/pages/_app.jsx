@@ -15,17 +15,17 @@ function MyApp({ Component, pageProps }) {
         {/* Alpine Official Plugins */}
         <script
           defer
-          src="https://unpkg.com/@alpinejs/mask@3.x.x/dist/cdn.min.js"
+          src="https://unpkg.com/@alpinejs/mask@latest/dist/cdn.min.js"
         ></script>
 
         <script
           defer
-          src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+          src="https://unpkg.com/@alpinejs/collapse@latest/dist/cdn.min.js"
         ></script>
 
         <script
           defer
-          src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"
+          src="https://unpkg.com/@alpinejs/persist@latest/dist/cdn.min.js"
         ></script>
 
         {/* Alpine Community Plugins */}
@@ -67,11 +67,6 @@ function MyApp({ Component, pageProps }) {
         <script
           defer
           src="https://unpkg.com/alpinejs-cursor@latest/dist/cursor.min.js"
-        ></script>
-
-        <script
-          defer
-          src="https://unpkg.com/alpinejs-component@latest/dist/component.min.js"
         ></script>
 
         <script
@@ -132,7 +127,7 @@ function MyApp({ Component, pageProps }) {
         {/* Alpine Core */}
         <script
           defer
-          src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+          src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"
         ></script>
 
         {/* Flatpickr */}
