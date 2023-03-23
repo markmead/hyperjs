@@ -20,6 +20,14 @@
   }
 }
 
+.form-checkbox {
+  @apply bg-slate-900 border-slate-800 w-6 h-6 rounded;
+}
+
+.form-label {
+  @apply text-white text-sm font-medium block mb-1;
+}
+
 .form-input {
   @apply bg-slate-900 border-slate-800 text-white w-full rounded-lg p-4 placeholder-slate-500;
 }
@@ -30,4 +38,12 @@
 
 .form-select {
   @apply bg-slate-900 border-slate-800 text-white w-full rounded-lg py-4 pl-4;
+}
+
+[x-validation-valid='false'] {
+  @apply border-red-500;
+}
+
+[x-validation-valid='true'] {
+  @apply border-green-500;
 }

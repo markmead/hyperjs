@@ -56,6 +56,11 @@ function MyApp({ Component, pageProps }) {
 
         <script
           defer
+          src="https://unpkg.com/alpinejs-form-validation@latest/dist/validation.min.js"
+        ></script>
+
+        <script
+          defer
           src="https://unpkg.com/alpinejs-notify@latest/dist/notify.min.js"
         ></script>
 

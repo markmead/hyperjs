@@ -1,0 +1,88 @@
+<form
+  @submit.prevent
+  x-data="{ contactName: '', contactAge: '', contactMessage: '', contactTerms: false }"
+>
+  <div
+    x-data="{ required: false }"
+    x-on:error="required = !$json($event.detail).required"
+    class="content"
+  >
+    <label for="contactName" class="form-label">Name</label>
+
+    <input
+      type="text"
+      id="contactName"
+      x-model="contactName"
+      x-validation.required="contactName"
+      class="form-input"
+    />
+
+    <span x-show="required">Need a name</span>
+  </div>
+
+  <div
+    x-data="{ minAge: false, maxAge: false }"
+    x-on:error="
+      minAge = !$json($event.detail).min
+      maxAge = !$json($event.detail).max
+    "
+    class="content"
+  >
+    <label for="contactAge" class="form-label">Age</label>
+
+    <input
+      type="number"
+      id="contactAge"
+      x-model="contactAge"
+      x-validation.min.18.max.24="contactAge"
+      class="form-input"
+    />
+
+    <span x-show="minAge">Must be at least 18 years old</span>
+
+    <span x-show="maxAge">Can't be older than 24 years old</span>
+  </div>
+
+  <div
+    x-data="{ minLetters: false, maxLetters: false }"
+    x-on:error="
+      minLetters = !$json($event.detail).minLength
+      maxLetters = !$json($event.detail).maxLength
+    "
+    class="content"
+  >
+    <label for="contactMessage" class="form-label">Message</label>
+
+    <textarea
+      id="contactMessage"
+      x-model="contactMessage"
+      x-validation.min:length.10.max:length.50="contactMessage"
+      class="form-textarea"
+    ></textarea>
+
+    <span x-show="minLetters">Must be at least 10 characters</span>
+
+    <span x-show="maxLetters">Can't be more than 50 characters</span>
+  </div>
+
+  <div
+    x-data="{ isAccepted: false }"
+    x-on:error="isAccepted = !$json($event.detail).checked"
+    class="content"
+  >
+    <label for="contactTerms" class="form-label">Terms</label>
+
+    <input
+      type="checkbox"
+      id="contactTerms"
+      x-model="contactTerms"
+      value="true"
+      x-validation.checked="contactTerms"
+      class="form-checkbox"
+    />
+
+    <span x-show="isAccepted">Must accept</span>
+  </div>
+
+  <button class="button mt-4">Submit</button>
+</form>
