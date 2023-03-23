@@ -1,0 +1,13 @@
+<p>Area A</p>
+
+<div x-data class="content">
+  <button @click="$manage('#TargetEl').fullName = 'John Cena'" class="button">
+    Change Name
+  </button>
+</div>
+
+<p>Area B</p>
+
+<div x-data="{ fullName: 'John Doe' }" id="TargetEl" class="content">
+  <span x-text="fullName"></span>
+</div>

@@ -1,0 +1,24 @@
+<p>React</p>
+
+<div x-data="{ name: 'John Doe', age: 50, company: 'GitHub' }" class="content">
+  <p x-tash="name, age, company">
+    Hello, I am {name}! I am {age} years old and I currently work at {company}!
+  </p>
+</div>
+
+<p>Vue</p>
+
+<div x-data="{ name: 'John Doe', age: 50, company: 'GitHub' }" class="content">
+  <p x-tash.vue="name, age, company">
+    Hello, I am {{ name }}! I am {{ age }} years old and I currently work at {{ company }}!
+  </p>
+</div>
+
+<p>Angular</p>
+
+<div x-data="{ name: 'John Doe', age: 50, company: 'GitHub' }" class="content">
+  <p x-tash.angular="name, age, company">
+    Hello, I am {{name}}! I am {{age}} years old and I currently work at
+    {{company}}!
+  </p>
+</div>
