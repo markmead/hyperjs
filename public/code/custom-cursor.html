@@ -1,0 +1,39 @@
+<div x-data x-cursor x-cursor-targets='[".button", ".content", "h1"]'>
+  <button class="button">Hover Me!</button>
+
+  <div class="content">
+    <h1 class="inline-block font-medium">Hover Me!</h1>
+  </div>
+</div>
+
+<style>
+  html,
+  body {
+    cursor: none;
+  }
+
+  [data-cursor] {
+    background-color: rgb(15 118 110);
+    border-radius: 50%;
+    height: 1.5rem;
+    transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease,
+      background-color 0.25s ease, border-radius 0.25s ease;
+    width: 1.5rem;
+  }
+
+  .cursor-hover--button [data-cursor] {
+    width: 3rem;
+    height: 3rem;
+    mix-blend-mode: difference;
+  }
+
+  .cursor-hover--content [data-cursor] {
+    opacity: 0.5;
+  }
+
+  .cursor-hover--h1 [data-cursor] {
+    background-color: rgb(255 255 255);
+    border-radius: 0.25rem;
+    mix-blend-mode: difference;
+  }
+</style>

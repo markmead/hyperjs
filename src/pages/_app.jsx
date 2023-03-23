@@ -66,6 +66,11 @@ function MyApp({ Component, pageProps }) {
 
         <script
           defer
+          src="https://unpkg.com/alpinejs-cursor@latest/dist/cursor.min.js"
+        ></script>
+
+        <script
+          defer
           src="https://unpkg.com/alpinejs-notify@latest/dist/notify.min.js"
         ></script>
 
