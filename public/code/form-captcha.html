@@ -1,16 +1,11 @@
 <form @submit.prevent x-data="{ contactName: '' }">
-  <div
-    x-data="{ required: false }"
-    @error="required = !$json($event.detail).required"
-    class="content"
-  >
+  <div class="content">
     <label for="contactName" class="form-label">Name</label>
 
     <input
       type="text"
       id="contactName"
       x-model="contactName"
-      x-validation.required="contactName"
       class="form-input"
     />
 
