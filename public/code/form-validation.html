@@ -17,7 +17,7 @@
       class="form-input"
     />
 
-    <span x-show="required">Need a name</span>
+    <span x-show="required" class="text-red-500">Need a name</span>
   </div>
 
   <div
@@ -38,9 +38,13 @@
       class="form-input"
     />
 
-    <span x-show="minAge">Must be at least 18 years old</span>
+    <span x-show="minAge" class="text-red-500">
+      Must be at least 18 years old
+    </span>
 
-    <span x-show="maxAge">Can't be older than 24 years old</span>
+    <span x-show="maxAge" class="text-red-500">
+      Can't be older than 24 years old
+    </span>
   </div>
 
   <div
@@ -60,9 +64,13 @@
       class="form-textarea"
     ></textarea>
 
-    <span x-show="minLetters">Must be at least 10 characters</span>
+    <span x-show="minLetters" class="text-red-500">
+      Must be at least 10 characters
+    </span>
 
-    <span x-show="maxLetters">Can't be more than 50 characters</span>
+    <span x-show="maxLetters" class="text-red-500">
+      Can't be more than 50 characters
+    </span>
   </div>
 
   <div
@@ -81,7 +89,7 @@
       class="form-checkbox"
     />
 
-    <span x-show="isAccepted">Must accept</span>
+    <span x-show="isAccepted" class="text-red-500">Must accept</span>
   </div>
 
   <button class="button mt-4">Submit</button>

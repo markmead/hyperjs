@@ -10,7 +10,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 
 import { componentFilePaths, COMPONENTS_PATH } from '@/utils/mdxUtils'
 
-import Banner from '@/components/BannerSimple'
+import Banner from '@/components/Banner'
 
 const mdxComponents = {
   Preview: dynamic(() => import('@/components/Preview')),
