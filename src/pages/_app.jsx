@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Script from 'next/script'
 
 import 'prismjs/themes/prism-okaidia.css'
 
@@ -176,6 +177,20 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:image" content="https://js.hyperui.dev/og.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://js.hyperui.dev/" />
+
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_KEY}`}
+        />
+
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.GA_KEY}');
+        `}
+        </Script>
       </Head>
 
       <Header />
