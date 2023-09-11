@@ -1,17 +1,27 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 
 import Prism from 'prismjs'
 
+import { componentPreviewHtml } from '@util/transformers'
+
 export default function Preview({ componentId }) {
-  const [code, setCode] = useState('')
+  const [componentCode, setComponentCode] = useState('')
+  const [componentHtml, setComponentHtml] = useState('')
+  const [previewCode, setPreviewCode] = useState(true)
   const [buttonEmoji, setButtonEmoji] = useState('📋')
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`/code/${componentId}.html`)
-      const text = await response.text()
+      const fetchResponse = await fetch(`/code/${componentId}.html`)
+      const fetchCode = await fetchResponse.text()
 
-      setCode(text)
+      setComponentCode(fetchCode)
+
+      const transformedHtml = componentPreviewHtml(fetchCode)
+
+      setComponentHtml(transformedHtml)
     }
 
     fetchData()
@@ -21,42 +31,76 @@ export default function Preview({ componentId }) {
 
   useEffect(() => Prism.highlightAll())
 
-  function copyToClipboard() {
-    navigator.clipboard.writeText(code).then(() => {
-      setButtonEmoji('✅')
-      setTimeout(() => setButtonEmoji('📋'), 3000)
-    })
+  async function copyToClipboard() {
+    await navigator.clipboard.writeText(componentCode)
+
+    setButtonEmoji('✅')
+    setTimeout(() => setButtonEmoji('📋'), 3000)
   }
 
   return (
     <>
-      <h2>Example</h2>
-
-      <div className="not-prose">
-        <div
-          className="p-4 bg-slate-800 rounded-xl max-h-[600px] space-y-4 relative"
-          dangerouslySetInnerHTML={{ __html: code }}
-        ></div>
-      </div>
-
-      <h2>Code</h2>
-
-      <div className="relative">
-        <div className="hidden sm:block">
+      <div className="not-prose lg:-ms-[10ch] lg:w-[85ch]">
+        <div className="flex gap-4 items-center">
           <button
-            className="absolute inline-flex items-center justify-center w-8 h-8 border rounded-lg top-4 right-4 border-slate-900 bg-slate-900/75"
-            onClick={copyToClipboard}
+            className={`
+              transition border border-teal-400 rounded-lg bg-slate-900 hover:bg-teal-400/5 px-4 py-2 text-sm font-medium
+              ${
+                previewCode
+                  ? 'ring-1 ring-teal-400 bg-teal-400/5'
+                  : 'hover:bg-teal-400/5'
+              }
+            `}
+            onClick={() => setPreviewCode(true)}
           >
-            <span role="img" aria-hidden="true" className="text-sm">
-              {buttonEmoji}
-            </span>
+            Example
+          </button>
+
+          <button
+            className={`
+              transition border border-teal-400 rounded-lg bg-slate-900 hover:bg-teal-400/5 px-4 py-2 text-sm font-medium
+              ${
+                !previewCode
+                  ? 'ring-1 ring-teal-400 bg-teal-400/5'
+                  : 'hover:bg-teal-400/5'
+              }
+            `}
+            onClick={() => setPreviewCode(false)}
+          >
+            Code
           </button>
         </div>
-      </div>
 
-      <pre>
-        <code className="language-html">{code}</code>
-      </pre>
+        <div className="bg-slate-800 rounded-lg relative mt-4">
+          {previewCode ? (
+            <iframe
+              className="w-full h-[600px]"
+              loading="lazy"
+              srcDoc={componentHtml}
+              title="Preview"
+            ></iframe>
+          ) : (
+            <div>
+              <div className="hidden sm:block">
+                <button
+                  onClick={copyToClipboard}
+                  className="transition border border-teal-400 rounded-lg bg-slate-900 hover:bg-teal-400/5 grid place-content-center w-10 h-10 absolute top-4 right-4"
+                >
+                  <span className="sr-only">Copy to clipboard</span>
+
+                  <span role="img" aria-hidden="true">
+                    {buttonEmoji}
+                  </span>
+                </button>
+              </div>
+
+              <pre>
+                <code className="language-html h-[600px]">{componentCode}</code>
+              </pre>
+            </div>
+          )}
+        </div>
+      </div>
     </>
   )
 }

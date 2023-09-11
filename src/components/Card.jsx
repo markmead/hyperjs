@@ -1,11 +1,9 @@
 import Link from 'next/link'
 
-export default function Card({ componentData, componentSlug }) {
-  const { title, description, emoji } = componentData
-
+export default function Card({ title, description, emoji, slug }) {
   return (
-    <Link as={`/components/${componentSlug}`} href={`/components/[slug]`}>
-      <a className="flex items-end h-full p-8 pt-12 min-h-[250px] transition border-2 border-teal-400 rounded-xl bg-slate-900 hover:relative hover:bg-teal-400/5">
+    <Link href="/components/[slug]" as={`/components/${slug}`}>
+      <div className="flex items-end h-full p-8 pt-12 min-h-[250px] transition border-2 border-teal-400 rounded-xl bg-slate-900 hover:relative hover:bg-teal-400/5">
         <div>
           <span role="img" aria-hidden="true" className="text-4xl">
             {emoji}
@@ -21,7 +19,7 @@ export default function Card({ componentData, componentSlug }) {
             {description}
           </p>
         </div>
-      </a>
+      </div>
     </Link>
   )
 }
