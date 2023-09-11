@@ -43,18 +43,18 @@ async function getComponent(params) {
   const componentPath = join(componentsPath, `${params.slug}.mdx`)
   const componentItem = await fs.readFile(componentPath, 'utf-8')
 
-  const { content, data: frontmatter } = matter(componentItem)
+  const { content, data: componentData } = matter(componentItem)
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [],
       rehypePlugins: [],
     },
-    scope: frontmatter,
+    scope: componentData,
   })
 
   return {
-    componentData: frontmatter,
+    componentData,
     componentContent: mdxSource,
   }
 }
