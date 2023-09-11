@@ -4,9 +4,8 @@ import { join } from 'path'
 import { serialize } from 'next-mdx-remote/serialize'
 
 import Container from '@component/Container'
-import Banner from '@component/Banner'
 import Preview from '@component/Preview'
-import MdxRemoteRender from '@component/MdxRemoteRender'
+import Renderer from '@component/Renderer'
 
 const mdxComponents = {
   Preview,
@@ -66,14 +65,11 @@ export default async function Page({ params }) {
   return (
     <>
       <div className="bg-slate-900">
-        <Banner
-          bannerTitle={componentData.title}
-          bannerText={componentData.description}
-        />
+        <Banner title={componentData.title} text={componentData.description} />
 
         <Container classNames="pb-8 lg:pb-12">
           <article className="mx-auto prose prose-invert">
-            <MdxRemoteRender
+            <Renderer
               mdxSource={componentContent}
               mdxComponents={mdxComponents}
             />
@@ -81,5 +77,23 @@ export default async function Page({ params }) {
         </Container>
       </div>
     </>
+  )
+}
+
+function Banner({ title, text }) {
+  return (
+    <section>
+      <div className="max-w-screen-xl px-4 py-16 mx-auto">
+        <div className="mx-auto text-center max-w-prose">
+          <h1 className="text-3xl font-black text-white sm:text-5xl">
+            {title}
+          </h1>
+
+          <p className="mt-4 font-medium text-slate-300 sm:leading-relaxed sm:text-xl">
+            {text}
+          </p>
+        </div>
+      </div>
+    </section>
   )
 }

@@ -2,7 +2,7 @@
 
 import { MDXRemote } from 'next-mdx-remote'
 
-export default function MdxContent({
+export default function Renderer({
   mdxSource,
   mdxComponents = {},
   mdxScope = {},

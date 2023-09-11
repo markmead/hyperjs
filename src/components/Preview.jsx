@@ -4,8 +4,11 @@ import { useState, useEffect } from 'react'
 
 import Prism from 'prismjs'
 
+import { componentPreviewHtml } from '@util/transformers'
+
 export default function Preview({ componentId }) {
   const [componentCode, setComponentCode] = useState('')
+  const [componentHtml, setComponentHtml] = useState('')
   const [previewCode, setPreviewCode] = useState(true)
   const [buttonEmoji, setButtonEmoji] = useState('📋')
 
@@ -15,6 +18,10 @@ export default function Preview({ componentId }) {
       const fetchCode = await fetchResponse.text()
 
       setComponentCode(fetchCode)
+
+      const transformedHtml = componentPreviewHtml(fetchCode)
+
+      setComponentHtml(transformedHtml)
     }
 
     fetchData()
@@ -68,7 +75,7 @@ export default function Preview({ componentId }) {
           {previewCode ? (
             <div
               className="space-y-4 p-4"
-              dangerouslySetInnerHTML={{ __html: componentCode }}
+              dangerouslySetInnerHTML={{ __html: componentHtml }}
             />
           ) : (
             <div>

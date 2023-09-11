@@ -1,6 +1,6 @@
-import Card from '@/components/Card'
+import Card from '@component/Card'
 
-function Grid({ componentItems }) {
+export default function Grid({ componentItems }) {
   return (
     <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {componentItems.map(({ title, description, emoji, slug }) => (
@@ -16,5 +16,3 @@ function Grid({ componentItems }) {
     </ul>
   )
 }
-
-export default Grid

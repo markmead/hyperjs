@@ -1,4 +1,4 @@
-import Social from '@/components/Social'
+import Social from '@component/Social'
 
 export default function Footer() {
   return (
