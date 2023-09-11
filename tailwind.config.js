@@ -24,6 +24,5 @@ module.exports = {
       strategy: 'class',
     }),
     require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp'),
   ],
 }
