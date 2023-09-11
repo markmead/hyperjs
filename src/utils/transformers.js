@@ -38,7 +38,7 @@ export function componentPreviewHtml(componentHtml) {
           <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css" />
         </head>
 
-        <body class="font-sans antialiased">
+        <body class="font-sans antialiased p-4 space-y-4">
           ${componentHtml}
         </body>
       </html>
