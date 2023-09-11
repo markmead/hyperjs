@@ -71,12 +71,14 @@ export default function Preview({ componentId }) {
           </button>
         </div>
 
-        <div className="bg-slate-800 rounded-xl max-h-[600px] overflow-auto relative mt-4">
+        <div className="bg-slate-800 rounded-lg relative mt-4">
           {previewCode ? (
-            <div
-              className="space-y-4 p-4"
-              dangerouslySetInnerHTML={{ __html: componentHtml }}
-            />
+            <iframe
+              className="w-full h-[600px]"
+              loading="lazy"
+              srcDoc={componentHtml}
+              title="Preview"
+            ></iframe>
           ) : (
             <div>
               <div className="hidden sm:block">
@@ -93,7 +95,7 @@ export default function Preview({ componentId }) {
               </div>
 
               <pre>
-                <code className="language-html">{componentCode}</code>
+                <code className="language-html h-[600px]">{componentCode}</code>
               </pre>
             </div>
           )}

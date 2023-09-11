@@ -3,7 +3,7 @@ import Script from 'next/script'
 import { Inter } from 'next/font/google'
 
 import 'prismjs/themes/prism-okaidia.css'
-import '@style/tailwind.css'
+import '@style/site.css'
 import '@style/prism.css'
 
 import Footer from '@component/Footer'

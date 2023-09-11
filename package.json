@@ -4,7 +4,9 @@
     "build": "next build",
     "start": "next start",
     "dev": "next dev",
-    "lint": "next lint"
+    "lint": "next lint",
+    "css": "npx tailwindcss -i src/styles/components.css -o public/components.css -m",
+    "postbuild": "yarn css"
   },
   "dependencies": {
     "next": "^13.4.19",
