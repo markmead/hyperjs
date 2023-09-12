@@ -1,10 +1,10 @@
-<div>
-  <div x-data="{ activeAccordion: true }" class="group">
+<div class="space-y-2">
+  <div x-data="{ activeAccordion: true }" class="space-y-2">
     <button
-      :aria-expanded="activeAccordion"
       @click="activeAccordion = !activeAccordion"
+      :aria-expanded="activeAccordion"
       aria-controls="accordion-panel-1"
-      class="group-aria-expanded:active"
+      class="underline aria-expanded:text-indigo-600"
     >
       Accordion 1
     </button>
@@ -25,12 +25,12 @@
     </section>
   </div>
 
-  <div x-data="{ activeAccordion: false }" class="group">
+  <div x-data="{ activeAccordion: false }" class="space-y-2">
     <button
-      :aria-expanded="activeAccordion"
       @click="activeAccordion = !activeAccordion"
+      :aria-expanded="activeAccordion"
       aria-controls="accordion-panel-2"
-      class="group-aria-expanded:button-active"
+      class="underline aria-expanded:text-indigo-600"
     >
       Accordion 2
     </button>

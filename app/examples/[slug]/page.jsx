@@ -4,11 +4,12 @@ import { join } from 'path'
 import { serialize } from 'next-mdx-remote/serialize'
 
 import Preview from '@component/Preview'
+import Callout from '@component/Callout'
 import Renderer from '@component/Renderer'
 import Content from '@/components/Content'
 
 const mdxComponents = {
-  Preview,
+  Callout,
 }
 
 const componentsPath = join(process.cwd(), '/src/data/components')

@@ -1,9 +1,10 @@
-<div x-data="{ activeTab: 'all' }">
-  <ul>
+<div x-data="{ activeTab: 'all' }" class="space-y-2">
+  <ul class="flex gap-2">
     <li>
       <a
-        :class="{ 'active': activeTab === 'all' }"
         @click.prevent="activeTab = 'all'"
+        :class="{ 'text-indigo-600': activeTab === 'all' }"
+        class="underline"
         href="#all"
       >
         All
@@ -12,8 +13,9 @@
 
     <li>
       <a
-        :class="{ 'active': activeTab === 'details' }"
         @click.prevent="activeTab = 'details'"
+        :class="{ 'text-indigo-600': activeTab === 'details' }"
+        class="underline"
         href="#details"
       >
         Details
@@ -22,8 +24,9 @@
 
     <li>
       <a
-        :class="{ 'active': activeTab === 'specs' }"
         @click.prevent="activeTab = 'specs'"
+        :class="{ 'text-indigo-600': activeTab === 'specs' }"
+        class="underline"
         href="#specs"
       >
         Specs
@@ -32,8 +35,9 @@
 
     <li>
       <a
-        :class="{ 'active': activeTab === 'reviews' }"
         @click.prevent="activeTab = 'reviews'"
+        :class="{ 'text-indigo-600': activeTab === 'reviews' }"
+        class="underline"
         href="#reviews"
       >
         Reviews
@@ -41,15 +45,17 @@
     </li>
   </ul>
 
-  <div class="mt-2 space-y-2">
+  <div class="space-y-2">
     <div
-      x-data="{ activeAccordion: false }"
       x-cloak
+      x-data="{ activeAccordion: false }"
       x-show="activeTab === 'details' || activeTab === 'all'"
+      class="space-y-2"
     >
       <button
-        :class="{ 'active': activeAccordion }"
         @click="activeAccordion = !activeAccordion"
+        :class="{ 'text-indigo-600': activeAccordion }"
+        class="underline"
       >
         Details #1
       </button>
@@ -60,13 +66,15 @@
     </div>
 
     <div
-      x-data="{ activeAccordion: false }"
       x-cloak
+      x-data="{ activeAccordion: false }"
       x-show="activeTab === 'specs' || activeTab === 'all'"
+      class="space-y-2"
     >
       <button
-        :class="{ 'active': activeAccordion }"
         @click="activeAccordion = !activeAccordion"
+        :class="{ 'text-indigo-600': activeAccordion }"
+        class="underline"
       >
         Specs #1
       </button>
@@ -77,13 +85,15 @@
     </div>
 
     <div
-      x-data="{ activeAccordion: false }"
       x-cloak
+      x-data="{ activeAccordion: false }"
       x-show="activeTab === 'specs' || activeTab === 'all'"
+      class="space-y-2"
     >
       <button
-        :class="{ 'active': activeAccordion }"
         @click="activeAccordion = !activeAccordion"
+        :class="{ 'text-indigo-600': activeAccordion }"
+        class="underline"
       >
         Specs #2
       </button>
@@ -94,13 +104,15 @@
     </div>
 
     <div
-      x-data="{ activeAccordion: false }"
       x-cloak
+      x-data="{ activeAccordion: false }"
       x-show="activeTab === 'reviews' || activeTab === 'all'"
+      class="space-y-2"
     >
       <button
-        :class="{ 'active': activeAccordion }"
         @click="activeAccordion = !activeAccordion"
+        :class="{ 'text-indigo-600': activeAccordion }"
+        class="underline"
       >
         Reviews #1
       </button>

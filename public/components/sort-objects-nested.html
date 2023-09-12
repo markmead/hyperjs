@@ -8,15 +8,16 @@
       ],
       type: 'asc.title.main'
     }"
+  class="spacey-y-2"
 >
-  <select x-model="type">
+  <select x-model="type" class="w-fill">
     <option value="asc.title.main">Asc</option>
     <option value="desc.title.main">Desc</option>
   </select>
 
-  <ul x-sort.items="type">
+  <ol x-sort.items="type" class="list-decimal space-y-2 list-inside">
     <template x-for="item in items">
       <li x-text="item.title.main"></li>
     </template>
-  </ul>
+  </ol>
 </div>

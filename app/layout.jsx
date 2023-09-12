@@ -71,6 +71,20 @@ async function getComponents() {
     return groupAcc
   }, {})
 
+  Object.keys(groupedComponentItems)
+    .sort()
+    .forEach((groupKey) => {
+      groupedComponentItems[groupKey].sort((groupA, groupB) => {
+        return groupA.title.localeCompare(groupB.title)
+      })
+    })
+
+  Object.keys(groupedComponentItems).forEach((itemKey) => {
+    groupedComponentItems[itemKey].sort((itemA, itemB) => {
+      return itemA.title.localeCompare(itemB.title)
+    })
+  })
+
   return groupedComponentItems
 }
 

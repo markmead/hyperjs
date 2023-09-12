@@ -156,7 +156,7 @@ function Nav({ items }) {
                       as={`/examples/${slug}`}
                       passHref
                     >
-                      <span className="text-xs font-medium text-gray-700 hover:text-indigo-600 transition">
+                      <span className="text-xs/relaxed block font-medium text-gray-700 hover:text-indigo-600 transition">
                         {title}
                       </span>
                     </Link>

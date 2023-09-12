@@ -1,8 +1,9 @@
-<div>
-  <div x-data="{ activeAccordion: false }">
+<div class="space-y-2">
+  <div x-data="{ activeAccordion: false }" class="space-y-2">
     <button
-      :class="{ 'active': activeAccordion }"
       @click="activeAccordion = !activeAccordion"
+      :class="{ 'text-indigo-600': activeAccordion }"
+      class="underline"
     >
       Accordion 1
     </button>
@@ -19,10 +20,11 @@
     </div>
   </div>
 
-  <div x-data="{ activeAccordion: false }">
+  <div x-data="{ activeAccordion: false }" class="space-y-2">
     <button
-      :class="{ 'active': activeAccordion }"
       @click="activeAccordion = !activeAccordion"
+      :class="{ 'text-indigo-600': activeAccordion }"
+      class="underline"
     >
       Accordion 2
     </button>

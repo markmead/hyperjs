@@ -1,21 +1,22 @@
 <form
   @submit.prevent
   x-data="{ contactName: '', contactAge: '', contactMessage: '', contactTerms: false }"
+  class="space-y-2"
 >
   <div
     x-data="{ required: false }"
     @error="required = !$json($event.detail).required"
+    class="space-y-2"
   >
-    <label for="contactName">Name</label>
-
     <input
       type="text"
-      id="contactName"
       x-model="contactName"
       x-validation.required="contactName"
+      placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
+      class="w-full"
     />
 
-    <span x-show="required">Need a name</span>
+    <div x-show="required" class="text-red-600">Need a name</div>
   </div>
 
   <div
@@ -24,19 +25,23 @@
       minAge = !$json($event.detail).min
       maxAge = !$json($event.detail).max
     "
+    class="space-y-2"
   >
-    <label for="contactAge">Age</label>
-
     <input
       type="number"
-      id="contactAge"
       x-model="contactAge"
       x-validation.min.18.max.24="contactAge"
+      placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
+      class="w-full"
     />
 
-    <span x-show="minAge"> Must be at least 18 years old </span>
+    <div x-show="minAge" class="text-red-600">
+      Must be at least 18 years old
+    </div>
 
-    <span x-show="maxAge"> Can't be older than 24 years old </span>
+    <div x-show="maxAge" class="text-red-600">
+      Can't be older than 24 years old
+    </div>
   </div>
 
   <div
@@ -45,46 +50,48 @@
       minLetters = !$json($event.detail).minLength
       maxLetters = !$json($event.detail).maxLength
     "
+    class="space-y-2"
   >
-    <label for="contactMessage">Message</label>
-
     <textarea
-      id="contactMessage"
       x-model="contactMessage"
       x-validation.min:length.10.max:length.50="contactMessage"
+      placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
+      class="w-full"
     ></textarea>
 
-    <span x-show="minLetters"> Must be at least 10 characters </span>
+    <div x-show="minLetters" class="text-red-600">
+      Must be at least 10 characters
+    </div>
 
-    <span x-show="maxLetters"> Can't be more than 50 characters </span>
+    <div x-show="maxLetters" class="text-red-600">
+      Can't be more than 50 characters
+    </div>
   </div>
 
   <div
     x-data="{ isAccepted: false }"
     @error="isAccepted = !$json($event.detail).checked"
+    class="space-y-2"
   >
-    <label for="contactTerms">Terms</label>
-
     <input
       type="checkbox"
-      id="contactTerms"
-      x-model="contactTerms"
       value="true"
+      x-model="contactTerms"
       x-validation.checked="contactTerms"
     />
 
-    <span x-show="isAccepted">Must accept</span>
+    <div x-show="isAccepted" class="text-red-600">Must accept</div>
   </div>
 
-  <button>Submit</button>
+  <button class="underline">Submit</button>
 </form>
 
 <style>
   [x-validation-valid='false'] {
-    border-color: red;
+    border-color: rgb(220 38 38);
   }
 
   [x-validation-valid='true'] {
-    border-color: green;
+    border-color: rgb(22 163 74);
   }
 </style>

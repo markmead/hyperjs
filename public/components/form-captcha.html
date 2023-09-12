@@ -1,20 +1,17 @@
-<form @submit.prevent x-data="{ contactName: '' }">
-  <div class="content">
-    <label for="contactName">Name</label>
+<form @submit.prevent x-data="{ inputName: '' }" class="space-y-2">
+  <input
+    type="text"
+    x-model="inputName"
+    placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
+    class="w-full"
+  />
 
-    <input type="text" id="contactName" x-model="contactName" />
+  <div
+    x-form-captcha
+    x-form-captcha-img="https://images.unsplash.com/photo-1598894000396-bc30e0996899?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80"
+  ></div>
 
-    <span x-show="required">Need a name</span>
-  </div>
-
-  <div class="content">
-    <div
-      x-form-captcha
-      x-form-captcha-img="https://images.unsplash.com/photo-1598894000396-bc30e0996899?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80"
-    ></div>
-  </div>
-
-  <button class="disabled:opacity-50">Submit</button>
+  <button class="underline disabled:opacity-50">Submit</button>
 </form>
 
 <style>
@@ -32,5 +29,6 @@
 
   .fvPrev,
   .fvNext {
+    text-decoration: underline;
   }
 </style>

@@ -1,0 +1,22 @@
+<div
+  x-data="{ inputName: $persist('') }"
+  @persist:delete.window="inputName = ''"
+  class="space-y-2"
+>
+  <input
+    type="text"
+    x-model="inputName"
+    placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
+    class="w-full"
+  />
+
+  <div class="flex gap-2">
+    <button @click="alert($persistGet('inputName'))" class="underline">
+      Alert
+    </button>
+
+    <button @click="$persistDelete('inputName')" class="underline">
+      Delete
+    </button>
+  </div>
+</div>

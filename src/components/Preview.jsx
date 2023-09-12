@@ -82,14 +82,12 @@ export default function Preview({ componentId }) {
             )}
 
             {previewExample && (
-              <div className="p-4">
-                <iframe
-                  className="w-full h-[300px]"
-                  loading="lazy"
-                  srcDoc={componentHtml}
-                  title="Preview"
-                ></iframe>
-              </div>
+              <iframe
+                className="w-full h-full"
+                loading="lazy"
+                srcDoc={componentHtml}
+                title="Preview"
+              ></iframe>
             )}
 
             {previewCode && (

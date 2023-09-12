@@ -1,12 +1,15 @@
-<div x-data="{ items: ['Post D', 'Post A', 'Post C', 'Post B'], type: 'asc' }">
-  <select x-model="type">
+<div
+  x-data="{ items: ['Post D', 'Post A', 'Post C', 'Post B'], type: 'asc' }"
+  class="space-y-2"
+>
+  <select x-model="type" class="w-full">
     <option value="asc">Asc</option>
     <option value="desc">Desc</option>
   </select>
 
-  <ul x-sort.items="type">
+  <ol x-sort.items="type" class="list-decimal space-y-2 list-inside">
     <template x-for="item in items">
       <li x-text="item"></li>
     </template>
-  </ul>
+  </ol>
 </div>
