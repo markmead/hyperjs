@@ -11,23 +11,27 @@ export default function Sidebar({ navItems, children }) {
     <>
       <div>
         {showSidebar && (
-          <div class="relative z-50 lg:hidden" role="dialog" aria-modal="true">
-            <div class="fixed inset-0 bg-gray-900/80"></div>
+          <div
+            className="relative z-50 lg:hidden"
+            role="dialog"
+            aria-modal="true"
+          >
+            <div className="fixed inset-0 bg-gray-900/80"></div>
 
-            <div class="fixed inset-0 flex">
-              <div class="relative mr-16 flex w-full max-w-xs flex-1">
-                <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
+            <div className="fixed inset-0 flex">
+              <div className="relative mr-16 flex w-full max-w-xs flex-1">
+                <div className="absolute left-full top-0 flex w-16 justify-center pt-5">
                   <button
-                    class="-m-2.5 p-2.5"
+                    className="-m-2.5 p-2.5"
                     onClick={() => setShowSidebar(false)}
                   >
-                    <span class="sr-only">Close sidebar</span>
+                    <span className="sr-only">Close sidebar</span>
 
                     <svg
-                      class="h-6 w-6 text-white"
+                      className="h-6 w-6 text-white"
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       stroke="currentColor"
                       aria-hidden="true"
                     >
@@ -40,7 +44,7 @@ export default function Sidebar({ navItems, children }) {
                   </button>
                 </div>
 
-                <div class="overflow-y-auto border-r border-gray-200 bg-white grow flex flex-col">
+                <div className="overflow-y-auto border-r border-gray-200 bg-white grow flex flex-col">
                   <Header />
 
                   <Nav items={Object.entries(navItems)} />
@@ -52,8 +56,8 @@ export default function Sidebar({ navItems, children }) {
           </div>
         )}
 
-        <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
-          <div class="overflow-y-auto border-r border-gray-200 bg-white grow flex flex-col">
+        <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+          <div className="overflow-y-auto border-r border-gray-200 bg-white grow flex flex-col">
             <Header />
 
             <Nav items={Object.entries(navItems)} />
@@ -62,18 +66,18 @@ export default function Sidebar({ navItems, children }) {
           </div>
         </div>
 
-        <div class="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
+        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
           <button
-            class="-m-2.5 p-2.5 text-gray-700 lg:hidden"
+            className="-m-2.5 p-2.5 text-gray-700 lg:hidden"
             onClick={() => setShowSidebar(true)}
           >
-            <span class="sr-only">Open sidebar</span>
+            <span className="sr-only">Open sidebar</span>
 
             <svg
-              class="h-6 w-6"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
               aria-hidden="true"
             >
@@ -85,13 +89,13 @@ export default function Sidebar({ navItems, children }) {
             </svg>
           </button>
 
-          <div class="flex-1 text-sm font-semibold leading-6 text-gray-900">
+          <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">
             Dashboard
           </div>
         </div>
 
-        <main class="py-10 lg:pl-72">
-          <div class="px-4 sm:px-6 lg:px-8">{children}</div>
+        <main className="py-10 lg:pl-72">
+          <div className="px-4 sm:px-6 lg:px-8">{children}</div>
         </main>
       </div>
     </>
@@ -100,7 +104,7 @@ export default function Sidebar({ navItems, children }) {
 
 function Header() {
   return (
-    <div class="px-6 py-3 border-b border-gray-100">
+    <div className="px-6 py-3 border-b border-gray-100">
       <h2 className="font-bold text-gray-900">HyperJS</h2>
 
       <p className="text-xs text-gray-700 mt-1.5">
@@ -112,7 +116,7 @@ function Header() {
 
 function Footer() {
   return (
-    <div class="px-6 py-3 border-t border-gray-100">
+    <div className="px-6 py-3 border-t border-gray-100">
       <p className="text-xs text-gray-700">Created by Mark Mead.</p>
     </div>
   )
@@ -121,7 +125,7 @@ function Footer() {
 function Nav({ items }) {
   return (
     <nav className="p-6 grow">
-      <ul class="space-y-3">
+      <ul className="space-y-3">
         {items.map(([group, items]) => (
           <li key={group}>
             <details className="group">
@@ -144,11 +148,15 @@ function Nav({ items }) {
                 </svg>
               </summary>
 
-              <ul role="list" class="mt-1.5 space-y-1.5 pl-3">
+              <ul role="list" className="mt-1.5 space-y-1.5 pl-3">
                 {items.map(({ title, slug }) => (
                   <li key={slug}>
-                    <Link href="/examples/[slug]" as={`/examples/${slug}`}>
-                      <span class="text-xs font-medium text-gray-700 hover:text-indigo-600 transition">
+                    <Link
+                      href="/examples/[slug]"
+                      as={`/examples/${slug}`}
+                      passHref
+                    >
+                      <span className="text-xs font-medium text-gray-700 hover:text-indigo-600 transition">
                         {title}
                       </span>
                     </Link>
