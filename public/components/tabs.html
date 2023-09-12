@@ -1,0 +1,39 @@
+<div x-data="{ activeTab: 'details' }">
+  <ul>
+    <li>
+      <a
+        @click.prevent="activeTab = 'details'"
+        :class="{ 'button-active': activeTab === 'details' }"
+        href="#details"
+      >
+        Details
+      </a>
+    </li>
+
+    <li>
+      <a
+        @click.prevent="activeTab = 'specs'"
+        :class="{ 'button-active': activeTab === 'specs' }"
+        href="#specs"
+      >
+        Specs
+      </a>
+    </li>
+
+    <li>
+      <a
+        @click.prevent="activeTab = 'reviews'"
+        :class="{ 'button-active': activeTab === 'reviews' }"
+        href="#reviews"
+      >
+        Reviews
+      </a>
+    </li>
+  </ul>
+
+  <div>
+    <div x-cloak x-show="activeTab === 'details'">Details</div>
+    <div x-cloak x-show="activeTab === 'specs'">Specs</div>
+    <div x-cloak x-show="activeTab === 'reviews'">Reviews</div>
+  </div>
+</div>

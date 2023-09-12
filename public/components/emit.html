@@ -1,0 +1,13 @@
+<p>Area A</p>
+
+<div x-data>
+  <button @click="$emit('#TargetEl', { isChecked: false })">Uncheck ❌</button>
+</div>
+
+<p>Area B</p>
+
+<div x-data="{ isChecked: false }" id="TargetEl">
+  <button @click="isChecked = !isChecked">Toggle</button>
+
+  <span x-text="isChecked ? 'Checked ✅' : 'Unchecked ❌'"></span>
+</div>

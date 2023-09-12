@@ -32,8 +32,8 @@ export default function Sidebar({ navItems, children }) {
                       aria-hidden="true"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         d="M6 18L18 6M6 6l12 12"
                       />
                     </svg>
@@ -78,8 +78,8 @@ export default function Sidebar({ navItems, children }) {
               aria-hidden="true"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
               />
             </svg>
@@ -123,7 +123,7 @@ function Nav({ items }) {
     <nav className="p-6 grow">
       <ul class="space-y-3">
         {items.map(([group, items]) => (
-          <li>
+          <li key={group}>
             <details className="group">
               <summary className="flex items-center justify-between cursor-pointer">
                 <span className="text-gray-900 font-medium text-sm hover:text-gray-700 transition">
@@ -147,7 +147,7 @@ function Nav({ items }) {
               <ul role="list" class="mt-1.5 space-y-1.5 pl-3">
                 {items.map(({ title, slug }) => (
                   <li key={slug}>
-                    <Link href="/components/[slug]" as={`/components/${slug}`}>
+                    <Link href="/examples/[slug]" as={`/examples/${slug}`}>
                       <span class="text-xs font-medium text-gray-700 hover:text-indigo-600 transition">
                         {title}
                       </span>

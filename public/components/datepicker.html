@@ -1,0 +1,12 @@
+<div
+  x-data
+  x-init="
+    flatpickr($refs.dateInput, {
+      altInput: true,
+      altFormat: 'F j, Y',
+      dateFormat: 'Y-m-d'
+    })
+  "
+>
+  <input x-ref="dateInput" type="text" placeholder="YYYY-MM-DD" />
+</div>

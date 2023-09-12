@@ -10,11 +10,14 @@ export default function Preview({ componentId }) {
   const [componentCode, setComponentCode] = useState('')
   const [componentHtml, setComponentHtml] = useState('')
   const [previewCode, setPreviewCode] = useState(true)
-  const [buttonEmoji, setButtonEmoji] = useState('📋')
+  const [previewExample, setPreviewExample] = useState(true)
+  const [buttonText, setButtonText] = useState('Copy')
+
+  const showBoth = previewCode && previewExample
 
   useEffect(() => {
     async function fetchData() {
-      const fetchResponse = await fetch(`/code/${componentId}.html`)
+      const fetchResponse = await fetch(`/components/${componentId}.html`)
       const fetchCode = await fetchResponse.text()
 
       setComponentCode(fetchCode)
@@ -34,73 +37,69 @@ export default function Preview({ componentId }) {
   async function copyToClipboard() {
     await navigator.clipboard.writeText(componentCode)
 
-    setButtonEmoji('✅')
-    setTimeout(() => setButtonEmoji('📋'), 3000)
+    setButtonText('Copied')
+    setTimeout(() => setButtonText('Copy'), 3000)
   }
 
   return (
     <>
-      <div className="not-prose lg:-ms-[10ch] lg:w-[85ch]">
-        <div className="flex gap-4 items-center">
+      <section className="mt-4">
+        <div className="flex gap-1.5 items-center">
           <button
-            className={`
-              transition border border-teal-400 rounded-lg bg-slate-900 hover:bg-teal-400/5 px-4 py-2 text-sm font-medium
-              ${
-                previewCode
-                  ? 'ring-1 ring-teal-400 bg-teal-400/5'
-                  : 'hover:bg-teal-400/5'
-              }
-            `}
-            onClick={() => setPreviewCode(true)}
+            className="px-3 py-1.5 text-sm font-medium text-gray-900 border-t border-x border-gray-200 rounded-t bg-white"
+            onClick={() => setPreviewExample(!previewExample)}
           >
             Example
           </button>
 
           <button
-            className={`
-              transition border border-teal-400 rounded-lg bg-slate-900 hover:bg-teal-400/5 px-4 py-2 text-sm font-medium
-              ${
-                !previewCode
-                  ? 'ring-1 ring-teal-400 bg-teal-400/5'
-                  : 'hover:bg-teal-400/5'
-              }
-            `}
-            onClick={() => setPreviewCode(false)}
+            className="px-3 py-1.5 text-sm font-medium text-gray-900 border-t border-x border-gray-200 rounded-t bg-white"
+            onClick={() => setPreviewCode(!previewCode)}
           >
             Code
           </button>
+
+          <button
+            onClick={copyToClipboard}
+            className="px-3 py-1.5 text-sm font-medium text-gray-900 ml-auto border-t border-x border-gray-200 rounded-t bg-white"
+          >
+            {buttonText}
+          </button>
         </div>
 
-        <div className="bg-slate-800 rounded-lg relative mt-4">
-          {previewCode ? (
-            <iframe
-              className="w-full h-[600px]"
-              loading="lazy"
-              srcDoc={componentHtml}
-              title="Preview"
-            ></iframe>
-          ) : (
-            <div>
-              <div className="hidden sm:block">
-                <button
-                  onClick={copyToClipboard}
-                  className="transition border border-teal-400 rounded-lg bg-slate-900 hover:bg-teal-400/5 grid place-content-center w-10 h-10 absolute top-4 right-4"
-                >
-                  <span className="sr-only">Copy to clipboard</span>
-
-                  <span role="img" aria-hidden="true">
-                    {buttonEmoji}
-                  </span>
-                </button>
+        <div className="bg-white rounded-b-lg relative border border-gray-200">
+          <div
+            className={`grid h-[500px] ${
+              showBoth ? 'grid-cols-2' : 'grid-cols-1'
+            }`}
+          >
+            {!previewExample && !previewCode && (
+              <div className="absolute inset-0 grid place-content-center">
+                <p className="text-gray-700 text-sm">
+                  Nothing to see, please select a view.
+                </p>
               </div>
+            )}
 
+            {previewExample && (
+              <div className="p-4">
+                <iframe
+                  className="w-full h-[300px]"
+                  loading="lazy"
+                  srcDoc={componentHtml}
+                  title="Preview"
+                ></iframe>
+              </div>
+            )}
+
+            {previewCode && (
               <pre>
-                <code className="language-html h-[600px]">{componentCode}</code>
+                <code className="language-html h-[300px]">{componentCode}</code>
               </pre>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }

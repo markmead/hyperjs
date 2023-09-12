@@ -1,0 +1,36 @@
+<form @submit.prevent x-data="{ contactName: '' }">
+  <div class="content">
+    <label for="contactName">Name</label>
+
+    <input type="text" id="contactName" x-model="contactName" />
+
+    <span x-show="required">Need a name</span>
+  </div>
+
+  <div class="content">
+    <div
+      x-form-captcha
+      x-form-captcha-img="https://images.unsplash.com/photo-1598894000396-bc30e0996899?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80"
+    ></div>
+  </div>
+
+  <button class="disabled:opacity-50">Submit</button>
+</form>
+
+<style>
+  .fvImg {
+    height: 200px;
+    object-fit: cover;
+    pointer-events: none;
+    width: 200px;
+  }
+
+  .fvActions {
+    position: relative;
+    z-index: 10;
+  }
+
+  .fvPrev,
+  .fvNext {
+  }
+</style>

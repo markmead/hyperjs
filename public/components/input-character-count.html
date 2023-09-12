@@ -1,0 +1,24 @@
+<p>Static Value (Modifier)</p>
+
+<div x-data="{ contactMessage: '' }">
+  <textarea x-model="contactMessage" maxlength="50"></textarea>
+
+  <p>You have written <span x-count="contactMessage"></span> characters.</p>
+
+  <p>
+    You have <span x-count.50="contactMessage"></span> characters remaining.
+  </p>
+</div>
+
+<p>Dynamic Value (Ref)</p>
+
+<div x-data="{ contactMessage: '' }">
+  <textarea x-model="contactMessage" maxlength="50" x-ref="textarea"></textarea>
+
+  <p>You have written <span x-count="contactMessage"></span> characters.</p>
+
+  <p>
+    You have <span x-count.textarea="contactMessage"></span> characters
+    remaining.
+  </p>
+</div>

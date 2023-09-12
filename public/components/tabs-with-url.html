@@ -1,0 +1,42 @@
+<div
+  x-data="{ activeTab: 'details' }"
+  x-init="activeTab = window.location.hash ? window.location.hash.replace('#', '') : 'details'"
+>
+  <ul>
+    <li>
+      <a
+        @click="activeTab = 'details'"
+        :class="{ 'active': activeTab === 'details' }"
+        href="#details"
+      >
+        Details
+      </a>
+    </li>
+
+    <li>
+      <a
+        @click="activeTab = 'specs'"
+        :class="{ 'active': activeTab === 'specs' }"
+        href="#specs"
+      >
+        Specs
+      </a>
+    </li>
+
+    <li>
+      <a
+        @click="activeTab = 'reviews'"
+        :class="{ 'active': activeTab === 'reviews' }"
+        href="#reviews"
+      >
+        Reviews
+      </a>
+    </li>
+  </ul>
+
+  <div>
+    <div x-cloak x-show="activeTab === 'details'">Details</div>
+    <div x-cloak x-show="activeTab === 'specs'">Specs</div>
+    <div x-cloak x-show="activeTab === 'reviews'">Reviews</div>
+  </div>
+</div>

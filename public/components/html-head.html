@@ -1,0 +1,37 @@
+<p>Initial Value with JSON</p>
+
+<script x-data x-head.json type="application/json">
+  {
+    "title": "Alpine JS Head 🗿",
+    "meta": [
+      {
+        "name": "description",
+        "content": "Inspect element and see the changes! 👋"
+      }
+    ]
+  }
+</script>
+
+<p>Update with an Alpine JS Directive</p>
+
+<div
+  x-data="{ headTitle: 'Alpine JS Head 🗿', metaDescription: 'Inspect element and see the changes! 👋' }"
+  x-head.title="headTitle"
+  x-head.meta.description="metaDescription"
+>
+  <input type="text" x-model="headTitle" />
+
+  <textarea x-model="metaDescription"></textarea>
+</div>
+
+<p>Update with an Alpine JS Magic Method</p>
+
+<div x-data class="content">
+  <button @click="$head('title', 'Lorem ipsum dolor')">Update Title</button>
+
+  <button
+    @click="$head('meta.description', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit...')"
+  >
+    Update Meta Description
+  </button>
+</div>
