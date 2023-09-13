@@ -3,6 +3,9 @@ import { promises as fs } from 'fs'
 import { join } from 'path'
 import { serialize } from 'next-mdx-remote/serialize'
 
+import rehypeExternalLinks from 'rehype-external-links'
+import remarkSlug from 'remark-slug'
+
 import Preview from '@component/Preview'
 import Callout from '@component/Callout'
 import Renderer from '@component/Renderer'
@@ -48,8 +51,8 @@ async function getComponent(params) {
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [],
+      remarkPlugins: [remarkSlug],
+      rehypePlugins: [[rehypeExternalLinks, { target: '_blank' }]],
     },
     scope: componentData,
   })

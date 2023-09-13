@@ -1,7 +1,7 @@
 import Callout from '@/components/Callout'
 import Content from '@component/Content'
 
-export default async function Page() {
+export default function Page() {
   return (
     <>
       <Content>

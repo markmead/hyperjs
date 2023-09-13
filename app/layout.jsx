@@ -1,6 +1,11 @@
 import Head from 'next/head'
 import Script from 'next/script'
+
 import { Inter } from 'next/font/google'
+
+import matter from 'gray-matter'
+import { join } from 'path'
+import { promises as fs } from 'fs'
 
 import 'prismjs/themes/prism-okaidia.css'
 import '@style/site.css'
@@ -33,10 +38,6 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 })
-
-import matter from 'gray-matter'
-import { join } from 'path'
-import { promises as fs } from 'fs'
 
 async function getComponents() {
   const componentsPath = join(process.cwd(), '/src/data/components')
