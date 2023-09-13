@@ -2,16 +2,22 @@
 
 import { useState, useEffect } from 'react'
 
+import {
+  ClipboardIcon,
+  EyeIcon,
+  CodeBracketIcon,
+} from '@heroicons/react/24/outline'
+
 import Prism from 'prismjs'
 
 import { componentPreviewHtml } from '@util/transformers'
 
 export default function Preview({ componentId }) {
+  const [buttonText, setButtonText] = useState('Copy')
   const [componentCode, setComponentCode] = useState('')
   const [componentHtml, setComponentHtml] = useState('')
   const [previewCode, setPreviewCode] = useState(true)
   const [previewExample, setPreviewExample] = useState(true)
-  const [buttonText, setButtonText] = useState('Copy')
 
   const showBoth = previewCode && previewExample
 
@@ -46,22 +52,24 @@ export default function Preview({ componentId }) {
       <section className="mt-4">
         <div className="flex gap-1.5 items-center">
           <Toggle
-            text="Preview"
-            active={previewExample}
-            handleToggle={setPreviewExample}
+            buttonText="Preview"
+            setActive={previewExample}
+            setHandle={setPreviewExample}
           />
 
           <Toggle
-            text="Code"
-            active={previewCode}
-            handleToggle={setPreviewCode}
+            buttonText="Code"
+            setActive={previewCode}
+            setHandle={setPreviewCode}
           />
 
           <button
             onClick={copyToClipboard}
-            className="px-3 py-1.5 text-sm font-medium text-gray-900 ml-auto border-t border-x border-gray-200 rounded-t bg-white"
+            className="px-3 py-1.5 inline-flex items-center gap-1.5 text-gray-900 ml-auto border-t border-x border-gray-200 rounded-t bg-white"
           >
-            {buttonText}
+            <span className="text-sm font-medium">{buttonText}</span>
+
+            <ClipboardIcon className="w-4 h-4" />
           </button>
         </div>
 
@@ -100,15 +108,21 @@ export default function Preview({ componentId }) {
   )
 }
 
-function Toggle({ text, active, handleToggle }) {
+function Toggle({ buttonText, setActive, setHandle }) {
   return (
     <button
-      className={`px-3 py-1.5 text-sm transition font-medium text-gray-900 border-t border-x bg-white border-gray-200 rounded-t ${
-        !active && 'opacity-50 hover:opacity-100'
+      className={`px-3 py-1.5 transition inline-flex items-center gap-1.5 text-gray-900 border-t border-x bg-white border-gray-200 rounded-t ${
+        !setActive && 'opacity-50 hover:opacity-100'
       }`}
-      onClick={() => handleToggle(!active)}
+      onClick={() => setHandle(!setActive)}
     >
-      {text}
+      <span className="text-sm font-medium">{buttonText}</span>
+
+      {buttonText === 'Preview' ? (
+        <EyeIcon className="w-4 h-4" />
+      ) : (
+        <CodeBracketIcon className="w-4 h-4" />
+      )}
     </button>
   )
 }

@@ -11,7 +11,7 @@ import 'prismjs/themes/prism-okaidia.css'
 import '@style/site.css'
 import '@style/prism.css'
 
-import Sidebar from '@/components/Sidebar'
+import Container from '@/components/Container'
 
 export const metadata = {
   title: 'Free Open Source Alpine JS Components | HyperJS',
@@ -116,7 +116,7 @@ export default async function RootLayout({ children }) {
       <body
         className={`${inter.variable} font-sans antialiased h-full bg-gray-50`}
       >
-        <Sidebar navItems={componentItems}>{children}</Sidebar>
+        <Container navItems={componentItems}>{children}</Container>
       </body>
     </html>
   )
