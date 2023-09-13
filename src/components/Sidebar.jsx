@@ -66,7 +66,7 @@ export default function Sidebar({ navItems, children }) {
                 <div className="overflow-y-auto border-r border-gray-200 bg-white grow flex flex-col">
                   <Header />
 
-                  <Nav items={Object.entries(navItems)} />
+                  <Nav items={sidebarItems} slug={urlSlug} />
 
                   <Footer />
                 </div>
@@ -79,7 +79,7 @@ export default function Sidebar({ navItems, children }) {
           <div className="overflow-y-auto border-r border-gray-200 bg-white grow flex flex-col">
             <Header />
 
-            <Nav items={Object.entries(navItems)} />
+            <Nav items={sidebarItems} slug={urlSlug} />
 
             <Footer />
           </div>
@@ -141,51 +141,67 @@ function Footer() {
   )
 }
 
-function Nav({ items }) {
+function Nav({ items, slug }) {
   return (
     <nav className="p-6 grow">
       <ul className="space-y-3">
         {items.map(([group, items]) => (
-          <li key={group}>
-            <details className="group">
-              <summary className="flex items-center justify-between cursor-pointer">
-                <span className="text-gray-900 font-medium text-sm hover:text-gray-700 transition">
-                  {group}
-                </span>
-
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-4 h-4 group-open:-rotate-180 transition duration-300"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </summary>
-
-              <ul role="list" className="mt-1.5 space-y-1.5 pl-3">
-                {items.map(({ title, slug }) => (
-                  <li key={slug}>
-                    <Link
-                      href="/examples/[slug]"
-                      as={`/examples/${slug}`}
-                      passHref
-                    >
-                      <span className="text-xs/relaxed block font-medium text-gray-700 hover:text-indigo-600 transition">
-                        {title}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </details>
-          </li>
+          <NavGroup key={group} group={group} items={items} slug={slug} />
         ))}
       </ul>
     </nav>
+  )
+}
+
+function NavGroup({ group, items, slug: urlSlug }) {
+  const isOpen = items.some(({ slug }) => slug === urlSlug)
+
+  return (
+    <li key={group}>
+      <details className="group" open={isOpen}>
+        <summary className="flex items-center justify-between cursor-pointer">
+          <span className="text-gray-900 font-medium text-sm hover:text-gray-700 transition">
+            {group}
+          </span>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-4 h-4 group-open:-rotate-180"
+          >
+            <path
+              fillRule="evenodd"
+              d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </summary>
+
+        <ul role="list" className="mt-1.5 space-y-1.5 pl-3">
+          {items.map(({ title, slug }) => {
+            const isActive = slug === urlSlug
+
+            return (
+              <li key={slug}>
+                <Link href="/examples/[slug]" as={`/examples/${slug}`} passHref>
+                  <span
+                    className={`text-xs/relaxed block font-medium0 transition
+                      ${
+                        isActive
+                          ? 'text-indigo-600'
+                          : 'text-gray-700 hover:text-indigo-600'
+                      }
+                    `}
+                  >
+                    {title}
+                  </span>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </details>
+    </li>
   )
 }
