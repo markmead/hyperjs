@@ -1,0 +1,48 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div
+  x-data="{ activeTab: 'details' }"
+  x-init="activeTab = window.location.hash ? window.location.hash.replace('#', '') : 'details'"
+  class="space-y-2"
+>
+  <ul class="flex gap-2">
+    <li>
+      <a
+        @click.prevent="activeTab = 'details'"
+        :class="{ 'text-indigo-600': activeTab === 'details' }"
+        class="underline"
+        href="#details"
+      >
+        Details
+      </a>
+    </li>
+
+    <li>
+      <a
+        @click.prevent="activeTab = 'specs'"
+        :class="{ 'text-indigo-600': activeTab === 'specs' }"
+        class="underline"
+        href="#specs"
+      >
+        Specs
+      </a>
+    </li>
+
+    <li>
+      <a
+        @click.prevent="activeTab = 'reviews'"
+        :class="{ 'text-indigo-600': activeTab === 'reviews' }"
+        class="underline"
+        href="#reviews"
+      >
+        Reviews
+      </a>
+    </li>
+  </ul>
+
+  <div>
+    <div x-cloak x-show="activeTab === 'details'">Details</div>
+    <div x-cloak x-show="activeTab === 'specs'">Specs</div>
+    <div x-cloak x-show="activeTab === 'reviews'">Reviews</div>
+  </div>
+</div>

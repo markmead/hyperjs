@@ -1,0 +1,104 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-form-validation@latest/dist/validation.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<form
+  @submit.prevent
+  x-data="{ contactName: '', contactAge: '', contactMessage: '', contactTerms: false }"
+  class="space-y-2"
+>
+  <div
+    x-data="{ required: false }"
+    @error="required = !$json($event.detail).required"
+    class="space-y-2"
+  >
+    <input
+      type="text"
+      x-model="contactName"
+      x-validation.required="contactName"
+      placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
+      class="w-full"
+    />
+
+    <div x-cloak x-show="required" class="text-red-600">Need a name</div>
+  </div>
+
+  <div
+    x-data="{ minAge: false, maxAge: false }"
+    @error="
+      minAge = !$json($event.detail).min
+      maxAge = !$json($event.detail).max
+    "
+    class="space-y-2"
+  >
+    <input
+      type="number"
+      x-model="contactAge"
+      x-validation.min.18.max.24="contactAge"
+      placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
+      class="w-full"
+    />
+
+    <div x-cloak x-show="minAge" class="text-red-600">
+      Must be at least 18 years old
+    </div>
+
+    <div x-cloak x-show="maxAge" class="text-red-600">
+      Can't be older than 24 years old
+    </div>
+  </div>
+
+  <div
+    x-data="{ minLetters: false, maxLetters: false }"
+    @error="
+      minLetters = !$json($event.detail).minLength
+      maxLetters = !$json($event.detail).maxLength
+    "
+    class="space-y-2"
+  >
+    <textarea
+      x-model="contactMessage"
+      x-validation.min:length.10.max:length.50="contactMessage"
+      placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
+      class="w-full"
+    ></textarea>
+
+    <div x-cloak x-show="minLetters" class="text-red-600">
+      Must be at least 10 characters
+    </div>
+
+    <div x-cloak x-show="maxLetters" class="text-red-600">
+      Can't be more than 50 characters
+    </div>
+  </div>
+
+  <div
+    x-data="{ isAccepted: false }"
+    @error="isAccepted = !$json($event.detail).checked"
+    class="space-y-2"
+  >
+    <input
+      type="checkbox"
+      value="true"
+      x-model="contactTerms"
+      x-validation.checked="contactTerms"
+    />
+
+    <div x-cloak x-show="isAccepted" class="text-red-600">Must accept</div>
+  </div>
+
+  <button class="underline">Submit</button>
+</form>
+
+<style>
+  [x-validation-valid='false'] {
+    border-color: rgb(220 38 38);
+  }
+
+  [x-validation-valid='true'] {
+    border-color: rgb(22 163 74);
+  }
+</style>

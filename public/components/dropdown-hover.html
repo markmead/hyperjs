@@ -1,0 +1,22 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div x-data="{ showDropdown: false }" class="space-y-2">
+  <button
+    @mouseover="showDropdown = true"
+    @mouseleave="showDropdown = false"
+    @click="showDropdown = !showDropdown"
+    class="underline"
+  >
+    Dropdown
+  </button>
+
+  <div
+    x-cloak
+    x-show="showDropdown"
+    @mouseover="showDropdown = true"
+    @mouseleave="showDropdown = false"
+    class="p-4 bg-gray-100"
+  >
+    Menu
+  </div>
+</div>

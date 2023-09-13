@@ -1,0 +1,16 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div
+  x-cloak
+  x-show="showAlert"
+  x-data="{ showAlert: true }"
+  x-init="setTimeout(() => showAlert = false, 3000)"
+  role="alert"
+  class="bg-red-100 p-4"
+>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus velit
+    nostrum iusto tempora! Error, officia ut quidem neque ullam eum.
+    Reprehenderit quae magnam laborum velit!
+  </p>
+</div>

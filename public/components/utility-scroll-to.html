@@ -1,0 +1,27 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-scroll-to@latest/dist/scroll-to.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<div x-data>
+  <header x-scroll-to-header class="fixed top-0 inset-x-0 z-50 bg-gray-100 p-4">
+    <nav class="flex items-center gap-2">
+      <a
+        x-on:click.prevent="$scrollTo({ offsetHeader: true })"
+        href="#AboutContent"
+        class="underline"
+      >
+        About
+      </a>
+
+      <a x-on:click.prevent="$scrollTo" href="#TeamContent" class="underline">
+        Team
+      </a>
+    </nav>
+  </header>
+
+  <div id="AboutContent" class="my-[100vh]">About</div>
+  <div id="TeamContent" class="my-[100vh]">Team</div>
+</div>

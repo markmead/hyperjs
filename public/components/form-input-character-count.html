@@ -1,0 +1,38 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-character-count@latest/dist/count.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div class="space-y-2">
+  <div x-data="{ contactMessage: '' }" class="space-y-2">
+    <strong>Modifier</strong>
+
+    <textarea x-model="contactMessage" maxlength="50" class="w-full"></textarea>
+
+    <p>You have written <span x-count="contactMessage"></span> characters.</p>
+
+    <p>
+      You have <span x-count.50="contactMessage"></span> characters remaining.
+    </p>
+  </div>
+
+  <div x-data="{ contactMessage: '' }" class="space-y-2">
+    <strong>Ref</strong>
+
+    <textarea
+      x-model="contactMessage"
+      maxlength="50"
+      x-ref="textarea"
+      class="w-full"
+    ></textarea>
+
+    <p>You have written <span x-count="contactMessage"></span> characters.</p>
+
+    <p>
+      You have <span x-count.textarea="contactMessage"></span> characters
+      remaining.
+    </p>
+  </div>
+</div>

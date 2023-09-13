@@ -1,5 +1,5 @@
 pre[class*='language-'] {
-  @apply !p-4 !m-0 !rounded-xl !bg-slate-800 !max-h-[600px] [&::-webkit-scrollbar]:hidden;
+  @apply !p-4 !m-0 rounded-lg !bg-gray-900 !max-h-[600px] [&::-webkit-scrollbar]:hidden;
 }
 
 .token:is(.property, .tag, .constant, .symbol, .deleted) {
@@ -15,7 +15,7 @@ pre[class*='language-'] {
 }
 
 .token:is(.comment, .prolog, .doctype, .cdata) {
-  @apply !text-slate-400;
+  @apply !text-gray-400;
 }
 
 .token:is(.operator, .entity, .url, .variable) {

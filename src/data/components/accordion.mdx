@@ -1,13 +1,27 @@
 ---
-title: Accordion
-description: Create an accordion with Alpine JS and the x-collapse plugin to provide a smooth transition.
-emoji: 📖
+title: How to create an accordion
+group: Accordion
 ---
 
-### Plugins
+For this we use the official Alpine JS plugin [x-collapse](https://alpinejs.dev/plugins/collapse). However, you don't have to use this, it is possible to recreate the effect with the following:
 
-- [Alpine JS Collapse](https://alpinejs.dev/plugins/collapse)
+- Add `maxHeight` value to `x-data`
 
-You don't have to use the Alpine JS Collapse plugin to create this effect.
+```
+x-data="{ activeAccordion: false, maxHeight: 0 }"
+```
 
-<Preview componentId="accordion" />
+- Add an `x-init` on the same element as `x-data`
+
+```
+x-init="maxHeight = `${$refs.accordionContent.scrollHeight}px`"
+```
+
+- On each accordion content element add `x-ref="accordionContent"`
+- On that same element add the styling
+
+```
+:style="activeAccordion && { 'max-height': maxHeight }"
+```
+
+And that's it, I can add an example if need be. However, here's the much cleaner approach using `x-collapse`.

@@ -1,0 +1,25 @@
+<script
+  defer
+  src="https://unpkg.com/@alpinejs/persist@latest/dist/cdn.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div
+  x-data="{ firstName: $persist(''), lastName: $persist('') }"
+  class="space-y-2"
+>
+  <input
+    type="text"
+    x-model="firstName"
+    placeholder="First name..."
+    class="w-full"
+  />
+
+  <input
+    type="text"
+    x-model="lastName"
+    placeholder="Last name..."
+    class="w-full"
+  />
+</div>

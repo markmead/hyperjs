@@ -1,0 +1,52 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div class="space-y-2">
+  <div x-data="{ activeAccordion: true }" class="space-y-2">
+    <button
+      @click="activeAccordion = !activeAccordion"
+      :aria-expanded="activeAccordion"
+      aria-controls="accordion-panel-1"
+      class="underline aria-expanded:text-indigo-600"
+    >
+      Accordion 1
+    </button>
+
+    <section
+      :hidden="!activeAccordion"
+      id="accordion-panel-1"
+      aria-labelledby="accordion-header-1"
+    >
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste illum
+        dolor, dolorem exercitationem veniam voluptatem ad laudantium
+        perferendis amet, consequatur ipsa accusantium magnam voluptatibus
+        architecto harum beatae dicta repellendus debitis nisi deleniti quis in.
+        Nostrum, similique sunt, iusto amet ea expedita saepe quidem provident
+        praesentium vitae ipsum enim recusandae ab?
+      </div>
+    </section>
+  </div>
+
+  <div x-data="{ activeAccordion: false }" class="space-y-2">
+    <button
+      @click="activeAccordion = !activeAccordion"
+      :aria-expanded="activeAccordion"
+      aria-controls="accordion-panel-2"
+      class="underline aria-expanded:text-indigo-600"
+    >
+      Accordion 2
+    </button>
+
+    <section
+      :hidden="!activeAccordion"
+      id="accordion-panel-2"
+      aria-labelledby="accordion-header-2"
+    >
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+        molestiae? Explicabo odit nisi delectus. Quo aliquid fuga maxime
+        explicabo sunt ullam sapiente voluptas aspernatur adipisci?
+      </div>
+    </section>
+  </div>
+</div>

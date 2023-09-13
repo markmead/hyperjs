@@ -1,0 +1,28 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-emit@latest/dist/emit.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div class="space-y-2">
+  <div class="space-y-2">
+    <strong>First</strong>
+
+    <div x-data>
+      <button @click="$emit('#TargetEl', { isChecked: false })">
+        Uncheck ❌
+      </button>
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    <strong>Second</strong>
+
+    <div x-data="{ isChecked: false }" id="TargetEl">
+      <button @click="isChecked = !isChecked">Toggle</button>
+
+      <span x-text="isChecked ? 'Checked ✅' : 'Unchecked ❌'"></span>
+    </div>
+  </div>
+</div>

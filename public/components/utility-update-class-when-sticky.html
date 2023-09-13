@@ -1,0 +1,49 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-sticky@latest/dist/sticky.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div x-data>
+  <div x-sticky="highlight" class="sticky-element"></div>
+
+  <div x-sticky.sticky-element="show" x-sticky-inactive="hide" class="alert">
+    Show when sticky
+  </div>
+</div>
+
+<style>
+  html,
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+
+  .sticky-element {
+    background-color: rgb(243 244 246);
+    height: 4rem;
+    left: 0;
+    position: sticky;
+    right: 0;
+    top: 0;
+  }
+
+  .highlight {
+    background-color: rgb(79 70 229);
+  }
+
+  .alert {
+    margin: 50vh 0;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+</style>

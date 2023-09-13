@@ -10,7 +10,7 @@ export default async function sitemap() {
       componentSlugs.map(async (componentSlug) => {
         const componentSlugFormatted = componentSlug.replace('.mdx', '')
 
-        return `components/${componentSlugFormatted}`
+        return `examples/${componentSlugFormatted}`
       })
     )
 

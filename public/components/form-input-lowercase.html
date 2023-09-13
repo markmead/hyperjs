@@ -1,0 +1,16 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div
+  x-data="{ inputName: 'Hello World!' }"
+  x-init="
+    inputName = inputName.toLowerCase()
+    $watch('inputName', (value) => inputName = value.toLowerCase())
+  "
+>
+  <input
+    x-model="inputName"
+    type="text"
+    placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
+    class="w-full"
+  />
+</div>

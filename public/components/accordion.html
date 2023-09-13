@@ -1,0 +1,47 @@
+<script
+  defer
+  src="https://unpkg.com/@alpinejs/collapse@latest/dist/cdn.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div class="space-y-2">
+  <div x-data="{ activeAccordion: true }" class="space-y-2">
+    <button
+      @click="activeAccordion = !activeAccordion"
+      :class="{ 'text-indigo-600': activeAccordion }"
+      class="underline"
+    >
+      Accordion 1
+    </button>
+
+    <div x-cloak x-collapse x-show="activeAccordion">
+      <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
+        voluptate quod labore nemo non culpa nesciunt corporis, nisi laudantium,
+        amet tempora nulla, saepe qui omnis odio molestias optio excepturi
+        blanditiis? Iusto quae eaque nesciunt veritatis provident maxime
+        perferendis laborum praesentium? Aspernatur eaque at quae soluta
+        pariatur modi reprehenderit fuga eligendi.
+      </div>
+    </div>
+  </div>
+
+  <div x-data="{ activeAccordion: false }" class="space-y-2">
+    <button
+      @click="activeAccordion = !activeAccordion"
+      :class="{ 'text-indigo-600': activeAccordion }"
+      class="underline"
+    >
+      Accordion 2
+    </button>
+
+    <div x-cloak x-collapse x-show="activeAccordion">
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat id,
+        eius expedita ullam maxime rem, accusantium nulla blanditiis itaque
+        dolorem perspiciatis vero explicabo odio voluptatum.
+      </div>
+    </div>
+  </div>
+</div>

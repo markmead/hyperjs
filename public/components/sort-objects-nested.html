@@ -1,0 +1,30 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-sort@latest/dist/sort.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div
+  x-data="{
+      items: [
+        { title: { main: 'Post D', letter: 'D' } },
+        { title: { main: 'Post A', letter: 'A' } },
+        { title: { main: 'Post C', letter: 'C' } },
+        { title: { main: 'Post B', letter: 'B' } }
+      ],
+      type: 'asc.title.main'
+    }"
+  class="spacey-y-2"
+>
+  <select x-model="type" class="w-full">
+    <option value="asc.title.main">Asc</option>
+    <option value="desc.title.main">Desc</option>
+  </select>
+
+  <ol x-sort.items="type" class="list-decimal space-y-2 list-inside">
+    <template x-for="item in items">
+      <li x-text="item.title.main"></li>
+    </template>
+  </ol>
+</div>

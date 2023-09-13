@@ -1,13 +1,17 @@
 import Head from 'next/head'
 import Script from 'next/script'
+
 import { Inter } from 'next/font/google'
+
+import matter from 'gray-matter'
+import { join } from 'path'
+import { promises as fs } from 'fs'
 
 import 'prismjs/themes/prism-okaidia.css'
 import '@style/site.css'
 import '@style/prism.css'
 
-import Footer from '@component/Footer'
-import Header from '@component/Header'
+import Sidebar from '@/components/Sidebar'
 
 export const metadata = {
   title: 'Free Open Source Alpine JS Components | HyperJS',
@@ -35,7 +39,59 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-export default function RootLayout({ children }) {
+async function getComponents() {
+  const componentsPath = join(process.cwd(), '/src/data/components')
+  const componentSlugs = await fs.readdir(componentsPath)
+
+  const componentItems = await Promise.all(
+    componentSlugs.map(async (componentSlug) => {
+      const componentPath = join(componentsPath, componentSlug)
+      const componentItem = await fs.readFile(componentPath, 'utf-8')
+
+      const {
+        data: { title, group },
+      } = matter(componentItem)
+
+      return {
+        title,
+        group,
+        slug: componentSlug.replace('.mdx', ''),
+      }
+    })
+  )
+
+  const groupedComponentItems = componentItems.reduce((groupAcc, groupItem) => {
+    const itemGroup = groupItem.group
+
+    if (!groupAcc[itemGroup]) {
+      groupAcc[itemGroup] = []
+    }
+
+    groupAcc[itemGroup].push(groupItem)
+
+    return groupAcc
+  }, {})
+
+  Object.keys(groupedComponentItems)
+    .sort()
+    .forEach((groupKey) => {
+      groupedComponentItems[groupKey].sort((groupA, groupB) => {
+        return groupA.title.localeCompare(groupB.title)
+      })
+    })
+
+  Object.keys(groupedComponentItems).forEach((itemKey) => {
+    groupedComponentItems[itemKey].sort((itemA, itemB) => {
+      return itemA.title.localeCompare(itemB.title)
+    })
+  })
+
+  return groupedComponentItems
+}
+
+export default async function RootLayout({ children }) {
+  const componentItems = await getComponents()
+
   return (
     <html className="h-full scroll-smooth" lang="en" dir="ltr">
       <Script
@@ -57,12 +113,10 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
 
-      <body className={`${inter.variable} font-sans antialiased`}>
-        <Header />
-
-        <main className="bg-slate-900">{children}</main>
-
-        <Footer />
+      <body
+        className={`${inter.variable} font-sans antialiased h-full bg-gray-50`}
+      >
+        <Sidebar navItems={componentItems}>{children}</Sidebar>
       </body>
     </html>
   )

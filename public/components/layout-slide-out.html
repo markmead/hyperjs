@@ -1,0 +1,25 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div x-data="{ slideOut: false }" @keydown.window.escape="slideOut = false">
+  <button @click="slideOut = !slideOut" class="underline">Toggle</button>
+
+  <div
+    x-cloak
+    x-transition.opacity
+    x-show="slideOut"
+    class="fixed inset-0 bg-black/50"
+  ></div>
+
+  <div
+    x-cloak
+    x-show="slideOut"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="translate-x-full"
+    @click.away="slideOut = false"
+    class="fixed inset-y-0 right-0 z-50 w-[300px] bg-white"
+  ></div>
+</div>

@@ -1,0 +1,42 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-component@latest/dist/component.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<div
+  x-data="{
+    people: [
+      { name: 'Albert Mayer', age: '44', skills: ['JavaScript', 'CSS'] },
+      { name: 'John Collins', age: '28', skills: ['Laravel', 'MySQL', 'jQuery'] },
+      { name: 'Eric Green', age: '36', skills: ['Tailwind CSS', 'Alpine JS', 'jQuery'] },
+      { name: 'Peter Clapton', age: '20', skills: ['Ruby on Rails'] },
+    ]
+  }"
+>
+  <ul class="grid grid-cols-2 gap-4">
+    <template x-for="person in people">
+      <x-component-wrapper
+        x-component
+        template="person"
+        x-data="{ item: person }"
+      ></x-component-wrapper>
+    </template>
+  </ul>
+</div>
+
+<template id="person">
+  <li>
+    <strong>
+      <span x-text="item.name"></span>
+      (<span x-text="item.age"></span>)
+    </strong>
+
+    <ul>
+      <template x-for="skill in item.skills">
+        <li x-text="skill"></li>
+      </template>
+    </ul>
+  </li>
+</template>

@@ -1,0 +1,25 @@
+---
+title: How to use variable interpolation like React, Vue or Angular
+group: Utility
+---
+
+Ever wanted to be able to use Alpine JS but use React, Vue or Angular approach to rendering dynamic content? Something like:
+
+```html
+<div x-data="{ name: 'Eric Green' }">
+  <!-- React-->
+  <p>{name}</p>
+
+  <!-- Vue-->
+  <p>{{ name}}</p>
+
+  <!-- Angular -->
+  <p>{{name}}</p>
+</div>
+```
+
+Well, it's possible with the [x-tash plugin](https://github.com/markmead/alpinejs-tash).
+
+It's simple to use, all you need to do is declare an `x-tash` directive with the variables that you want to render. With this opt-in approach you can still use the built in Alpine JS `x-text` method if you wish.
+
+Here's an example.

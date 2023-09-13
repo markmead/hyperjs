@@ -1,0 +1,28 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-overlap@latest/dist/overlap.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div class="relative">
+  <div id="targetEl" class="h-32 w-32 bg-gray-100"></div>
+
+  <div
+    x-data="{ isOverlap: $overlap('#targetEl') }"
+    class="absolute grid w-24 h-24 place-content-center top-12 left-12"
+    :class="{ 'bg-indigo-100': isOverlap, 'bg-red-100': !isOverlap }"
+    @resize.window="isOverlap = $overlap('#targetEl')"
+  >
+    <p x-text="isOverlap ? 'Overlap: Yes' : 'Overlap: No'" class="text-sm"></p>
+  </div>
+
+  <div
+    x-data="{ isOverlap: $overlap('#targetEl') }"
+    class="absolute grid w-24 h-24 place-content-center top-36 left-8"
+    :class="{ 'bg-indigo-100': isOverlap, 'bg-red-100': !isOverlap }"
+    @resize.window="isOverlap = $overlap('#targetEl')"
+  >
+    <p x-text="isOverlap ? 'Overlap: Yes' : 'Overlap: No'" class="text-sm"></p>
+  </div>
+</div>

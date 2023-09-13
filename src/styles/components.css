@@ -4,41 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .button {
-    @apply px-5 py-3 text-sm rounded-lg bg-teal-900 text-white font-medium inline-block;
-    @apply disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-
-  .button-active {
-    @apply bg-teal-700;
-  }
-
-  .content {
-    @apply p-4 bg-slate-700 rounded-lg text-white mt-2;
-  }
-
-  .alert {
-    @apply p-4 bg-red-700 rounded-lg text-white flex justify-between items-center;
-  }
-}
-
-.form-label {
-  @apply text-white text-sm font-medium block mb-1;
-}
-
-.form-input {
-  @apply bg-slate-900 border-slate-800 text-white w-full rounded-lg p-4 placeholder-slate-500;
-}
-
-.form-textarea {
-  @apply bg-slate-900 border-slate-800 text-white w-full resize-none rounded-lg p-4 placeholder-slate-500;
-}
-
-.form-select {
-  @apply bg-slate-900 border-slate-800 text-white w-full rounded-lg py-4 pl-4;
-}
-
-.form-checkbox {
-  @apply bg-slate-900 border-slate-800 w-6 h-6 rounded;
+[x-cloak] {
+  @apply hidden;
 }
