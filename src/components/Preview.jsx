@@ -69,8 +69,8 @@ export default function Preview({ componentId }) {
 
         <div className="bg-white rounded-b-lg relative border border-gray-200">
           <div
-            className={`grid h-[500px] ${
-              showBoth ? 'grid-cols-2' : 'grid-cols-1'
+            className={`grid grid-cols-1 h-[500px] ${
+              showBoth && 'md:grid-cols-2 grid-rows-2 md:grid-rows-1'
             }`}
           >
             {!previewExample && !previewCode && (

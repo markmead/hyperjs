@@ -2,10 +2,30 @@
 
 import Link from 'next/link'
 
-import { useState } from 'react'
+import { useParams } from 'next/navigation'
+
+import { useState, useEffect } from 'react'
 
 export default function Sidebar({ navItems, children }) {
   const [showSidebar, setShowSidebar] = useState(false)
+  const [pageTitle, setPageTitle] = useState('')
+
+  const { slug: urlSlug } = useParams()
+
+  useEffect(() => {
+    const headerTitle = Object.entries(navItems).reduce(
+      (pageAcc, [_, items]) => {
+        const pageItem = items.find(({ slug }) => slug === urlSlug)
+
+        return pageItem ? pageItem.title : pageAcc
+      },
+      ''
+    )
+
+    setPageTitle(headerTitle)
+  }, [urlSlug])
+
+  useEffect(() => setShowSidebar(false), [urlSlug])
 
   return (
     <>
@@ -20,7 +40,7 @@ export default function Sidebar({ navItems, children }) {
 
             <div className="fixed inset-0 flex">
               <div className="relative mr-16 flex w-full max-w-xs flex-1">
-                <div className="absolute left-full top-0 flex w-16 justify-center pt-5">
+                <div className="absolute left-full top-0 flex w-16 justify-center pt-4">
                   <button
                     className="-m-2.5 p-2.5"
                     onClick={() => setShowSidebar(false)}
@@ -90,7 +110,7 @@ export default function Sidebar({ navItems, children }) {
           </button>
 
           <div className="flex-1 text-sm font-semibold leading-6 text-gray-900">
-            Dashboard
+            {pageTitle}
           </div>
         </div>
 
