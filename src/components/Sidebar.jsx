@@ -1,6 +1,20 @@
 import Link from 'next/link'
 
-import { ChevronDownIcon } from '@heroicons/react/24/outline'
+import {
+  ChevronDownIcon,
+  BookOpenIcon,
+  BellAlertIcon,
+  CalendarIcon,
+  BarsArrowDownIcon,
+  BeakerIcon,
+  NewspaperIcon,
+  ArrowsUpDownIcon,
+  ArchiveBoxIcon,
+  QueueListIcon,
+  SparklesIcon,
+} from '@heroicons/react/24/outline'
+
+import { groupData } from '@data/groups'
 
 import Logo from '@component/Logo'
 
@@ -55,6 +69,11 @@ function SidebarNav({ navItems, urlSlug }) {
 function NavGroup({ navItem, urlSlug }) {
   const [navGroup, navItems] = navItem
 
+  const { title: groupTitle, icon: groupIcon } =
+    groupData.find(({ id: groupId }) => {
+      return groupId === navGroup
+    }) || {}
+
   const isOpen = navItems.some(({ slug: itemSlug }) => itemSlug === urlSlug)
 
   return (
@@ -62,8 +81,10 @@ function NavGroup({ navItem, urlSlug }) {
       <details className="group" open={isOpen}>
         <summary className="flex items-center justify-between cursor-pointer">
           <span className="inline-flex items-center gap-2">
+            <GroupIcon groupIcon={groupIcon} />
+
             <span className="text-gray-900 font-medium text-sm hover:text-gray-700 transition">
-              {navGroup}
+              {groupTitle}
             </span>
           </span>
 
@@ -104,5 +125,26 @@ function NavGroup({ navItem, urlSlug }) {
         </ul>
       </details>
     </li>
+  )
+}
+
+function GroupIcon({ groupIcon }) {
+  return (
+    <>
+      {groupIcon === 'BookOpenIcon' && <BookOpenIcon className="w-4 h-4" />}
+      {groupIcon === 'CalendarIcon' && <CalendarIcon className="w-4 h-4" />}
+      {groupIcon === 'BellAlertIcon' && <BellAlertIcon className="w-4 h-4" />}
+      {groupIcon === 'BarsArrowDownIcon' && (
+        <BarsArrowDownIcon className="w-4 h-4" />
+      )}
+      {groupIcon === 'BeakerIcon' && <BeakerIcon className="w-4 h-4" />}
+      {groupIcon === 'NewspaperIcon' && <NewspaperIcon className="w-4 h-4" />}
+      {groupIcon === 'ArrowsUpDownIcon' && (
+        <ArrowsUpDownIcon className="w-4 h-4" />
+      )}
+      {groupIcon === 'ArchiveBoxIcon' && <ArchiveBoxIcon className="w-4 h-4" />}
+      {groupIcon === 'QueueListIcon' && <QueueListIcon className="w-4 h-4" />}
+      {groupIcon === 'SparklesIcon' && <SparklesIcon className="w-4 h-4" />}
+    </>
   )
 }

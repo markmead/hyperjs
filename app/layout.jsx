@@ -11,7 +11,7 @@ import 'prismjs/themes/prism-okaidia.css'
 import '@style/site.css'
 import '@style/prism.css'
 
-import Container from '@/components/Container'
+import Container from '@component/Container'
 
 export const metadata = {
   title: 'Free Open Source Alpine JS Components | HyperJS',
