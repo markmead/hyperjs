@@ -124,7 +124,9 @@ export default function Sidebar({ navItems, children }) {
 function Header() {
   return (
     <div className="px-6 py-3 border-b border-gray-100">
-      <h2 className="font-bold text-gray-900">HyperJS</h2>
+      <Link href="/" as="/">
+        <h2 className="font-bold text-gray-900">HyperJS</h2>
+      </Link>
 
       <p className="text-xs text-gray-700 mt-1.5">
         A collection of Alpine JS examples that you can use in your projects.

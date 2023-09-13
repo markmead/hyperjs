@@ -45,19 +45,17 @@ export default function Preview({ componentId }) {
     <>
       <section className="mt-4">
         <div className="flex gap-1.5 items-center">
-          <button
-            className="px-3 py-1.5 text-sm font-medium text-gray-900 border-t border-x border-gray-200 rounded-t bg-white"
-            onClick={() => setPreviewExample(!previewExample)}
-          >
-            Example
-          </button>
+          <Toggle
+            text="Preview"
+            active={previewExample}
+            handleToggle={setPreviewExample}
+          />
 
-          <button
-            className="px-3 py-1.5 text-sm font-medium text-gray-900 border-t border-x border-gray-200 rounded-t bg-white"
-            onClick={() => setPreviewCode(!previewCode)}
-          >
-            Code
-          </button>
+          <Toggle
+            text="Code"
+            active={previewCode}
+            handleToggle={setPreviewCode}
+          />
 
           <button
             onClick={copyToClipboard}
@@ -99,5 +97,18 @@ export default function Preview({ componentId }) {
         </div>
       </section>
     </>
+  )
+}
+
+function Toggle({ text, active, handleToggle }) {
+  return (
+    <button
+      className={`px-3 py-1.5 text-sm transition font-medium text-gray-900 border-t border-x bg-white border-gray-200 rounded-t ${
+        !active && 'opacity-50 hover:opacity-100'
+      }`}
+      onClick={() => handleToggle(!active)}
+    >
+      {text}
+    </button>
   )
 }

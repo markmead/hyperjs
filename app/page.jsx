@@ -1,3 +1,4 @@
+import Callout from '@/components/Callout'
 import Content from '@component/Content'
 
 export default async function Page() {
@@ -16,6 +17,11 @@ export default async function Page() {
           I have kept the styling to a minimum so that you can focus on the
           functionality.
         </p>
+
+        <Callout>
+          This is a new version of the website with a change in direction for
+          content. Please be patient while I expand on the content.
+        </Callout>
       </Content>
     </>
   )
