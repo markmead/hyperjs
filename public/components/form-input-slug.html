@@ -1,15 +1,22 @@
-<div x-data="{ inputTitle: 'Hello World' }" class="flex gap-4">
+<script
+  defer
+  src="https://unpkg.com/alpinejs-slug@latest/dist/slug.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div x-data="{ inputTitle: 'Hello World' }" class="space-y-2">
   <input
     x-model="inputTitle"
     type="text"
     placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
-    class="form-input"
+    class="w-full"
   />
 
   <input
     x-slug="inputTitle"
     type="text"
     placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
-    class="form-input"
+    class="w-full"
   />
 </div>

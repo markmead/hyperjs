@@ -1,22 +1,55 @@
+<script
+  defer
+  src="https://unpkg.com/@alpinejs/persist@latest/dist/cdn.min.js"
+></script>
+
+<script
+  defer
+  src="https://unpkg.com/alpinejs-persist-extended@latest/dist/storage.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <div
-  x-data="{ inputName: $persist('') }"
-  @persist:delete.window="inputName = ''"
+  x-data="{ firstName: $persist(''), lastName: $persist(''), hasDelete: false }"
+  x-init="$watch('hasDelete', () => setTimeout(() => (hasDelete = false), 3000))"
+  @persist:delete="hasDelete = true"
   class="space-y-2"
 >
-  <input
-    type="text"
-    x-model="inputName"
-    placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
-    class="w-full"
-  />
+  <div class="flex gap-2 items-center">
+    <input
+      type="text"
+      x-model="firstName"
+      placeholder="First name..."
+      class="w-full"
+    />
 
-  <div class="flex gap-2">
-    <button @click="alert($persistGet('inputName'))" class="underline">
+    <button @click="alert($persistGet('firstName'))" class="underline">
       Alert
     </button>
 
-    <button @click="$persistDelete('inputName')" class="underline">
+    <button @click="$persistDelete('firstName')" class="underline">
       Delete
     </button>
+  </div>
+
+  <div class="flex gap-2 items-center">
+    <input
+      type="text"
+      x-model="lastName"
+      placeholder="Last name..."
+      class="w-full"
+    />
+    <button @click="alert($persistGet('lastName'))" class="underline">
+      Alert
+    </button>
+
+    <button @click="$persistDelete('lastName')" class="underline">
+      Delete
+    </button>
+  </div>
+
+  <div x-cloak x-show="hasDelete" role="alert" class="text-red-600">
+    Deleted from storage!
   </div>
 </div>

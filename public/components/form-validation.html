@@ -1,3 +1,10 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-form-validation@latest/dist/validation.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <form
   @submit.prevent
   x-data="{ contactName: '', contactAge: '', contactMessage: '', contactTerms: false }"
@@ -16,7 +23,7 @@
       class="w-full"
     />
 
-    <div x-show="required" class="text-red-600">Need a name</div>
+    <div x-cloak x-show="required" class="text-red-600">Need a name</div>
   </div>
 
   <div
@@ -35,11 +42,11 @@
       class="w-full"
     />
 
-    <div x-show="minAge" class="text-red-600">
+    <div x-cloak x-show="minAge" class="text-red-600">
       Must be at least 18 years old
     </div>
 
-    <div x-show="maxAge" class="text-red-600">
+    <div x-cloak x-show="maxAge" class="text-red-600">
       Can't be older than 24 years old
     </div>
   </div>
@@ -59,11 +66,11 @@
       class="w-full"
     ></textarea>
 
-    <div x-show="minLetters" class="text-red-600">
+    <div x-cloak x-show="minLetters" class="text-red-600">
       Must be at least 10 characters
     </div>
 
-    <div x-show="maxLetters" class="text-red-600">
+    <div x-cloak x-show="maxLetters" class="text-red-600">
       Can't be more than 50 characters
     </div>
   </div>
@@ -80,7 +87,7 @@
       x-validation.checked="contactTerms"
     />
 
-    <div x-show="isAccepted" class="text-red-600">Must accept</div>
+    <div x-cloak x-show="isAccepted" class="text-red-600">Must accept</div>
   </div>
 
   <button class="underline">Submit</button>

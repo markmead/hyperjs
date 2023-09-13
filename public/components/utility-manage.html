@@ -1,13 +1,27 @@
-<p>Area A</p>
+<script
+  defer
+  src="https://unpkg.com/alpinejs-manage@latest/dist/manage.min.js"
+></script>
 
-<div x-data class="content">
-  <button @click="$manage('#TargetEl').fullName = 'John Cena'" class="button">
-    Change Name
-  </button>
-</div>
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
-<p>Area B</p>
+<div x-data class="space-y-2">
+  <div class="space-y-2">
+    <strong> First </strong>
 
-<div x-data="{ fullName: 'John Doe' }" id="TargetEl" class="content">
-  <span x-text="fullName"></span>
+    <button
+      @click="$manage('#targetEl').fullName = 'Eric Green'"
+      class="underline"
+    >
+      Change Name
+    </button>
+  </div>
+
+  <div class="space-y-2">
+    <strong>Second</strong>
+
+    <div x-data="{ fullName: 'Peter Clapton' }" id="targetEl">
+      <span x-text="fullName"></span>
+    </div>
+  </div>
 </div>

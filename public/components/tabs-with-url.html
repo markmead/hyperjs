@@ -1,20 +1,11 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <div
   x-data="{ activeTab: 'details' }"
   x-init="activeTab = window.location.hash ? window.location.hash.replace('#', '') : 'details'"
   class="space-y-2"
 >
   <ul class="flex gap-2">
-    <li>
-      <a
-        @click.prevent="activeTab = 'all'"
-        :class="{ 'text-indigo-600': activeTab === 'all' }"
-        class="underline"
-        href="#all"
-      >
-        All
-      </a>
-    </li>
-
     <li>
       <a
         @click.prevent="activeTab = 'details'"

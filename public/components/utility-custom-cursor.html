@@ -1,3 +1,10 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-cursor@latest/dist/cursor.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <div x-data x-cursor x-cursor-targets='[".button", ".content", "h1"]'>
   <button class="button">Hover Me!</button>
 
@@ -16,8 +23,12 @@
     background-color: rgb(15 118 110);
     border-radius: 50%;
     height: 1.5rem;
-    transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease,
-      background-color 0.25s ease, border-radius 0.25s ease;
+    transition:
+      width 0.25s ease,
+      height 0.25s ease,
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      border-radius 0.25s ease;
     width: 1.5rem;
   }
 

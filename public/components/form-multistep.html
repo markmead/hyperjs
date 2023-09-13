@@ -1,5 +1,13 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <form x-data="{ formStep: 1 }" class="space-y-2">
-  <button x-cloak x-show="formStep > 1" @click="formStep -= 1" type="button">
+  <button
+    x-cloak
+    x-show="formStep > 1"
+    @click="formStep -= 1"
+    type="button"
+    class="underline"
+  >
     Back
   </button>
 
@@ -8,9 +16,17 @@
   <div x-cloak x-show="formStep === 3">Step 3</div>
   <div x-cloak x-show="formStep === 4">Final Step</div>
 
-  <button x-cloak x-show="formStep < 4" @click="formStep += 1" type="button">
+  <button
+    x-cloak
+    x-show="formStep < 4"
+    @click="formStep += 1"
+    type="button"
+    class="underline"
+  >
     Next Step
   </button>
 
-  <button x-cloak x-show="formStep === 4" type="submit">Submit</button>
+  <button x-cloak x-show="formStep === 4" type="submit" class="underline">
+    Submit
+  </button>
 </form>

@@ -1,24 +1,38 @@
-<p>Static Value (Modifier)</p>
+<script
+  defer
+  src="https://unpkg.com/alpinejs-character-count@latest/dist/count.min.js"
+></script>
 
-<div x-data="{ contactMessage: '' }">
-  <textarea x-model="contactMessage" maxlength="50"></textarea>
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
-  <p>You have written <span x-count="contactMessage"></span> characters.</p>
+<div class="space-y-2">
+  <div x-data="{ contactMessage: '' }" class="space-y-2">
+    <strong>Modifier</strong>
 
-  <p>
-    You have <span x-count.50="contactMessage"></span> characters remaining.
-  </p>
-</div>
+    <textarea x-model="contactMessage" maxlength="50" class="w-full"></textarea>
 
-<p>Dynamic Value (Ref)</p>
+    <p>You have written <span x-count="contactMessage"></span> characters.</p>
 
-<div x-data="{ contactMessage: '' }">
-  <textarea x-model="contactMessage" maxlength="50" x-ref="textarea"></textarea>
+    <p>
+      You have <span x-count.50="contactMessage"></span> characters remaining.
+    </p>
+  </div>
 
-  <p>You have written <span x-count="contactMessage"></span> characters.</p>
+  <div x-data="{ contactMessage: '' }" class="space-y-2">
+    <strong>Ref</strong>
 
-  <p>
-    You have <span x-count.textarea="contactMessage"></span> characters
-    remaining.
-  </p>
+    <textarea
+      x-model="contactMessage"
+      maxlength="50"
+      x-ref="textarea"
+      class="w-full"
+    ></textarea>
+
+    <p>You have written <span x-count="contactMessage"></span> characters.</p>
+
+    <p>
+      You have <span x-count.textarea="contactMessage"></span> characters
+      remaining.
+    </p>
+  </div>
 </div>

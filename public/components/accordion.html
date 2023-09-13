@@ -1,5 +1,12 @@
+<script
+  defer
+  src="https://unpkg.com/@alpinejs/collapse@latest/dist/cdn.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <div class="space-y-2">
-  <div x-data="{ activeAccordion: false }" class="space-y-2">
+  <div x-data="{ activeAccordion: true }" class="space-y-2">
     <button
       @click="activeAccordion = !activeAccordion"
       :class="{ 'text-indigo-600': activeAccordion }"

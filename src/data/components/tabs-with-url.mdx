@@ -1,5 +1,5 @@
 ---
-title: How to Create Tabs with URL Navigation
+title: How to create tabs with URL navigation
 group: Tab
 ---
 
@@ -9,8 +9,8 @@ Creating tabs with URL navigation doesn't require much extra work over creating 
 x-init="activeTab = window.location.hash ? window.location.hash.replace('#', '') : 'details'"
 ```
 
-Here we are checking if the URL has a hash, if so, we take that hash and remove the "#", if not, we default to "details".
+Here we are checking if the URL has a hash, if so, we take that hash and remove the "#", if not, we use the default.
 
 <Callout>
-As the preview is in an `<iframe>` you won't see the URL changing. However, if you head over to the [URL for the component HTML](/components/tabs-with-url.html) you will see it working.
+As the preview is in an `<iframe>` you won't see the URL changing. However, if you head over to the [component code](/components/tabs-with-url.html) for the preview you will see it working.
 </Callout>

@@ -1,3 +1,5 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <div x-data="{ showModal: false }" @keydown.window.escape="showModal = false">
   <button @click="showModal = !showModal" class="underline">Toggle</button>
 
@@ -16,7 +18,7 @@
   >
     <div
       @click.away="showModal = false"
-      class="w-[300px] h-[300px] bg-white rounded-lg"
+      class="w-[300px] h-[300px] bg-white"
     ></div>
   </div>
 </div>

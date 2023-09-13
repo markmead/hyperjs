@@ -1,63 +1,73 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-notify@latest/dist/notify.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <div x-data>
-  <div
-    id="notificationWrapperTopRight"
-    class="fixed top-4 right-4 space-y-2"
-  ></div>
+  <div id="topRight" class="fixed top-4 right-4 space-y-2 max-w-xs"></div>
+  <div id="bottomLeft" class="fixed bottom-4 left-4 space-y-2 max-w-xs"></div>
 
-  <div
-    id="notificationWrapperBottomLeft"
-    class="fixed bottom-4 left-4 space-y-2"
-  ></div>
-
-  <button
-    @click="$notify('Nihil distinctio suscipit iste impedit magnam eius iure culpa mollitia tenetur', {
-      wrapperId: 'notificationWrapperBottomLeft',
-      templateId: 'notificationAlert',
+  <div class="flex gap-2">
+    <button
+      @click="$notify('Nihil distinctio suscipit iste impedit magnam eius iure culpa mollitia tenetur', {
+      wrapperId: 'bottomLeft',
+      templateId: 'alertStandard',
       autoRemove: 3000
     })"
-  >
-    Standard (Bottom Left)
-  </button>
+      class="underline"
+    >
+      Standard
+    </button>
 
-  <button
-    @click="$notify('Earum aliquid quaerat officiis.', {
-      wrapperId: 'notificationWrapperBottomLeft',
-      templateId: 'notificationAlertClose',
+    <button
+      @click="$notify('Earum aliquid quaerat officiis.', {
+        wrapperId: 'bottomLeft',
+        templateId: 'alertClose',
+      })"
+      class="underline"
+    >
+      Dismiss
+    </button>
+
+    <button
+      @click="$notify('Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus.', {
+      wrapperId: 'topRight',
+      templateId: 'alertAnimate',
     })"
-  >
-    Close Button (Bottom Left)
-  </button>
+      class="underline"
+    >
+      Animate
+    </button>
+  </div>
 
-  <button
-    @click="$notify('Lorem ipsum dolor, sit amet consectetur adipisicing elit', {
-    wrapperId: 'notificationWrapperTopRight',
-    templateId: 'notificationAlertAnimated',
-    autoClose: 5000,
-    autoRemove: true
-  })"
-  >
-    Animate (Top Left)
-  </button>
-
-  <template id="notificationAlert">
-    <div role="alert">{notificationText}</div>
+  <template id="alertStandard">
+    <div role="alert" class="bg-gray-100 p-4">{notificationText}</div>
   </template>
 
-  <template id="notificationAlertClose">
-    <div x-data role="alert">
+  <template id="alertClose">
+    <div
+      x-data
+      role="alert"
+      class="bg-gray-100 p-4 data-[notify-show=false]:hidden"
+    >
       {notificationText}
 
-      <button @click="$root.setAttribute('data-notify-show', false)">
+      <button
+        @click="$root.setAttribute('data-notify-show', false)"
+        class="underline"
+      >
         Close
       </button>
     </div>
   </template>
 </div>
 
-<template id="notificationAlertAnimated">
+<template id="alertAnimate">
   <div
     role="alert"
-    class="data-[notify-show=true]:animate-slide-in data-[notify-show=false]:animate-slide-out"
+    class="data-[notify-show=true]:animate-slide-in data-[notify-show=false]:animate-slide-out bg-gray-100 p-4"
   >
     {notificationText}
   </div>

@@ -1,7 +1,17 @@
-<div x-cloak x-show="showAlert" x-data="{ showAlert: true }" role="alert">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus velit
-  nostrum iusto tempora! Error, officia ut quidem neque ullam eum. Reprehenderit
-  quae magnam laborum velit!
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
-  <button @click="showAlert = false">Close</button>
+<div
+  x-cloak
+  x-show="showAlert"
+  x-data="{ showAlert: true }"
+  role="alert"
+  class="bg-red-100 p-4 space-y-2"
+>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus velit
+    nostrum iusto tempora! Error, officia ut quidem neque ullam eum.
+    Reprehenderit quae magnam laborum velit!
+  </p>
+
+  <button @click="showAlert = false" class="underline">Dismiss</button>
 </div>

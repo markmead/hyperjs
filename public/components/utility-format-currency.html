@@ -1,0 +1,40 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-money@latest/dist/money.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<div class="space-y-2">
+  <div x-data="{ productPrice: 49999 }" class="space-y-2">
+    <input
+      type="text"
+      x-model="productPrice"
+      placeholder="99999"
+      class="w-full"
+    />
+
+    <ul class="list-disc space-y-2 list-inside">
+      <li x-money.js-JP.JPY="productPrice"></li>
+      <li x-money.de-DE.EUR="productPrice"></li>
+      <li x-money.en-GB.GBP="productPrice"></li>
+      <li x-money.en-US.USD="productPrice"></li>
+    </ul>
+  </div>
+
+  <div x-data="{ productPrice: 49.999 }" class="space-y-2">
+    <input
+      type="text"
+      x-model="productPrice"
+      placeholder="99.999"
+      class="w-full"
+    />
+
+    <ul class="list-disc space-y-2 list-inside">
+      <li x-money.js-JP.JPY.decimal="productPrice"></li>
+      <li x-money.de-DE.EUR.decimal="productPrice"></li>
+      <li x-money.en-GB.GBP.decimal="productPrice"></li>
+      <li x-money.en-US.USD.decimal="productPrice"></li>
+    </ul>
+  </div>
+</div>

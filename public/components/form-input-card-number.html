@@ -1,8 +1,15 @@
+<script
+  defer
+  src="https://unpkg.com/@alpinejs/mask@latest/dist/cdn.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <div x-data="{ cardNumber: '' }">
   <input
     x-model="cardNumber"
-    x-mask="9999 9999 9999 9999"
     type="text"
-    placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
+    placeholder="9999 9999 9999 9999"
+    class="w-full"
   />
 </div>

@@ -1,11 +1,9 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <div x-data="{ inputQuantity: 1 }" class="flex items-center gap-2">
-  <button @click="inputQuantity--" class="p-3 text-white bg-black rounded-lg">
-    Decrease
-  </button>
+  <button @click="inputQuantity--" class="underline">Decrease</button>
 
-  <input x-model="inputQuantity" type="number" class="form-input" />
+  <input x-model="inputQuantity" type="number" class="w-full" />
 
-  <button @click="inputQuantity++" class="p-3 text-white bg-black rounded-lg">
-    Increase
-  </button>
+  <button @click="inputQuantity++" class="underline">Increase</button>
 </div>

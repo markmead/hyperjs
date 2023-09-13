@@ -1,37 +1,45 @@
-<p>Initial Value with JSON</p>
+<script
+  defer
+  src="https://unpkg.com/alpinejs-head@latest/dist/head.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
 <script x-data x-head.json type="application/json">
   {
-    "title": "Alpine JS Head 🗿",
+    "title": "Alpine JS Head - Title",
     "meta": [
       {
         "name": "description",
-        "content": "Inspect element and see the changes! 👋"
+        "content": "Alpine JS Head - Description"
       }
     ]
   }
 </script>
 
-<p>Update with an Alpine JS Directive</p>
-
 <div
-  x-data="{ headTitle: 'Alpine JS Head 🗿', metaDescription: 'Inspect element and see the changes! 👋' }"
+  x-data="{ headTitle: 'Alpine JS Head - Title', metaDescription: 'Alpine JS Head - Description' }"
   x-head.title="headTitle"
   x-head.meta.description="metaDescription"
+  class="space-y-2"
 >
-  <input type="text" x-model="headTitle" />
+  <input type="text" x-model="headTitle" class="w-full" />
 
-  <textarea x-model="metaDescription"></textarea>
-</div>
+  <textarea x-model="metaDescription" class="w-full"></textarea>
 
-<p>Update with an Alpine JS Magic Method</p>
+  <div class="flex gap-2">
+    <button
+      @click="$head('title', '🌟NEW🌟 Alpine JS Head - Title')"
+      class="underline"
+    >
+      Update title
+    </button>
 
-<div x-data class="content">
-  <button @click="$head('title', 'Lorem ipsum dolor')">Update Title</button>
-
-  <button
-    @click="$head('meta.description', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit...')"
-  >
-    Update Meta Description
-  </button>
+    <button
+      @click="$head('meta.description', '🌟NEW🌟 Alpine JS Head - Description')"
+      class="underline"
+    >
+      Update description
+    </button>
+  </div>
 </div>

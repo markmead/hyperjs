@@ -1,11 +1,38 @@
-<div x-data="{ formData: {} }">
-  <form @submit.prevent="formData = $formData">
-    <input type="text" name="FirstName" placeholder="First Name..." />
+<script
+  defer
+  src="https://unpkg.com/alpinejs-form-data@latest/dist/form-data.min.js"
+></script>
 
-    <input type="text" name="LastName" placeholder="Last Name..." />
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <button type="submit">Submit</button>
+<div x-data="{ formData: {} }" class="space-y-2">
+  <form @submit.prevent="formData = $formData" class="space-y-2">
+    <input
+      type="text"
+      name="firstName"
+      placeholder="First name..."
+      class="w-full"
+    />
+
+    <input
+      type="text"
+      name="lastName"
+      placeholder="Last name..."
+      class="w-full"
+    />
+
+    <textarea
+      name="contactMessage"
+      placeholder="Your message..."
+      class="w-full"
+    ></textarea>
+
+    <button type="submit" class="underline">Submit</button>
   </form>
 
-  <div x-text="JSON.stringify(formData)"></div>
+  <pre
+    x-cloak
+    x-show="!!Object.keys(formData).length"
+    x-text="JSON.stringify(formData, null, 2)"
+  ></pre>
 </div>

@@ -1,5 +1,7 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <div x-data="{ slideOut: false }" @keydown.window.escape="slideOut = false">
-  <button @click="slideOut = !slideOut">Toggle</button>
+  <button @click="slideOut = !slideOut" class="underline">Toggle</button>
 
   <div
     x-cloak

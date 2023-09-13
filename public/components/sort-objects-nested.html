@@ -1,3 +1,10 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-sort@latest/dist/sort.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <div
   x-data="{
       items: [
@@ -10,7 +17,7 @@
     }"
   class="spacey-y-2"
 >
-  <select x-model="type" class="w-fill">
+  <select x-model="type" class="w-full">
     <option value="asc.title.main">Asc</option>
     <option value="desc.title.main">Desc</option>
   </select>

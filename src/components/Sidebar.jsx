@@ -12,18 +12,17 @@ export default function Sidebar({ navItems, children }) {
 
   const { slug: urlSlug } = useParams()
 
-  useEffect(() => {
-    const headerTitle = Object.entries(navItems).reduce(
-      (pageAcc, [_, items]) => {
-        const pageItem = items.find(({ slug }) => slug === urlSlug)
+  const sidebarItems = Object.entries(navItems)
 
-        return pageItem ? pageItem.title : pageAcc
-      },
-      ''
-    )
+  useEffect(() => {
+    const headerTitle = sidebarItems.reduce((pageAcc, [_, items]) => {
+      const { title } = items.find(({ slug }) => slug === urlSlug) || {}
+
+      return title || pageAcc
+    }, '')
 
     setPageTitle(headerTitle)
-  }, [urlSlug])
+  }, [urlSlug, navItems])
 
   useEffect(() => setShowSidebar(false), [urlSlug])
 

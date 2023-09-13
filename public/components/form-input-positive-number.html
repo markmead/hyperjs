@@ -1,3 +1,5 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
 <div
   x-data="{ inputQuantity: 1 }"
   x-init="$watch('inputQuantity', (value) => inputQuantity = value < 0 ? 0 : value)"
@@ -6,6 +8,6 @@
     x-model="inputQuantity"
     type="number"
     placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit..."
-    class="form-input"
+    class="w-full"
   />
 </div>

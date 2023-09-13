@@ -15,7 +15,7 @@ pre[class*='language-'] {
 }
 
 .token:is(.comment, .prolog, .doctype, .cdata) {
-  @apply !text-slate-400;
+  @apply !text-gray-400;
 }
 
 .token:is(.operator, .entity, .url, .variable) {

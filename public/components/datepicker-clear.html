@@ -1,3 +1,12 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+/>
+
 <div
   x-data="{ currentDate: '', flatpickrInstance: null }"
   x-init="
@@ -10,8 +19,19 @@
       }
     })
   "
+  class="space-y-2"
 >
-  <input x-ref="dateInput" type="text" placeholder="YYYY-MM-DD" />
+  <input
+    x-ref="dateInput"
+    type="text"
+    placeholder="YYYY-MM-DD"
+    class="w-full"
+  />
 
-  <button @click="currentDate = ''; flatpickrInstance.clear()">Clear</button>
+  <button
+    @click="currentDate = ''; flatpickrInstance.clear()"
+    class="underline"
+  >
+    Clear
+  </button>
 </div>

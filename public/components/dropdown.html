@@ -1,5 +1,9 @@
-<div x-data="{ showDropdown: false }">
-  <button @click="showDropdown = !showDropdown">Dropdown</button>
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
-  <div x-cloak x-show="showDropdown">Menu</div>
+<div x-data="{ showDropdown: false }" class="space-y-2">
+  <button @click="showDropdown = !showDropdown" class="underline">
+    Dropdown
+  </button>
+
+  <div x-cloak x-show="showDropdown" class="p-4 bg-gray-100">Menu</div>
 </div>
