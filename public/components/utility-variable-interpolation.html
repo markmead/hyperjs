@@ -1,25 +1,38 @@
-<p>React</p>
+<script
+  defer
+  src="https://unpkg.com/alpinejs-tash@latest/dist/tash.min.js"
+></script>
 
-<div x-data="{ name: 'John Doe', age: 50, company: 'GitHub' }">
-  <p x-tash="name, age, company">
-    Hello, I am {name}! I am {age} years old and I currently work at {company}!
-  </p>
-</div>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-<p>Vue</p>
+<div class="space-y-2">
+  <div class="space-y-2">
+    <strong>React</strong>
 
-<div x-data="{ name: 'John Doe', age: 50, company: 'GitHub' }">
-  <p x-tash.vue="name, age, company">
-    Hello, I am {{ name }}! I am {{ age }} years old and I currently work at {{
-    company }}!
-  </p>
-</div>
+    <div x-data="{ name: 'John Doe', age: 50 }">
+      <p x-tash="name, age, company">
+        Hello, I am {name}! I am {age} years old!
+      </p>
+    </div>
+  </div>
 
-<p>Angular</p>
+  <div class="space-y-2">
+    <strong>Vue</strong>
 
-<div x-data="{ name: 'John Doe', age: 50, company: 'GitHub' }">
-  <p x-tash.angular="name, age, company">
-    Hello, I am {{name}}! I am {{age}} years old and I currently work at
-    {{company}}!
-  </p>
+    <div x-data="{ name: 'John Doe', age: 50 }">
+      <p x-tash.vue="name, age, company">
+        Hello, I am {{ name }}! I am {{ age }} years old!
+      </p>
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    <strong>Angular</strong>
+
+    <div x-data="{ name: 'John Doe', age: 50 }">
+      <p x-tash.angular="name, age, company">
+        Hello, I am {{name}}! I am {{age}} years old! {{company}}!
+      </p>
+    </div>
+  </div>
 </div>

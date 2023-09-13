@@ -8,6 +8,7 @@ export function componentPreviewHtml(componentHtml) {
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+          <!--
           <script defer src="https://unpkg.com/@alpinejs/mask@latest/dist/cdn.min.js"></script>
           <script defer src="https://unpkg.com/@alpinejs/collapse@latest/dist/cdn.min.js"></script>
           <script defer src="https://unpkg.com/@alpinejs/persist@latest/dist/cdn.min.js"></script>
@@ -36,6 +37,7 @@ export function componentPreviewHtml(componentHtml) {
 
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
           <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css" />
+          -->
         </head>
 
         <body class="font-sans antialiased p-4">
