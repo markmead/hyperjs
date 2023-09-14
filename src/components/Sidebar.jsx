@@ -31,7 +31,7 @@ export default function Sidebar({ showMenu, showSide, navItems, urlSlug }) {
 
           <div className="fixed inset-0 flex">
             <div className="relative flex w-full max-w-xs flex-1">
-              <div className="overflow-y-auto border-r border-gray-200 bg-white grow flex flex-col pt-16">
+              <div className="overflow-y-auto border-r border-gray-200 bg-white grow flex flex-col pt-28 sm:pt-16">
                 <SidebarNav navItems={navItems} urlSlug={urlSlug} />
               </div>
             </div>

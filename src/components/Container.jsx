@@ -18,7 +18,7 @@ export default function Container({ navItems, children }) {
 
   return (
     <>
-      <div className="pt-16">
+      <div className="pt-28 sm:pt-16">
         <Sidebar
           showMenu={showMenu}
           showSide={showSide}
@@ -37,7 +37,7 @@ export default function Container({ navItems, children }) {
             navItems={navItems}
           />
 
-          <div className="px-4 sm:px-6 lg:px-8 py-10">
+          <div className="px-4 sm:px-6 lg:px-8 py-8">
             {children}
 
             <Footer />

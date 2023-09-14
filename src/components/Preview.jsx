@@ -73,7 +73,7 @@ export default function Preview({ componentId }) {
           </button>
         </div>
 
-        <div className="bg-white rounded-b-lg relative border border-gray-200">
+        <div className="bg-white rounded-b relative border border-gray-200">
           <div
             className={`grid grid-cols-1 h-[500px] ${
               showBoth && 'md:grid-cols-2 grid-rows-2 md:grid-rows-1'

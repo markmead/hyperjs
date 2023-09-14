@@ -13,38 +13,40 @@ export default function Header({
 }) {
   return (
     <header
-      className={`h-16 px-6 bg-white border-b border-gray-200 flex items-center gap-4 fixed top-0 z-50 right-0 ${
+      className={`px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-200 fixed top-0 z-50 right-0 ${
         showSide ? 'lg:w-[calc(100%_-_288px)] w-full' : 'w-full'
       }`}
     >
-      <div className="flex items-center gap-2 sm:gap-4 flex-1">
-        <button
-          className="p-1.5 text-gray-700 hidden lg:block border border-gray-200 rounded"
-          onClick={() => setShowSide(!showSide)}
-        >
-          <span className="sr-only">Open sidebar</span>
+      <div className="h-16 flex items-center gap-4 sm:gap-6 lg:gap-8">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <button
+            className="p-1.5 text-gray-700 border border-gray-200 rounded"
+            onClick={() => {
+              setShowSide(!showSide)
+              setShowMenu(!showMenu)
+            }}
+          >
+            <span className="sr-only">Open sidebar</span>
 
-          <Bars3Icon className="w-5 h-5" />
-        </button>
+            <Bars3Icon className="w-5 h-5" />
+          </button>
 
-        <button
-          className="p-1.5 text-gray-700 block lg:hidden border border-gray-200 rounded"
-          onClick={() => setShowMenu(!showMenu)}
-        >
-          <span className="sr-only">Open menu</span>
+          <Logo />
+        </div>
 
-          <Bars3Icon className="w-5 h-5" />
-        </button>
+        <div className="hidden sm:block flex-1">
+          <Search navItems={navItems} />
+        </div>
 
-        <Logo />
+        <div className="flex items-center gap-2 sm:gap-4 flex-1 justify-end">
+          <SponsorLink />
 
-        <Search navItems={navItems} />
+          <GithubLink />
+        </div>
       </div>
 
-      <div className="flex items-center gap-2 sm:gap-4">
-        <SponsorLink />
-
-        <GithubLink />
+      <div className="block sm:hidden">
+        <Search navItems={navItems} />
       </div>
     </header>
   )

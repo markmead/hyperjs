@@ -43,11 +43,11 @@ export default function Search({ navItems }) {
   useDebounce(() => setSearchQueryDebounced(searchQuery), 500, [searchQuery])
 
   return (
-    <div className="relative flex-1">
+    <div className="relative h-12 sm:h-auto sm:flex-1">
       <input
         type="text"
-        className={`max-w-sm w-full rounded-t-lg text-sm border-gray-200 relative z-[100] focus:ring-inset ${
-          searchQuery ? 'border-b-none' : 'rounded-b-lg'
+        className={`sm:max-w-sm w-full rounded-t text-sm border-gray-200 relative z-[100] focus:ring-inset ${
+          searchQuery ? 'border-b-none' : 'rounded-b'
         }`}
         placeholder="Search"
         value={searchQuery}
@@ -57,7 +57,7 @@ export default function Search({ navItems }) {
       {searchQuery && (
         <div
           ref={refDropdown}
-          className="absolute left-0 top-auto z-50 max-w-sm w-full rounded-b-lg -mt-px border border-gray-200 bg-white shadow-sm"
+          className="absolute left-0 top-auto z-50 sm:max-w-sm w-full rounded-b -mt-px border border-gray-200 bg-white shadow-sm"
         >
           {!!filteredItems.length ? (
             <SearchResults searchItems={filteredItems} />
