@@ -13,7 +13,7 @@ export default function Header({
 }) {
   return (
     <header
-      className={`px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-200 fixed top-0 z-50 right-0 ${
+      className={`px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-200 h-28 sm:h-16 fixed top-0 z-50 right-0 ${
         showSide ? 'lg:w-[calc(100%_-_288px)] w-full' : 'w-full'
       }`}
     >

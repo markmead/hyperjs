@@ -27,7 +27,7 @@ export default function Sidebar({ showMenu, showSide, navItems, urlSlug }) {
           role="dialog"
           aria-modal="true"
         >
-          <div className="fixed inset-0 bg-gray-900/80"></div>
+          <div className="fixed inset-0 bg-gray-900/50"></div>
 
           <div className="fixed inset-0 flex">
             <div className="relative flex w-full max-w-xs flex-1">
@@ -42,7 +42,7 @@ export default function Sidebar({ showMenu, showSide, navItems, urlSlug }) {
       {showSide && (
         <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
           <div className="overflow-y-auto border-r border-gray-200 bg-white grow flex flex-col">
-            <div className="h-16 flex items-center px-6 border-b border-gray-100">
+            <div className="h-16 flex items-center px-6 border-b border-gray-200 shrink-0">
               <Logo />
             </div>
 
