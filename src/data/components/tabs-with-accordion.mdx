@@ -2,3 +2,19 @@
 title: How to create tabs with an accordion
 group: tab
 ---
+
+Here's a more complex component that combines both tabs and accordions, thankfully, these are two things that Alpine JS can manage easily.
+
+If we take the [standard tabs](/examples/tabs) component and then drop in a [standard accordion](/examples/accordion) component in each of the tabs content, we have this component.
+
+An extra feature this has over the two standard components it's built from is the addition of the "all" tab, which allows all tabs content to show at once. This is something that's easy to add to any tab component as you just change the check of the active tab from:
+
+```js
+activeTab === '???'
+```
+
+To:
+
+```js
+activeTab === '???' || activeTab === 'all'
+```

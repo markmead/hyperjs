@@ -1,0 +1,21 @@
+---
+title: How to save to local storage
+group: storage
+---
+
+Saving to local storage is a great way to maintain user choice for features such as:
+
+- Dark mode
+- Grid/list layout
+
+Thankfully, there's an [Alpine JS plugin](https://alpinejs.dev/plugins/persist) that adds this functionality with an easy to use magic method. All it requires you to do is wrap you data within `x-data` in a `$persist` method, something like this:
+
+```html
+x-data="{ darkMode: $persist(false), collectionLayout: $persist('grid') }"
+```
+
+On initial load these values will be saved into local storage and then updated when the values are changed.
+
+<Callout>
+  Make some changes and refresh the page to see your changes saved.
+</Callout>

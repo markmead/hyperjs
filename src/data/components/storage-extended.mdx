@@ -1,0 +1,19 @@
+---
+title: How to read and delete from local storage
+group: storage
+---
+
+If all you need is the ability to save values to local storage then the [standard storage](/examples/storage) example is all you need. However, if you ever thought:
+
+> Wouldn't it be cool if I could read and delete stuff from local storage as well
+
+Then the Alpine JS [persist extended plugin](https://github.com/markmead/alpinejs-persist-extended) is what you're after. It has two magic methods:
+
+- `$persistGet` which allows you to read data from local storage
+- `$persistDelete` which allows you to delete data from local storage
+
+With the addition of the `@persist:delete` event which you can hook into and use to update the page when a value in local storage is deleted.
+
+<Callout>
+  Make some changes and refresh the page to see your changes saved.
+</Callout>

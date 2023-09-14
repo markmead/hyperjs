@@ -3,14 +3,20 @@ title: How to create tabs with URL navigation
 group: tab
 ---
 
-Creating tabs with URL navigation doesn't require much extra work over creating [standard tabs](/examples/tabs), all you need to add is a way for Alpine JS to read the hash in the URL and set the value.
+Creating tabs with URL navigation doesn't require much extra work from creating [standard tabs](/examples/tabs), all you need is a way for Alpine JS to read the hash in the URL and set the active tab value.
 
-```
-x-init="activeTab = window.location.hash ? window.location.hash.replace('#', '') : 'details'"
+Here's what the example is using:
+
+```html
+x-init="activeTab = window.location.hash?.replace('#', '') || 'details'"
 ```
 
-Here we are checking if the URL has a hash, if so, we take that hash and remove the "#", if not, we use the default.
+Which is using the optional chaining method on `.replace()` for the hash, this is the equivalent of writing:
+
+```html
+window.location.hash ? window.location.hash.replace('#', '') : 'details'
+```
 
 <Callout>
-As the preview is in an `<iframe>` you won't see the URL changing. However, if you head over to the [component code](/components/tabs-with-url.html) for the preview you will see it working.
+As the preview is in an `<iframe>` you won't see the URL changing. However, if you to the [component code](/components/tabs-with-url.html) for the preview you will see it working.
 </Callout>
