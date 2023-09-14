@@ -5,6 +5,8 @@ import { serialize } from 'next-mdx-remote/serialize'
 
 import rehypeExternalLinks from 'rehype-external-links'
 
+import { ogMeta, twitterMeta } from '@data/metadata'
+
 import Preview from '@component/Preview'
 import Callout from '@component/Callout'
 import Renderer from '@component/Renderer'
@@ -21,19 +23,13 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${componentData.title} | HyperJS`,
-    description: componentData.description,
     openGraph: {
+      ...ogMeta,
       title: `${componentData.title} | HyperJS`,
-      description: componentData.description,
-      url: 'https://js.hyperui.dev/',
-      siteName: 'HyperJS',
-      type: 'website',
-      image: 'https://js.hyperui.dev/og.jpg',
     },
     twitter: {
-      card: 'summary_large_image',
+      ...twitterMeta,
       title: `${componentData.title} | HyperJS`,
-      description: componentData.description,
     },
   }
 }
@@ -68,14 +64,17 @@ export default async function Page({ params }) {
   return (
     <>
       <Content>
-        <h1>{componentData.title}</h1>
+        <h1>
+          {componentData.title}
+          <span className="sr-only"> in Alpine JS</span>
+        </h1>
 
         <p>{componentData.description}</p>
 
         <Renderer mdxSource={componentContent} mdxComponents={mdxComponents} />
       </Content>
 
-      <Preview componentId={params.slug} />
+      <Preview componentId={params.slug} componentTitle={componentData.title} />
     </>
   )
 }

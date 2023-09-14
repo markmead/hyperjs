@@ -11,26 +11,17 @@ import 'prismjs/themes/prism-okaidia.css'
 import '@style/site.css'
 import '@style/prism.css'
 
+import { siteMeta, ogMeta, twitterMeta } from '@data/metadata'
+
 import Container from '@component/Container'
 
 export const metadata = {
-  title: 'Free Open Source Alpine JS Components | HyperJS',
-  description:
-    'Free Alpine JS components that can be used in your next project.',
+  ...siteMeta,
   openGraph: {
-    title: 'Free Open Source Alpine JS Components | HyperJS',
-    description:
-      'Free Alpine JS components that can be used in your next project.',
-    url: 'https://js.hyperui.dev/',
-    siteName: 'HyperJS',
-    type: 'website',
-    images: ['https://js.hyperui.dev/og.jpg'],
+    ...ogMeta,
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Free Open Source Alpine JS Components | HyperJS',
-    description:
-      'Free Alpine JS components that can be used in your next project.',
+    ...twitterMeta,
   },
 }
 
@@ -72,13 +63,11 @@ async function getComponents() {
     return groupAcc
   }, {})
 
-  Object.keys(groupedComponentItems)
-    .sort()
-    .forEach((groupKey) => {
-      groupedComponentItems[groupKey].sort((groupA, groupB) => {
-        return groupA.title.localeCompare(groupB.title)
-      })
+  Object.keys(groupedComponentItems).forEach((groupKey) => {
+    groupedComponentItems[groupKey].sort((groupA, groupB) => {
+      return groupA.title.localeCompare(groupB.title)
     })
+  })
 
   Object.keys(groupedComponentItems).forEach((itemKey) => {
     groupedComponentItems[itemKey].sort((itemA, itemB) => {

@@ -12,7 +12,7 @@ import Prism from 'prismjs'
 
 import { componentPreviewHtml } from '@util/transformers'
 
-export default function Preview({ componentId }) {
+export default function Preview({ componentId, componentTitle }) {
   const [buttonText, setButtonText] = useState('Copy')
   const [componentCode, setComponentCode] = useState('')
   const [componentHtml, setComponentHtml] = useState('')
@@ -92,7 +92,7 @@ export default function Preview({ componentId }) {
                 className="w-full h-full"
                 loading="lazy"
                 srcDoc={componentHtml}
-                title="Preview"
+                title={`${componentTitle} in Alpine JS`}
               ></iframe>
             )}
 
