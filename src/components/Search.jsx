@@ -46,7 +46,7 @@ export default function Search({ navItems }) {
     <div className="relative h-12 sm:h-auto sm:flex-1">
       <input
         type="text"
-        className={`sm:max-w-sm w-full rounded-t text-sm border-gray-200 relative z-[100] focus:ring-inset ${
+        className={`sm:max-w-sm w-full rounded-t text-sm py-1.5 border-gray-200 relative z-[100] focus:ring-inset ${
           searchQuery ? 'border-b-none' : 'rounded-b'
         }`}
         placeholder="Search"

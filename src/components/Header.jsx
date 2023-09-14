@@ -17,7 +17,7 @@ export default function Header({
         showSide ? 'lg:w-[calc(100%_-_288px)] w-full' : 'w-full'
       }`}
     >
-      <div className="h-16 flex items-center gap-4 sm:gap-6 lg:gap-8">
+      <div className="h-16 flex items-center gap-4">
         <div className="flex items-center gap-2 sm:gap-4">
           <button
             className="p-1.5 text-gray-700 border border-gray-200 rounded"
@@ -31,7 +31,9 @@ export default function Header({
             <Bars3Icon className="w-5 h-5" />
           </button>
 
-          <Logo />
+          <span className="block lg:hidden">
+            <Logo />
+          </span>
         </div>
 
         <div className="hidden sm:block flex-1">
