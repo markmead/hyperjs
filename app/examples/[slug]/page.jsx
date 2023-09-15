@@ -22,14 +22,14 @@ export async function generateMetadata({ params }) {
   const { componentData } = await getComponent(params)
 
   return {
-    title: `${componentData.title} | HyperJS`,
+    title: `How to ${componentData.title} with Alpine JS | HyperJS`,
     openGraph: {
       ...ogMeta,
-      title: `${componentData.title} | HyperJS`,
+      title: `How to ${componentData.title} with Alpine JS | HyperJS`,
     },
     twitter: {
       ...twitterMeta,
-      title: `${componentData.title} | HyperJS`,
+      title: `How to ${componentData.title} with Alpine JS | HyperJS`,
     },
   }
 }
@@ -61,13 +61,22 @@ async function getComponent(params) {
 export default async function Page({ params }) {
   const { componentData, componentContent } = await getComponent(params)
 
+  const schemaData = {
+    '@context': 'http://schema.org',
+    '@type': 'NewsArticle',
+    headline: `How to ${componentData.title} with Alpine JS`,
+    image: 'https://js.hyperui.dev/og.jpg',
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+
       <Content>
-        <h1>
-          {componentData.title}
-          <span className="sr-only"> in Alpine JS</span>
-        </h1>
+        <h1>How to {componentData.title} with Alpine JS</h1>
 
         <p>{componentData.description}</p>
 

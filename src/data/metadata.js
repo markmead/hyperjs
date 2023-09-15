@@ -1,20 +1,18 @@
 export const siteMeta = {
-  title: 'Code examples and guides for Alpine JS functionality | HyperJS',
+  title: 'Code Examples and Guides of Functionality with Alpine JS | HyperJS',
   description:
-    'Learn how to use Alpine JS to build interactive components and functionality for your next project. Included are code examples and guides for each example.',
+    'Collection of code examples and guides of functionality with Alpine JS. Learn how to build a website with Alpine JS.',
 }
 
 export const ogMeta = {
   ...siteMeta,
-  url: 'https://js.hyperui.dev/',
   siteName: 'HyperUI',
   type: 'website',
+  url: 'https://js.hyperui.dev/',
   images: ['https://js.hyperui.dev/og.jpg'],
 }
 
 export const twitterMeta = {
+  ...siteMeta,
   card: 'summary_large_image',
-  title: 'Code examples and guides for Alpine JS functionality | HyperJS',
-  description:
-    'Learn how to use Alpine JS to build interactive components and functionality for your next project. Included are code examples and guides for each example.',
 }

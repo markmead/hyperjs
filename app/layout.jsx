@@ -71,7 +71,12 @@ async function getComponents() {
 
   Object.keys(groupedComponentItems).forEach((itemKey) => {
     groupedComponentItems[itemKey].sort((itemA, itemB) => {
-      return itemA.title.localeCompare(itemB.title)
+      // return itemA.title.localeCompare(itemB.title)
+
+      const itemALength = itemA.title.length
+      const itemBLength = itemB.title.length
+
+      return itemALength - itemBLength
     })
   })
 

@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <>
       <Content>
-        <h1>Alpine JS Examples</h1>
+        <h1>Code Examples and Guides on Functionality with Alpine JS</h1>
 
         <p>
           Alpine JS allows you to write DOM manipulation all in your HTML,
