@@ -1,4 +1,4 @@
-import Callout from '@/components/Callout'
+import Callout from '@component/Callout'
 import Content from '@component/Content'
 
 export default function Page() {
@@ -23,6 +23,13 @@ export default function Page() {
           content. Please be patient while I expand on the content.
         </Callout>
       </Content>
+
+      <div
+        data-ea-publisher="hyperuidev"
+        data-ea-type="image"
+        className="bordered horizontal"
+        id="home-page"
+      ></div>
     </>
   )
 }

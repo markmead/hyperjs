@@ -10,7 +10,7 @@ import { ogMeta, twitterMeta } from '@data/metadata'
 import Preview from '@component/Preview'
 import Callout from '@component/Callout'
 import Renderer from '@component/Renderer'
-import Content from '@/components/Content'
+import Content from '@component/Content'
 
 const mdxComponents = {
   Callout,
@@ -78,7 +78,16 @@ export default async function Page({ params }) {
       <Content>
         <h1>How to {componentData.title} with Alpine JS</h1>
 
-        <p>{componentData.description}</p>
+        {!!componentData.description && <p>{componentData.description}</p>}
+
+        <div className="not-prose max-w-xl">
+          <div
+            data-ea-publisher="hyperuidev"
+            data-ea-type="text"
+            className="bordered horizontal"
+            id="component-page"
+          ></div>
+        </div>
 
         <Renderer mdxSource={componentContent} mdxComponents={mdxComponents} />
       </Content>

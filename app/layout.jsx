@@ -13,6 +13,7 @@ import '@style/prism.css'
 
 import { siteMeta, ogMeta, twitterMeta } from '@data/metadata'
 
+import Ads from '@/ads'
 import Container from '@component/Container'
 
 export const metadata = {
@@ -111,6 +112,8 @@ export default async function RootLayout({ children }) {
         className={`${inter.variable} font-sans antialiased h-full bg-gray-50`}
       >
         <Container navItems={componentItems}>{children}</Container>
+
+        <Ads />
       </body>
     </html>
   )
