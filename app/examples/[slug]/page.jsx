@@ -10,7 +10,7 @@ import { ogMeta, twitterMeta } from '@data/metadata'
 import Preview from '@component/Preview'
 import Callout from '@component/Callout'
 import Renderer from '@component/Renderer'
-import Content from '@/components/Content'
+import Content from '@component/Content'
 
 const mdxComponents = {
   Callout,

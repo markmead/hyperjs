@@ -1,4 +1,4 @@
-import Callout from '@/components/Callout'
+import Callout from '@component/Callout'
 import Content from '@component/Content'
 
 export default function Page() {
