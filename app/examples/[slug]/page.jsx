@@ -80,6 +80,13 @@ export default async function Page({ params }) {
 
         <p>{componentData.description}</p>
 
+        <div
+          data-ea-publisher="hyperuidev"
+          data-ea-type="text"
+          className="bordered horizontal"
+          id="example-page"
+        ></div>
+
         <Renderer mdxSource={componentContent} mdxComponents={mdxComponents} />
       </Content>
 
