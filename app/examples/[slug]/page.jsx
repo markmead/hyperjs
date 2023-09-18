@@ -78,14 +78,16 @@ export default async function Page({ params }) {
       <Content>
         <h1>How to {componentData.title} with Alpine JS</h1>
 
-        <p>{componentData.description}</p>
+        {!!componentData.description && <p>{componentData.description}</p>}
 
-        <div
-          data-ea-publisher="hyperuidev"
-          data-ea-type="text"
-          className="bordered horizontal"
-          id="example-page"
-        ></div>
+        <div className="not-prose max-w-xl">
+          <div
+            data-ea-publisher="hyperuidev"
+            data-ea-type="text"
+            className="bordered horizontal"
+            id="component-page"
+          ></div>
+        </div>
 
         <Renderer mdxSource={componentContent} mdxComponents={mdxComponents} />
       </Content>
