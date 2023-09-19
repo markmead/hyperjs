@@ -81,7 +81,7 @@ export default async function Page({ params }) {
 
         {!!componentData.description && <p>{componentData.description}</p>}
 
-        <Ad adType="text" adClass="bordered horizontal" adId="example-page" />
+        <Ad adType="image" adClass="bordered horizontal" adId="example-page" />
 
         <Renderer mdxSource={componentContent} mdxComponents={mdxComponents} />
       </Content>
