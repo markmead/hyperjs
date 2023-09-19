@@ -17,11 +17,7 @@
 >
   <ul class="grid grid-cols-2 gap-4">
     <template x-for="person in people">
-      <x-component-wrapper
-        x-component
-        template="person"
-        x-data="{ item: person }"
-      ></x-component-wrapper>
+      <x-component template="person" x-data="{ item: person }"></x-component>
     </template>
   </ul>
 </div>
