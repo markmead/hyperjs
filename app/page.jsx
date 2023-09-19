@@ -1,3 +1,4 @@
+import Ad from '@component/Ad'
 import Callout from '@component/Callout'
 import Content from '@component/Content'
 
@@ -22,14 +23,13 @@ export default function Page() {
           This is a new version of the website with a change in direction for
           content. Please be patient while I expand on the content.
         </Callout>
-      </Content>
 
-      <div
-        data-ea-publisher="hyperuidev"
-        data-ea-type="image"
-        className="bordered horizontal"
-        id="home-page"
-      ></div>
+        <Ad
+          adType="image"
+          adClass="bordered horizontal mt-4"
+          adId="home-page"
+        />
+      </Content>
     </>
   )
 }
