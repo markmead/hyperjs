@@ -7,6 +7,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 
 import { ogMeta, twitterMeta } from '@data/metadata'
 
+import Ad from '@component/Ad'
 import Preview from '@component/Preview'
 import Callout from '@component/Callout'
 import Renderer from '@component/Renderer'
@@ -80,14 +81,7 @@ export default async function Page({ params }) {
 
         {!!componentData.description && <p>{componentData.description}</p>}
 
-        <div className="not-prose max-w-xl">
-          <div
-            data-ea-publisher="hyperuidev"
-            data-ea-type="text"
-            className="bordered horizontal"
-            id="component-page"
-          ></div>
-        </div>
+        <Ad adType="image" adClass="bordered horizontal" adId="example-page" />
 
         <Renderer mdxSource={componentContent} mdxComponents={mdxComponents} />
       </Content>
