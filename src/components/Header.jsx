@@ -1,5 +1,4 @@
 import { Bars3Icon } from '@heroicons/react/24/solid'
-import { HeartIcon } from '@heroicons/react/24/outline'
 
 import Logo from '@component/Logo'
 import Search from '@component/Search'
@@ -40,9 +39,7 @@ export default function Header({
           <Search navItems={navItems} />
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-4 flex-1 justify-end">
-          <SponsorLink />
-
+        <div className="flex items-center flex-1 justify-end">
           <GithubLink />
         </div>
       </div>
@@ -51,21 +48,6 @@ export default function Header({
         <Search navItems={navItems} />
       </div>
     </header>
-  )
-}
-
-function SponsorLink() {
-  return (
-    <a
-      href="https://github.com/sponsors/markmead"
-      rel="noreferrer"
-      target="_blank"
-      className="px-3 py-1.5 inline-flex items-center gap-1.5 transition text-gray-900 border bg-white border-gray-200 rounded"
-    >
-      <span className="text-sm font-medium">Sponsor</span>
-
-      <HeartIcon className="w-4 h-4" />
-    </a>
   )
 }
 

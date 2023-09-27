@@ -22,6 +22,7 @@ export default function Search({ navItems }) {
 
   useEffect(() => {
     const formattedItems = Object.entries(navItems).flatMap((navItem) => {
+      // eslint-disable-next-line no-unused-vars
       const [_, groupItems] = navItem
 
       return groupItems
@@ -59,7 +60,7 @@ export default function Search({ navItems }) {
           ref={refDropdown}
           className="absolute left-0 top-auto z-50 sm:max-w-sm w-full rounded-b -mt-px border border-gray-200 bg-white shadow-sm"
         >
-          {!!filteredItems.length ? (
+          {filteredItems.length ? (
             <SearchResults searchItems={filteredItems} />
           ) : (
             <SearchEmpty searchQuery={searchQuery} />
