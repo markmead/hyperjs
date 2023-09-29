@@ -5,6 +5,36 @@
 
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+<style title="normalize">
+  * {
+    box-sizing: border-box;
+  }
+</style>
+
+<style title="person">
+  .person-card {
+    border-radius: 0.25rem;
+    border: 1px solid rgb(229 231 235);
+    height: 100%;
+    padding: 1rem;
+  }
+
+  .person-card__name {
+    font-size: 1.25rem;
+  }
+
+  .person-card__age {
+    font-size: 0.85rem;
+    vertical-align: top;
+  }
+
+  .person-card__skills {
+    list-style-position: inside;
+    margin: 1rem 0 0;
+    padding: 0;
+  }
+</style>
+
 <div
   x-data="{
     people: [
@@ -15,21 +45,25 @@
     ]
   }"
 >
-  <ul class="grid grid-cols-2 gap-4">
+  <ul class="grid grid-cols-2 items-stretch gap-4">
     <template x-for="person in people">
-      <x-component template="person" x-data="{ item: person }"></x-component>
+      <x-component
+        template="person"
+        styles="normalize,person"
+        x-data="{ item: person }"
+      ></x-component>
     </template>
   </ul>
 </div>
 
 <template id="person">
-  <li>
+  <li class="person-card">
     <strong>
-      <span x-text="item.name"></span>
-      (<span x-text="item.age"></span>)
+      <span x-text="item.name" class="person-card__name"></span>
+      <span class="person-card__age"> (<span x-text="item.age"></span>) </span>
     </strong>
 
-    <ul>
+    <ul class="person-card__skills">
       <template x-for="skill in item.skills">
         <li x-text="skill"></li>
       </template>
