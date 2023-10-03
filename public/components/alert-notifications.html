@@ -1,13 +1,13 @@
 <script
   defer
-  src="https://unpkg.com/alpinejs-notify@latest/dist/notify.min.js"
+  src="https://unpkg.com/alpinejs-notify@latest/dist/notifications.min.js"
 ></script>
 
 <script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
 <div x-data>
-  <div id="topRight" class="fixed top-4 right-4 space-y-2 max-w-xs"></div>
-  <div id="bottomLeft" class="fixed bottom-4 left-4 space-y-2 max-w-xs"></div>
+  <div id="topRight" class="fixed right-4 top-4 max-w-xs space-y-2"></div>
+  <div id="bottomLeft" class="fixed bottom-4 left-4 max-w-xs space-y-2"></div>
 
   <div class="flex gap-2">
     <button
@@ -45,24 +45,24 @@
   <template id="alertStandard">
     <div role="alert" class="bg-gray-100 p-4">{notificationText}</div>
   </template>
-
-  <template id="alertClose">
-    <div
-      x-data
-      role="alert"
-      class="bg-gray-100 p-4 data-[notify-show=false]:hidden"
-    >
-      {notificationText}
-
-      <button
-        @click="$root.setAttribute('data-notify-show', false)"
-        class="underline"
-      >
-        Close
-      </button>
-    </div>
-  </template>
 </div>
+
+<template id="alertClose">
+  <div
+    x-data
+    role="alert"
+    class="bg-gray-100 p-4 data-[notify-show=false]:hidden"
+  >
+    {notificationText}
+
+    <button
+      @click="$root.setAttribute('data-notify-show', false)"
+      class="underline"
+    >
+      Close
+    </button>
+  </div>
+</template>
 
 <template id="alertAnimate">
   <div
