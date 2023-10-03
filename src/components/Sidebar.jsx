@@ -31,7 +31,7 @@ export default function Sidebar({ showMenu, showSide, navItems, urlSlug }) {
 
           <div className="fixed inset-0 flex">
             <div className="relative flex w-full max-w-xs flex-1">
-              <div className="overflow-y-auto border-r border-gray-200 bg-white grow flex flex-col pt-28 sm:pt-16">
+              <div className="flex grow flex-col overflow-y-auto border-r border-gray-200 bg-white pt-28 sm:pt-16">
                 <SidebarNav navItems={navItems} urlSlug={urlSlug} />
               </div>
             </div>
@@ -41,8 +41,8 @@ export default function Sidebar({ showMenu, showSide, navItems, urlSlug }) {
 
       {showSide && (
         <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
-          <div className="overflow-y-auto border-r border-gray-200 bg-white grow flex flex-col">
-            <div className="h-16 flex items-center px-6 border-b border-gray-200 shrink-0 sticky top-0 bg-white z-10">
+          <div className="flex grow flex-col overflow-y-auto border-r border-gray-200 bg-white">
+            <div className="sticky top-0 z-10 flex h-16 shrink-0 items-center border-b border-gray-200 bg-white px-6">
               <Logo />
             </div>
 
@@ -56,7 +56,7 @@ export default function Sidebar({ showMenu, showSide, navItems, urlSlug }) {
 
 function SidebarNav({ navItems, urlSlug }) {
   return (
-    <nav className="p-6 grow">
+    <nav className="grow p-6">
       <ul className="space-y-4">
         {Object.entries(navItems).map((navItem, navIndex) => (
           <NavGroup key={navIndex} navItem={navItem} urlSlug={urlSlug} />
@@ -78,22 +78,25 @@ function NavGroup({ navItem, urlSlug }) {
 
   return (
     <li>
-      <details className="group" open={isOpen}>
-        <summary className="flex items-center justify-between cursor-pointer">
+      <details
+        className="group [&_summary::-webkit-details-marker]:hidden"
+        open={isOpen}
+      >
+        <summary className="flex cursor-pointer items-center justify-between">
           <span className="inline-flex items-center gap-2">
             <GroupIcon groupIcon={groupIcon} />
 
-            <span className="text-gray-900 font-medium text-sm hover:text-gray-700 transition">
+            <span className="text-sm font-medium text-gray-900 transition hover:text-gray-700">
               {groupTitle}
             </span>
           </span>
 
-          <ChevronDownIcon className="w-4 h-4 group-open:-rotate-180" />
+          <ChevronDownIcon className="h-4 w-4 group-open:-rotate-180" />
         </summary>
 
         <ul
           role="list"
-          className="mt-2 space-y-2 pl-4 ml-2 border-l border-gray-100"
+          className="ml-2 mt-2 space-y-2 border-l border-gray-100 pl-4"
         >
           {navItems.map((navItem) => {
             const { title: itemTitle, slug: itemSlug } = navItem
@@ -108,7 +111,7 @@ function NavGroup({ navItem, urlSlug }) {
                   passHref
                 >
                   <span
-                    className={`text-xs/relaxed block font-medium transition
+                    className={`block text-xs/relaxed font-medium transition
                         ${
                           isActive
                             ? 'text-indigo-600'
@@ -131,20 +134,20 @@ function NavGroup({ navItem, urlSlug }) {
 function GroupIcon({ groupIcon }) {
   return (
     <>
-      {groupIcon === 'BookOpenIcon' && <BookOpenIcon className="w-4 h-4" />}
-      {groupIcon === 'CalendarIcon' && <CalendarIcon className="w-4 h-4" />}
-      {groupIcon === 'BellAlertIcon' && <BellAlertIcon className="w-4 h-4" />}
+      {groupIcon === 'BookOpenIcon' && <BookOpenIcon className="h-4 w-4" />}
+      {groupIcon === 'CalendarIcon' && <CalendarIcon className="h-4 w-4" />}
+      {groupIcon === 'BellAlertIcon' && <BellAlertIcon className="h-4 w-4" />}
       {groupIcon === 'BarsArrowDownIcon' && (
-        <BarsArrowDownIcon className="w-4 h-4" />
+        <BarsArrowDownIcon className="h-4 w-4" />
       )}
-      {groupIcon === 'BeakerIcon' && <BeakerIcon className="w-4 h-4" />}
-      {groupIcon === 'NewspaperIcon' && <NewspaperIcon className="w-4 h-4" />}
+      {groupIcon === 'BeakerIcon' && <BeakerIcon className="h-4 w-4" />}
+      {groupIcon === 'NewspaperIcon' && <NewspaperIcon className="h-4 w-4" />}
       {groupIcon === 'ArrowsUpDownIcon' && (
-        <ArrowsUpDownIcon className="w-4 h-4" />
+        <ArrowsUpDownIcon className="h-4 w-4" />
       )}
-      {groupIcon === 'ArchiveBoxIcon' && <ArchiveBoxIcon className="w-4 h-4" />}
-      {groupIcon === 'QueueListIcon' && <QueueListIcon className="w-4 h-4" />}
-      {groupIcon === 'SparklesIcon' && <SparklesIcon className="w-4 h-4" />}
+      {groupIcon === 'ArchiveBoxIcon' && <ArchiveBoxIcon className="h-4 w-4" />}
+      {groupIcon === 'QueueListIcon' && <QueueListIcon className="h-4 w-4" />}
+      {groupIcon === 'SparklesIcon' && <SparklesIcon className="h-4 w-4" />}
     </>
   )
 }
