@@ -18,14 +18,15 @@
       class="w-full align-top"
     ></textarea>
 
-    <button x-data @click="$notify(title, { body })" class="underline">
+    <button x-data @click="$notify({ title, body })" class="underline">
       Dynamic
     </button>
   </div>
 
   <button
     x-data
-    @click="$notify('You have a new message', {
+    @click="$notify({
+      title: 'You have a new message',
       body: 'How are you today?'
     })"
     class="underline"
