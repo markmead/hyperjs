@@ -1,0 +1,65 @@
+<script
+  defer
+  src="https://unpkg.com/alpinejs-axios@latest/dist/api.min.js"
+></script>
+
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div class="space-y-2">
+  <div x-data="{ productData: {} }" class="space-y-2">
+    <button
+      @click="productData = await $get('https://dummyjson.com/products/1[data]')"
+      class="underline"
+    >
+      Get
+    </button>
+
+    <pre
+      x-text="JSON.stringify(productData, null, 2)"
+      class="overflow-auto bg-gray-100 p-4 text-sm"
+    ></pre>
+  </div>
+
+  <div x-data="{ productData: {} }" class="space-y-2">
+    <button
+      @click="productData = await $post('https://dummyjson.com/products/add[data]', { title: 'BMW Pencil' })"
+      class="underline"
+    >
+      Create
+    </button>
+
+    <pre
+      x-text="JSON.stringify(productData, null, 2)"
+      class="overflow-auto bg-gray-100 p-4 text-sm"
+    ></pre>
+  </div>
+
+  <div x-data="{ productData: {} }" class="space-y-2">
+    <!-- You can also use $patch -->
+    <button
+      @click="productData = await $put('https://dummyjson.com/products/1[data]', { title: 'iPhone Galaxy +1' })"
+      class="underline"
+    >
+      Update
+    </button>
+
+    <pre
+      x-text="JSON.stringify(productData, null, 2)"
+      class="overflow-auto bg-gray-100 p-4 text-sm"
+    ></pre>
+  </div>
+
+  <div x-data="{ productData: {} }" class="space-y-2">
+    <button
+      @click="productData = await $delete('https://dummyjson.com/products/1[data]')"
+      class="underline"
+    >
+      Delete
+    </button>
+
+    <pre
+      x-text="JSON.stringify(productData, null, 2)"
+      class="overflow-auto bg-gray-100 p-4 text-sm"
+    ></pre>
+  </div>
+</div>
