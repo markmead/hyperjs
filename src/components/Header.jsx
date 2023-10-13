@@ -54,7 +54,7 @@ export default function Header({
 function GithubLink() {
   return (
     <a
-      href="https://github.com/markmead/hyperui"
+      href="https://github.com/markmead/hyperjs"
       rel="noreferrer"
       target="_blank"
       className="text-gray-900 hover:opacity-75"
