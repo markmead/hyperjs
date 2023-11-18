@@ -12,10 +12,10 @@ import '@style/prism.css'
 
 import { siteMeta, ogMeta, twitterMeta } from '@data/metadata'
 
-import Ads from '@/ads'
 import Container from '@component/Container'
 
 export const metadata = {
+  metadataBase: new URL('https://js.hyperui.dev'),
   ...siteMeta,
   openGraph: {
     ...ogMeta,
@@ -97,8 +97,6 @@ export default async function RootLayout({ children }) {
         className={`${inter.variable} h-full bg-gray-50 font-sans antialiased`}
       >
         <Container navItems={componentItems}>{children}</Container>
-
-        <Ads />
       </body>
     </html>
   )

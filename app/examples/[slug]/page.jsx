@@ -7,7 +7,6 @@ import rehypeExternalLinks from 'rehype-external-links'
 
 import { ogMeta, twitterMeta } from '@data/metadata'
 
-import Ad from '@component/Ad'
 import Preview from '@component/Preview'
 import Callout from '@component/Callout'
 import Renderer from '@component/Renderer'
@@ -80,8 +79,6 @@ export default async function Page({ params }) {
         <h1>How to {componentData.title} with Alpine JS</h1>
 
         {!!componentData.description && <p>{componentData.description}</p>}
-
-        <Ad adType="image" adClass="bordered horizontal" adId="example-page" />
 
         <Renderer mdxSource={componentContent} mdxComponents={mdxComponents} />
       </Content>
