@@ -93,9 +93,7 @@ export default async function RootLayout({ children }) {
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </Head>
 
-      <body
-        className={`${inter.variable} h-full bg-gray-50 font-sans antialiased`}
-      >
+      <body className={`${inter.variable} h-full bg-gray-50 font-sans antialiased`}>
         <Container navItems={componentItems}>{children}</Container>
       </body>
     </html>

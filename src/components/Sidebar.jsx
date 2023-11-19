@@ -22,11 +22,7 @@ export default function Sidebar({ showMenu, showSide, navItems, urlSlug }) {
   return (
     <div>
       {showMenu && (
-        <div
-          className="relative z-50 lg:hidden"
-          role="dialog"
-          aria-modal="true"
-        >
+        <div className="relative z-50 lg:hidden" role="dialog" aria-modal="true">
           <div className="fixed inset-0 bg-gray-900/50"></div>
 
           <div className="fixed inset-0 flex">
@@ -78,10 +74,7 @@ function NavGroup({ navItem, urlSlug }) {
 
   return (
     <li>
-      <details
-        className="group [&_summary::-webkit-details-marker]:hidden"
-        open={isOpen}
-      >
+      <details className="group [&_summary::-webkit-details-marker]:hidden" open={isOpen}>
         <summary className="flex cursor-pointer items-center justify-between">
           <span className="inline-flex items-center gap-2">
             <GroupIcon groupIcon={groupIcon} />
@@ -94,10 +87,7 @@ function NavGroup({ navItem, urlSlug }) {
           <ChevronDownIcon className="h-4 w-4 group-open:-rotate-180" />
         </summary>
 
-        <ul
-          role="list"
-          className="ml-2 mt-2 space-y-2 border-l border-gray-100 pl-4"
-        >
+        <ul role="list" className="ml-2 mt-2 space-y-2 border-l border-gray-100 pl-4">
           {navItems.map((navItem) => {
             const { title: itemTitle, slug: itemSlug } = navItem
 
@@ -105,18 +95,10 @@ function NavGroup({ navItem, urlSlug }) {
 
             return (
               <li key={itemSlug}>
-                <Link
-                  href="/examples/[slug]"
-                  as={`/examples/${itemSlug}`}
-                  passHref
-                >
+                <Link href="/examples/[slug]" as={`/examples/${itemSlug}`} passHref>
                   <span
                     className={`block text-xs/relaxed font-medium transition
-                        ${
-                          isActive
-                            ? 'text-indigo-600'
-                            : 'text-gray-700 hover:text-indigo-600'
-                        }
+                        ${isActive ? 'text-indigo-600' : 'text-gray-700 hover:text-indigo-600'}
                       `}
                   >
                     {itemTitle}
@@ -137,14 +119,10 @@ function GroupIcon({ groupIcon }) {
       {groupIcon === 'BookOpenIcon' && <BookOpenIcon className="h-4 w-4" />}
       {groupIcon === 'CalendarIcon' && <CalendarIcon className="h-4 w-4" />}
       {groupIcon === 'BellAlertIcon' && <BellAlertIcon className="h-4 w-4" />}
-      {groupIcon === 'BarsArrowDownIcon' && (
-        <BarsArrowDownIcon className="h-4 w-4" />
-      )}
+      {groupIcon === 'BarsArrowDownIcon' && <BarsArrowDownIcon className="h-4 w-4" />}
       {groupIcon === 'BeakerIcon' && <BeakerIcon className="h-4 w-4" />}
       {groupIcon === 'NewspaperIcon' && <NewspaperIcon className="h-4 w-4" />}
-      {groupIcon === 'ArrowsUpDownIcon' && (
-        <ArrowsUpDownIcon className="h-4 w-4" />
-      )}
+      {groupIcon === 'ArrowsUpDownIcon' && <ArrowsUpDownIcon className="h-4 w-4" />}
       {groupIcon === 'ArchiveBoxIcon' && <ArchiveBoxIcon className="h-4 w-4" />}
       {groupIcon === 'QueueListIcon' && <QueueListIcon className="h-4 w-4" />}
       {groupIcon === 'SparklesIcon' && <SparklesIcon className="h-4 w-4" />}

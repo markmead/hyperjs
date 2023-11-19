@@ -2,11 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-import {
-  ClipboardIcon,
-  EyeIcon,
-  CodeBracketIcon,
-} from '@heroicons/react/24/outline'
+import { ClipboardIcon, EyeIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
 
 import Prism from 'prismjs'
 
@@ -50,46 +46,36 @@ export default function Preview({ componentId, componentTitle }) {
   return (
     <>
       <section className="mt-4">
-        <div className="flex gap-1.5 items-center">
-          <Toggle
-            buttonText="Preview"
-            setActive={previewExample}
-            setHandle={setPreviewExample}
-          />
+        <div className="flex items-center gap-1.5">
+          <Toggle buttonText="Preview" setActive={previewExample} setHandle={setPreviewExample} />
 
-          <Toggle
-            buttonText="Code"
-            setActive={previewCode}
-            setHandle={setPreviewCode}
-          />
+          <Toggle buttonText="Code" setActive={previewCode} setHandle={setPreviewCode} />
 
           <button
             onClick={copyToClipboard}
-            className="px-3 py-1.5 inline-flex items-center gap-1.5 text-gray-900 ml-auto border-t border-x border-gray-200 rounded-t bg-white"
+            className="ml-auto inline-flex items-center gap-1.5 rounded-t border-x border-t border-gray-200 bg-white px-3 py-1.5 text-gray-900"
           >
             <span className="text-sm font-medium">{buttonText}</span>
 
-            <ClipboardIcon className="w-4 h-4" />
+            <ClipboardIcon className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="bg-white rounded-b relative border border-gray-200">
+        <div className="relative rounded-b border border-gray-200 bg-white">
           <div
-            className={`grid grid-cols-1 h-[500px] ${
-              showBoth && 'md:grid-cols-2 grid-rows-2 md:grid-rows-1'
+            className={`grid h-[500px] grid-cols-1 ${
+              showBoth && 'grid-rows-2 md:grid-cols-2 md:grid-rows-1'
             }`}
           >
             {!previewExample && !previewCode && (
               <div className="absolute inset-0 grid place-content-center">
-                <p className="text-gray-700 text-sm">
-                  Nothing to see, please select a view.
-                </p>
+                <p className="text-sm text-gray-700">Nothing to see, please select a view.</p>
               </div>
             )}
 
             {previewExample && (
               <iframe
-                className="w-full h-full"
+                className="h-full w-full"
                 loading="lazy"
                 srcDoc={componentHtml}
                 title={`${componentTitle} in Alpine JS`}
@@ -111,7 +97,7 @@ export default function Preview({ componentId, componentTitle }) {
 function Toggle({ buttonText, setActive, setHandle }) {
   return (
     <button
-      className={`px-3 py-1.5 transition inline-flex items-center gap-1.5 text-gray-900 border-t border-x bg-white border-gray-200 rounded-t ${
+      className={`inline-flex items-center gap-1.5 rounded-t border-x border-t border-gray-200 bg-white px-3 py-1.5 text-gray-900 transition ${
         !setActive && 'opacity-50 hover:opacity-100'
       }`}
       onClick={() => setHandle(!setActive)}
@@ -119,9 +105,9 @@ function Toggle({ buttonText, setActive, setHandle }) {
       <span className="text-sm font-medium">{buttonText}</span>
 
       {buttonText === 'Preview' ? (
-        <EyeIcon className="w-4 h-4" />
+        <EyeIcon className="h-4 w-4" />
       ) : (
-        <CodeBracketIcon className="w-4 h-4" />
+        <CodeBracketIcon className="h-4 w-4" />
       )}
     </button>
   )

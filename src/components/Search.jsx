@@ -47,7 +47,7 @@ export default function Search({ navItems }) {
     <div className="relative h-12 sm:h-auto sm:flex-1">
       <input
         type="text"
-        className={`sm:max-w-sm w-full rounded-t text-sm py-1.5 border-gray-200 relative z-[100] focus:ring-inset ${
+        className={`relative z-[100] w-full rounded-t border-gray-200 py-1.5 text-sm focus:ring-inset sm:max-w-sm ${
           searchQuery ? 'border-b-none' : 'rounded-b'
         }`}
         placeholder="Search"
@@ -58,7 +58,7 @@ export default function Search({ navItems }) {
       {searchQuery && (
         <div
           ref={refDropdown}
-          className="absolute left-0 top-auto z-50 sm:max-w-sm w-full rounded-b -mt-px border border-gray-200 bg-white shadow-sm"
+          className="absolute left-0 top-auto z-50 -mt-px w-full rounded-b border border-gray-200 bg-white shadow-sm sm:max-w-sm"
         >
           {filteredItems.length ? (
             <SearchResults searchItems={filteredItems} />
@@ -73,7 +73,7 @@ export default function Search({ navItems }) {
 
 function SearchResults({ searchItems }) {
   return (
-    <ul className="max-h-64 space-y-2 overflow-auto py-4 px-3">
+    <ul className="max-h-64 space-y-2 overflow-auto px-3 py-4">
       {searchItems.map(({ title: itemTitle, slug: itemSlug }) => (
         <li key={itemSlug}>
           <Link
@@ -92,7 +92,7 @@ function SearchResults({ searchItems }) {
 
 function SearchEmpty({ searchQuery }) {
   return (
-    <div className="py-4 px-3">
+    <div className="px-3 py-4">
       <p className="text-xs/relaxed text-gray-700">
         No results found for <strong>{searchQuery}</strong>.
       </p>

@@ -37,7 +37,7 @@ export default function Container({ navItems, children }) {
             navItems={navItems}
           />
 
-          <div className="px-4 sm:px-6 lg:px-8 py-8">
+          <div className="px-4 py-8 sm:px-6 lg:px-8">
             {children}
 
             <Footer />

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "lint": "next lint",
     "css": "npx tailwindcss -i src/styles/components.css -o public/components.css -m",
-    "postbuild": "yarn css"
+    "postbuild": "npm run css",
+    "format": "prettier '{src,app}/**/*.{css,js,jsx,mdx}' --write"
   },
   "dependencies": {
     "next": "^13.4.19",
