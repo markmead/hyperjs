@@ -1,20 +1,14 @@
-<script
-  defer
-  src="https://unpkg.com/alpinejs-sort@latest/dist/sort.min.js"
-></script>
+<script defer src="https://unpkg.com/alpinejs-sort@latest/dist/sort.min.js"></script>
 
 <script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
-<div
-  x-data="{ items: ['Post D', 'Post A', 'Post C', 'Post B'], type: 'asc' }"
-  class="space-y-2"
->
+<div x-data="{ items: ['Post D', 'Post A', 'Post C', 'Post B'], type: 'asc' }" class="space-y-2">
   <select x-model="type" class="w-full">
     <option value="asc">Asc</option>
     <option value="desc">Desc</option>
   </select>
 
-  <ol x-sort.items="type" class="list-decimal space-y-2 list-inside">
+  <ol x-sort.items="type" class="list-inside list-decimal space-y-2">
     <template x-for="item in items">
       <li x-text="item"></li>
     </template>

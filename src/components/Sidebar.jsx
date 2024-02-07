@@ -84,7 +84,7 @@ function NavGroup({ navItem, urlSlug }) {
             </span>
           </span>
 
-          <ChevronDownIcon className="h-4 w-4 group-open:-rotate-180" />
+          <ChevronDownIcon className="size-4 group-open:-rotate-180" />
         </summary>
 
         <ul role="list" className="ml-2 mt-2 space-y-2 border-l border-gray-100 pl-4">
@@ -95,14 +95,13 @@ function NavGroup({ navItem, urlSlug }) {
 
             return (
               <li key={itemSlug}>
-                <Link href="/examples/[slug]" as={`/examples/${itemSlug}`} passHref>
-                  <span
-                    className={`block text-xs/relaxed font-medium transition
-                        ${isActive ? 'text-indigo-600' : 'text-gray-700 hover:text-indigo-600'}
-                      `}
-                  >
-                    {itemTitle}
-                  </span>
+                <Link
+                  passHref
+                  href="/examples/[slug]"
+                  as={`/examples/${itemSlug}`}
+                  className={`text-xs/relaxed font-medium transition ${isActive ? 'text-indigo-600' : 'text-gray-700 hover:text-indigo-600'}`}
+                >
+                  {itemTitle}
                 </Link>
               </li>
             )
@@ -116,16 +115,16 @@ function NavGroup({ navItem, urlSlug }) {
 function GroupIcon({ groupIcon }) {
   return (
     <>
-      {groupIcon === 'BookOpenIcon' && <BookOpenIcon className="h-4 w-4" />}
-      {groupIcon === 'CalendarIcon' && <CalendarIcon className="h-4 w-4" />}
-      {groupIcon === 'BellAlertIcon' && <BellAlertIcon className="h-4 w-4" />}
-      {groupIcon === 'BarsArrowDownIcon' && <BarsArrowDownIcon className="h-4 w-4" />}
-      {groupIcon === 'BeakerIcon' && <BeakerIcon className="h-4 w-4" />}
-      {groupIcon === 'NewspaperIcon' && <NewspaperIcon className="h-4 w-4" />}
-      {groupIcon === 'ArrowsUpDownIcon' && <ArrowsUpDownIcon className="h-4 w-4" />}
-      {groupIcon === 'ArchiveBoxIcon' && <ArchiveBoxIcon className="h-4 w-4" />}
-      {groupIcon === 'QueueListIcon' && <QueueListIcon className="h-4 w-4" />}
-      {groupIcon === 'SparklesIcon' && <SparklesIcon className="h-4 w-4" />}
+      {groupIcon === 'BookOpenIcon' && <BookOpenIcon className="size-4" />}
+      {groupIcon === 'CalendarIcon' && <CalendarIcon className="size-4" />}
+      {groupIcon === 'BellAlertIcon' && <BellAlertIcon className="size-4" />}
+      {groupIcon === 'BarsArrowDownIcon' && <BarsArrowDownIcon className="size-4" />}
+      {groupIcon === 'BeakerIcon' && <BeakerIcon className="size-4" />}
+      {groupIcon === 'NewspaperIcon' && <NewspaperIcon className="size-4" />}
+      {groupIcon === 'ArrowsUpDownIcon' && <ArrowsUpDownIcon className="size-4" />}
+      {groupIcon === 'ArchiveBoxIcon' && <ArchiveBoxIcon className="size-4" />}
+      {groupIcon === 'QueueListIcon' && <QueueListIcon className="size-4" />}
+      {groupIcon === 'SparklesIcon' && <SparklesIcon className="size-4" />}
     </>
   )
 }

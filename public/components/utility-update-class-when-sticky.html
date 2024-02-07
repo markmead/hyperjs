@@ -1,16 +1,11 @@
-<script
-  defer
-  src="https://unpkg.com/alpinejs-sticky@latest/dist/sticky.min.js"
-></script>
+<script defer src="https://unpkg.com/alpinejs-sticky@latest/dist/sticky.min.js"></script>
 
 <script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
 <div x-data>
   <div x-sticky="highlight" class="sticky-element"></div>
 
-  <div x-sticky.sticky-element="show" x-sticky-inactive="hide" class="alert">
-    Show when sticky
-  </div>
+  <div x-sticky.sticky-element="show" x-sticky-inactive="hide" class="alert">Show when sticky</div>
 </div>
 
 <style>

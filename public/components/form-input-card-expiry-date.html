@@ -1,16 +1,7 @@
-<script
-  defer
-  src="https://unpkg.com/@alpinejs/mask@latest/dist/cdn.min.js"
-></script>
+<script defer src="https://unpkg.com/@alpinejs/mask@latest/dist/cdn.min.js"></script>
 
 <script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
 <div x-data="{ cardExpiryDate: '' }">
-  <input
-    x-model="cardExpiryDate"
-    x-mask="99/99"
-    type="text"
-    placeholder="99/99"
-    class="w-full"
-  />
+  <input x-model="cardExpiryDate" x-mask="99/99" type="text" placeholder="99/99" class="w-full" />
 </div>

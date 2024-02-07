@@ -1,7 +1,4 @@
-<script
-  defer
-  src="https://unpkg.com/alpinejs-tash@latest/dist/tash.min.js"
-></script>
+<script defer src="https://unpkg.com/alpinejs-tash@latest/dist/tash.min.js"></script>
 
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -10,9 +7,7 @@
     <strong>React</strong>
 
     <div x-data="{ name: 'John Doe', age: 50 }">
-      <p x-tash="name, age, company">
-        Hello, I am {name}! I am {age} years old!
-      </p>
+      <p x-tash="name, age, company">Hello, I am {name}! I am {age} years old!</p>
     </div>
   </div>
 
@@ -20,9 +15,7 @@
     <strong>Vue</strong>
 
     <div x-data="{ name: 'John Doe', age: 50 }">
-      <p x-tash.vue="name, age, company">
-        Hello, I am {{ name }}! I am {{ age }} years old!
-      </p>
+      <p x-tash.vue="name, age, company">Hello, I am {{ name }}! I am {{ age }} years old!</p>
     </div>
   </div>
 

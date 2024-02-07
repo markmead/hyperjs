@@ -1,7 +1,4 @@
-<script
-  defer
-  src="https://unpkg.com/alpinejs-overlap@latest/dist/overlap.min.js"
-></script>
+<script defer src="https://unpkg.com/alpinejs-overlap@latest/dist/overlap.min.js"></script>
 
 <script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
@@ -10,7 +7,7 @@
 
   <div
     x-data="{ isOverlap: $overlap('#targetEl') }"
-    class="absolute grid w-24 h-24 place-content-center top-12 left-12"
+    class="absolute left-12 top-12 grid h-24 w-24 place-content-center"
     :class="{ 'bg-indigo-100': isOverlap, 'bg-red-100': !isOverlap }"
     @resize.window="isOverlap = $overlap('#targetEl')"
   >
@@ -19,7 +16,7 @@
 
   <div
     x-data="{ isOverlap: $overlap('#targetEl') }"
-    class="absolute grid w-24 h-24 place-content-center top-36 left-8"
+    class="absolute left-8 top-36 grid h-24 w-24 place-content-center"
     :class="{ 'bg-indigo-100': isOverlap, 'bg-red-100': !isOverlap }"
     @resize.window="isOverlap = $overlap('#targetEl')"
   >

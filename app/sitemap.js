@@ -8,9 +8,9 @@ export default async function sitemap() {
 
     const componentItems = await Promise.all(
       componentSlugs.map(async (componentSlug) => {
-        const componentSlugFormatted = componentSlug.replace('.mdx', '')
+        const formattedComponentSlug = componentSlug.replace('.mdx', '')
 
-        return `examples/${componentSlugFormatted}`
+        return `examples/${formattedComponentSlug}`
       })
     )
 

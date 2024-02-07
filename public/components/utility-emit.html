@@ -1,7 +1,4 @@
-<script
-  defer
-  src="https://unpkg.com/alpinejs-emit@latest/dist/emit.min.js"
-></script>
+<script defer src="https://unpkg.com/alpinejs-emit@latest/dist/emit.min.js"></script>
 
 <script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
@@ -10,9 +7,7 @@
     <strong>First</strong>
 
     <div x-data>
-      <button @click="$emit('#TargetEl', { isChecked: false })">
-        Uncheck ❌
-      </button>
+      <button @click="$emit('#TargetEl', { isChecked: false })">Uncheck ❌</button>
     </div>
   </div>
 

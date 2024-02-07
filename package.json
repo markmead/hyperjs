@@ -1,39 +1,39 @@
 {
   "name": "hyperjs",
   "scripts": {
-    "build": "next build",
+    "dev": "next dev --turbo",
     "start": "next start",
-    "dev": "next dev",
-    "lint": "next lint",
-    "css": "npx tailwindcss -i src/styles/components.css -o public/components.css -m",
+    "build": "next build",
     "postbuild": "npm run css",
-    "format": "prettier '{src,app}/**/*.{css,js,jsx,mdx}' --write"
+    "lint": "next lint --fix",
+    "format": "prettier '{src,app}/**/*.{css,js,jsx,mdx}' --write",
+    "css": "npx tailwindcss -i src/styles/components.css -o public/components.css -m"
   },
   "dependencies": {
-    "next": "^13.4.19",
+    "next": "^14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@heroicons/react": "^2.0.18",
-    "@next/eslint-plugin-next": "^13.5.2",
-    "@tailwindcss/forms": "^0.5.3",
+    "@heroicons/react": "^2.1.1",
+    "@next/eslint-plugin-next": "^14.1.0",
+    "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
-    "autoprefixer": "^10.4.15",
-    "eslint": "^8.49.0",
-    "eslint-config-next": "^13.4.19",
-    "fast-glob": "^3.2.12",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.1.0",
+    "fast-glob": "^3.3.2",
     "gray-matter": "^4.0.3",
     "next-mdx-remote": "^4.4.1",
-    "postcss": "^8.4.29",
-    "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.4",
+    "postcss": "^8.4.34",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "prismjs": "^1.29.0",
-    "react-use": "^17.4.0",
+    "react-use": "^17.5.0",
     "rehype-external-links": "^3.0.0",
-    "remark": "^14.0.3",
-    "remark-html": "^15.0.1",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "remark-slug": "^7.0.1",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.4.1"
   }
 }

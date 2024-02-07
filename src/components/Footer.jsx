@@ -7,11 +7,10 @@ export default function Footer() {
           href="https://github.com/markmead"
           rel="noreferrer"
           target="_blank"
-          className="inline-block font-medium text-gray-700 hover:text-gray-900"
+          className="inline-block font-medium no-underline hover:text-gray-900"
         >
           Mark Mead
         </a>
-        .
       </p>
     </div>
   )

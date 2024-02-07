@@ -6,21 +6,12 @@
 <script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
 <div class="space-y-2">
-  <div
-    x-data="{ title: 'You have a new message', body: 'How are you today?' }"
-    class="space-y-2"
-  >
+  <div x-data="{ title: 'You have a new message', body: 'How are you today?' }" class="space-y-2">
     <input x-model="title" type="text" placeholder="Title" class="w-full" />
 
-    <textarea
-      x-model="body"
-      placeholder="Body"
-      class="w-full align-top"
-    ></textarea>
+    <textarea x-model="body" placeholder="Body" class="w-full align-top"></textarea>
 
-    <button x-data @click="$notify({ title, body })" class="underline">
-      Dynamic
-    </button>
+    <button x-data @click="$notify({ title, body })" class="underline">Dynamic</button>
   </div>
 
   <button

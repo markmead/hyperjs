@@ -3,22 +3,9 @@
 <div x-data="{ showModal: false }" @keydown.window.escape="showModal = false">
   <button @click="showModal = !showModal" class="underline">Toggle</button>
 
-  <div
-    x-cloak
-    x-transition.opacity
-    x-show="showModal"
-    class="fixed inset-0 bg-black/50"
-  ></div>
+  <div x-cloak x-transition.opacity x-show="showModal" class="fixed inset-0 bg-black/50"></div>
 
-  <div
-    x-cloak
-    x-transition
-    x-show="showModal"
-    class="fixed inset-0 z-50 grid place-content-center"
-  >
-    <div
-      @click.away="showModal = false"
-      class="w-[300px] h-[300px] bg-white"
-    ></div>
+  <div x-cloak x-transition x-show="showModal" class="fixed inset-0 z-50 grid place-content-center">
+    <div @click.away="showModal = false" class="h-[300px] w-[300px] bg-white"></div>
   </div>
 </div>

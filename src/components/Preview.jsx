@@ -57,7 +57,7 @@ export default function Preview({ componentId, componentTitle }) {
           >
             <span className="text-sm font-medium">{buttonText}</span>
 
-            <ClipboardIcon className="h-4 w-4" />
+            <ClipboardIcon className="size-4" />
           </button>
         </div>
 
@@ -105,9 +105,9 @@ function Toggle({ buttonText, setActive, setHandle }) {
       <span className="text-sm font-medium">{buttonText}</span>
 
       {buttonText === 'Preview' ? (
-        <EyeIcon className="h-4 w-4" />
+        <EyeIcon className="size-4" />
       ) : (
-        <CodeBracketIcon className="h-4 w-4" />
+        <CodeBracketIcon className="size-4" />
       )}
     </button>
   )

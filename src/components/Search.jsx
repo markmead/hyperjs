@@ -80,7 +80,7 @@ function SearchResults({ searchItems }) {
             passHref
             href="/examples/[slug]"
             as={`/examples/${itemSlug}`}
-            className="block text-xs/relaxed font-medium text-gray-700 hover:text-indigo-600 focus:text-indigo-600"
+            className="block text-sm/relaxed font-medium text-gray-700 hover:text-indigo-600 focus:text-indigo-600"
           >
             {itemTitle}
           </Link>
@@ -93,8 +93,8 @@ function SearchResults({ searchItems }) {
 function SearchEmpty({ searchQuery }) {
   return (
     <div className="px-3 py-4">
-      <p className="text-xs/relaxed text-gray-700">
-        No results found for <strong>{searchQuery}</strong>.
+      <p className="text-sm/relaxed text-gray-700">
+        No results found for <strong className="font-medium text-gray-900">{searchQuery}</strong>.
       </p>
     </div>
   )
