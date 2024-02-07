@@ -1,7 +1,4 @@
-<script
-  defer
-  src="https://unpkg.com/alpinejs-sort@latest/dist/sort.min.js"
-></script>
+<script defer src="https://unpkg.com/alpinejs-sort@latest/dist/sort.min.js"></script>
 
 <script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
@@ -22,7 +19,7 @@
     <option value="desc.title.main">Desc</option>
   </select>
 
-  <ol x-sort.items="type" class="list-decimal space-y-2 list-inside">
+  <ol x-sort.items="type" class="list-inside list-decimal space-y-2">
     <template x-for="item in items">
       <li x-text="item.title.main"></li>
     </template>

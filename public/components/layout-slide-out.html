@@ -3,12 +3,7 @@
 <div x-data="{ slideOut: false }" @keydown.window.escape="slideOut = false">
   <button @click="slideOut = !slideOut" class="underline">Toggle</button>
 
-  <div
-    x-cloak
-    x-transition.opacity
-    x-show="slideOut"
-    class="fixed inset-0 bg-black/50"
-  ></div>
+  <div x-cloak x-transition.opacity x-show="slideOut" class="fixed inset-0 bg-black/50"></div>
 
   <div
     x-cloak

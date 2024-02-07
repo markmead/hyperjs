@@ -1,7 +1,4 @@
-<script
-  defer
-  src="https://unpkg.com/alpinejs-notify@latest/dist/notifications.min.js"
-></script>
+<script defer src="https://unpkg.com/alpinejs-notify@latest/dist/notifications.min.js"></script>
 
 <script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
@@ -35,6 +32,8 @@
       @click="$notify('Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus.', {
       wrapperId: 'topRight',
       templateId: 'alertAnimate',
+      autoClose: 3000,
+      autoRemove: true
     })"
       class="underline"
     >
@@ -48,27 +47,21 @@
 </div>
 
 <template id="alertClose">
-  <div
-    x-data
-    role="alert"
-    class="bg-gray-100 p-4 data-[notify-show=false]:hidden"
-  >
+  <div x-data role="alert" class="bg-gray-100 p-4 data-[notify-show=false]:hidden">
     {notificationText}
 
-    <button
-      @click="$root.setAttribute('data-notify-show', false)"
-      class="underline"
-    >
-      Close
-    </button>
+    <button @click="$root.setAttribute('data-notify-show', false)" class="underline">Close</button>
   </div>
 </template>
 
 <template id="alertAnimate">
   <div
+    x-data
     role="alert"
     class="data-[notify-show=true]:animate-slide-in data-[notify-show=false]:animate-slide-out bg-gray-100 p-4"
   >
     {notificationText}
+
+    <button @click="$root.setAttribute('data-notify-show', false)" class="underline">Close</button>
   </div>
 </template>

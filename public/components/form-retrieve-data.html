@@ -1,31 +1,14 @@
-<script
-  defer
-  src="https://unpkg.com/alpinejs-form-data@latest/dist/form-data.min.js"
-></script>
+<script defer src="https://unpkg.com/alpinejs-form-data@latest/dist/form-data.min.js"></script>
 
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <div x-data="{ formData: {} }" class="space-y-2">
   <form @submit.prevent="formData = $formData" class="space-y-2">
-    <input
-      type="text"
-      name="firstName"
-      placeholder="First name..."
-      class="w-full"
-    />
+    <input type="text" name="firstName" placeholder="First name..." class="w-full" />
 
-    <input
-      type="text"
-      name="lastName"
-      placeholder="Last name..."
-      class="w-full"
-    />
+    <input type="text" name="lastName" placeholder="Last name..." class="w-full" />
 
-    <textarea
-      name="contactMessage"
-      placeholder="Your message..."
-      class="w-full"
-    ></textarea>
+    <textarea name="contactMessage" placeholder="Your message..." class="w-full"></textarea>
 
     <button type="submit" class="underline">Submit</button>
   </form>
