@@ -5,7 +5,7 @@
     "start": "next start",
     "build": "next build",
     "postbuild": "npm run css",
-    "lint": "next lint",
+    "lint": "next lint --fix",
     "format": "prettier '{src,app}/**/*.{css,js,jsx,mdx}' --write",
     "css": "npx tailwindcss -i src/styles/components.css -o public/components.css -m"
   },
