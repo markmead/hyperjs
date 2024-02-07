@@ -105,9 +105,9 @@ function Toggle({ buttonText, setActive, setHandle }) {
       <span className="text-sm font-medium">{buttonText}</span>
 
       {buttonText === 'Preview' ? (
-        <EyeIcon className="h-4 w-4" />
+        <EyeIcon className="size-4" />
       ) : (
-        <CodeBracketIcon className="h-4 w-4" />
+        <CodeBracketIcon className="size-4" />
       )}
     </button>
   )
