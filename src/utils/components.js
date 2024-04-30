@@ -1,36 +1,26 @@
-import Head from 'next/head'
-
-import { Inter } from 'next/font/google'
-
 import matter from 'gray-matter'
+import rehypeExternalLinks from 'rehype-external-links'
+
 import { join } from 'path'
 import { promises as fs } from 'fs'
+import { serialize } from 'next-mdx-remote/serialize'
 
-import 'prismjs/themes/prism-okaidia.css'
-import '@style/site.css'
-import '@style/prism.css'
+export async function getComponentPaths() {
+  const componentsPath = join(process.cwd(), '/src/data/components')
+  const componentSlugs = await fs.readdir(componentsPath)
 
-import { siteMeta, ogMeta, twitterMeta } from '@data/metadata'
+  const paths = componentSlugs.map((componentSlug) => {
+    return {
+      params: {
+        slug: componentSlug.replace('.mdx', ''),
+      },
+    }
+  })
 
-import Container from '@component/Container'
-
-export const metadata = {
-  metadataBase: new URL('https://js.hyperui.dev'),
-  ...siteMeta,
-  openGraph: {
-    ...ogMeta,
-  },
-  twitter: {
-    ...twitterMeta,
-  },
+  return paths
 }
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
-
-async function getComponents() {
+export async function getComponents() {
   const componentsPath = join(process.cwd(), '/src/data/components')
   const componentSlugs = await fs.readdir(componentsPath)
 
@@ -71,8 +61,6 @@ async function getComponents() {
 
   Object.keys(groupedComponentItems).forEach((itemKey) => {
     groupedComponentItems[itemKey].sort((itemA, itemB) => {
-      // return itemA.title.localeCompare(itemB.title)
-
       const itemALength = itemA.title.length
       const itemBLength = itemB.title.length
 
@@ -83,19 +71,24 @@ async function getComponents() {
   return groupedComponentItems
 }
 
-export default async function RootLayout({ children }) {
-  const componentItems = await getComponents()
+export async function getComponent(params) {
+  const componentsPath = join(process.cwd(), '/src/data/components')
 
-  return (
-    <html className="h-full scroll-smooth" lang="en" dir="ltr">
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-      </Head>
+  const componentPath = join(componentsPath, `${params.slug}.mdx`)
+  const componentItem = await fs.readFile(componentPath, 'utf-8')
 
-      <body className={`${inter.variable} h-full bg-gray-50 font-sans antialiased`}>
-        <Container navItems={componentItems}>{children}</Container>
-      </body>
-    </html>
-  )
+  const { content, data: componentData } = matter(componentItem)
+
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      remarkPlugins: [],
+      rehypePlugins: [[rehypeExternalLinks, { target: '_blank' }]],
+    },
+    scope: componentData,
+  })
+
+  return {
+    componentData,
+    componentContent: mdxSource,
+  }
 }

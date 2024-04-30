@@ -1,6 +1,4 @@
-'use client'
-
-import { useParams } from 'next/navigation'
+import { useRouter } from 'next/router'
 
 import { useState, useEffect } from 'react'
 
@@ -12,7 +10,9 @@ export default function Container({ navItems, children }) {
   const [showMenu, setShowMenu] = useState(false)
   const [showSide, setShowSide] = useState(true)
 
-  const { slug: urlSlug } = useParams()
+  const appRouter = useRouter()
+
+  const urlSlug = appRouter.query.slug || ''
 
   useEffect(() => setShowMenu(false), [urlSlug])
 

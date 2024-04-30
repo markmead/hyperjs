@@ -1,9 +1,0 @@
-@config "./tailwind/components.config.js";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-[x-cloak] {
-  @apply hidden;
-}

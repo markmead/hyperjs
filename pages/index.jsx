@@ -1,9 +1,22 @@
+import { getComponents } from '@util/components'
+
 import Callout from '@component/Callout'
 import Content from '@component/Content'
+import Container from '@component/Container'
 
-export default function Page() {
+export async function getStaticProps() {
+  const componentItems = await getComponents()
+
+  return {
+    props: {
+      componentItems,
+    },
+  }
+}
+
+export default function Page({ componentItems }) {
   return (
-    <>
+    <Container navItems={componentItems}>
       <Content>
         <h1>Code Examples and Guides on Functionality with Alpine JS</h1>
 
@@ -20,6 +33,6 @@ export default function Page() {
           patient while I expand on the content.
         </Callout>
       </Content>
-    </>
+    </Container>
   )
 }

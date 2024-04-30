@@ -1,5 +1,3 @@
-'use client'
-
 import { useState, useEffect } from 'react'
 
 import { ClipboardIcon, EyeIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
@@ -17,9 +15,15 @@ export default function Preview({ componentId, componentTitle }) {
 
   const showBoth = previewCode && previewExample
 
+  const isProduction = process.env.NODE_ENV === 'production'
+
   useEffect(() => {
     async function fetchData() {
-      const fetchResponse = await fetch(`/components/${componentId}.html`)
+      let componentUrl = `/components/${componentId}`
+
+      componentUrl = isProduction ? `${componentUrl}` : `${componentUrl}.html`
+
+      const fetchResponse = await fetch(componentUrl)
       const fetchCode = await fetchResponse.text()
 
       setComponentCode(fetchCode)

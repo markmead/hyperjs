@@ -1,8 +1,6 @@
-'use client'
-
 import Link from 'next/link'
 
-import { useParams } from 'next/navigation'
+import { useRouter } from 'next/router'
 
 import { useEffect, useState, useRef } from 'react'
 
@@ -16,7 +14,9 @@ export default function Search({ navItems }) {
   const [filteredItems, setFilteredItems] = useState([])
   const [formattedItems, setFormattedItems] = useState([])
 
-  const { slug: urlSlug } = useParams()
+  const appRouter = useRouter()
+
+  const urlSlug = appRouter.query.slug || ''
 
   useEffect(() => setSearchQuery(''), [urlSlug])
 
