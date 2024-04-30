@@ -92,3 +92,18 @@ export async function getComponent(params) {
     componentContent: mdxSource,
   }
 }
+
+export async function getComponentsSitemap() {
+  const componentsPath = join(process.cwd(), '/src/data/components')
+  const componentSlugs = await fs.readdir(componentsPath)
+
+  const componentItems = await Promise.all(
+    componentSlugs.map(async (componentSlug) => {
+      const formattedComponentSlug = componentSlug.replace('.mdx', '')
+
+      return `examples/${formattedComponentSlug}`
+    })
+  )
+
+  return componentItems
+}
