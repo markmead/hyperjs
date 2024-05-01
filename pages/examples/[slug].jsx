@@ -8,6 +8,7 @@ import Callout from '@component/Callout'
 import Renderer from '@component/Renderer'
 import Content from '@component/Content'
 import Container from '@component/Container'
+import Meta from '@component/Meta'
 
 const mdxComponents = {
   Callout,
@@ -43,6 +44,13 @@ export default function Page({ componentItems, componentData, componentContent }
     image: 'https://js.hyperui.dev/og.jpg',
   }
 
+  const metaContent = {
+    title: `How to ${componentData.title} with Alpine JS | HyperUI`,
+    description:
+      componentData.description ||
+      `Learn how to ${componentData.title} with Alpine JS with this guide and example.`,
+  }
+
   const appRouter = useRouter()
 
   const urlSlug = appRouter.query.slug || ''
@@ -53,6 +61,8 @@ export default function Page({ componentItems, componentData, componentContent }
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
+
+      <Meta metaContent={metaContent} />
 
       <Container navItems={componentItems}>
         <Content>
