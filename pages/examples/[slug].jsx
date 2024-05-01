@@ -45,7 +45,7 @@ export default function Page({ componentItems, componentData, componentContent }
 
   const appRouter = useRouter()
 
-  const urlSlug = appRouter.asPath
+  const urlSlug = appRouter.query.slug || ''
 
   return (
     <>
