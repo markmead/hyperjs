@@ -65,7 +65,7 @@ export default function Page({ componentItems, componentData, componentContent }
           <Renderer mdxSource={componentContent} mdxComponents={mdxComponents} />
         </Content>
 
-        <Preview componentId={urlSlug} componentTitle={componentData.title} />
+        <Preview key={urlSlug} componentId={urlSlug} componentTitle={componentData.title} />
       </Container>
     </>
   )
