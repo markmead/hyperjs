@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 
 import { getComponent, getComponents, getComponentPaths } from '@util/components'
 
+import Ad from '@component/Ad'
 import Preview from '@component/Preview'
 import Callout from '@component/Callout'
 import Renderer from '@component/Renderer'
@@ -58,6 +59,8 @@ export default function Page({ componentItems, componentData, componentContent }
           <h1>How to {componentData.title} with Alpine JS</h1>
 
           {!!componentData.description && <p>{componentData.description}</p>}
+
+          <Ad adStyle="stickybox" />
 
           <Renderer mdxSource={componentContent} mdxComponents={mdxComponents} />
         </Content>

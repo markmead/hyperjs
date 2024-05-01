@@ -1,6 +1,6 @@
 import { getComponents } from '@util/components'
 
-import Callout from '@component/Callout'
+import Ad from '@component/Ad'
 import Content from '@component/Content'
 import Container from '@component/Container'
 
@@ -28,10 +28,7 @@ export default function Page({ componentItems }) {
 
         <p>I have kept the styling to a minimum so that you can focus on the functionality.</p>
 
-        <Callout>
-          This is a new version of the website with a change in direction for content. Please be
-          patient while I expand on the content.
-        </Callout>
+        <Ad />
       </Content>
     </Container>
   )
