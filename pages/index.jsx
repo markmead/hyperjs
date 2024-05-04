@@ -1,6 +1,5 @@
 import { getComponents } from '@util/components'
 
-import Ad from '@component/Ad'
 import Content from '@component/Content'
 import Container from '@component/Container'
 import Meta from '@component/Meta'
@@ -37,8 +36,6 @@ export default function Page({ componentItems }) {
           </p>
 
           <p>I have kept the styling to a minimum so that you can focus on the functionality.</p>
-
-          <Ad />
         </Content>
       </Container>
     </>
