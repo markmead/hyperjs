@@ -8,7 +8,6 @@ import { promises as fs } from 'fs'
 
 import 'prismjs/themes/prism-okaidia.css'
 import '@style/site.css'
-import '@style/prism.css'
 
 import { siteMeta, ogMeta, twitterMeta } from '@data/metadata'
 

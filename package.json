@@ -1,13 +1,11 @@
 {
   "name": "hyperjs",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "start": "next start",
     "build": "next build",
-    "postbuild": "npm run css",
     "lint": "next lint --fix",
-    "format": "prettier '{src,app}/**/*.{css,js,jsx,mdx}' --write",
-    "css": "npx tailwindcss -i src/styles/components.css -o public/components.css -m"
+    "format": "prettier '{src,app}/**/*.{css,js,jsx,mdx}' --write"
   },
   "dependencies": {
     "next": "^14.1.4",
