@@ -1,9 +1,12 @@
+import { notFound } from 'next/navigation'
+
 import matter from 'gray-matter'
 import { promises as fs } from 'fs'
 import { join } from 'path'
 import { serialize } from 'next-mdx-remote/serialize'
 
 import rehypeExternalLinks from 'rehype-external-links'
+import remarkSlug from 'remark-slug'
 
 import { ogMeta, twitterMeta } from '@data/metadata'
 
@@ -39,22 +42,26 @@ export async function generateStaticParams() {
 }
 
 async function getComponent(params) {
-  const componentPath = join(componentsPath, `${params.slug}.mdx`)
-  const componentItem = await fs.readFile(componentPath, 'utf-8')
+  try {
+    const componentPath = join(componentsPath, `${params.slug}.mdx`)
+    const componentItem = await fs.readFile(componentPath, 'utf-8')
 
-  const { content, data: componentData } = matter(componentItem)
+    const { content, data: componentData } = matter(componentItem)
 
-  const mdxSource = await serialize(content, {
-    mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [[rehypeExternalLinks, { target: '_blank' }]],
-    },
-    scope: componentData,
-  })
+    const mdxSource = await serialize(content, {
+      mdxOptions: {
+        remarkPlugins: [remarkSlug],
+        rehypePlugins: [[rehypeExternalLinks, { target: '_blank' }]],
+      },
+      scope: componentData,
+    })
 
-  return {
-    componentData,
-    componentContent: mdxSource,
+    return {
+      componentData,
+      componentContent: mdxSource,
+    }
+  } catch {
+    notFound()
   }
 }
 
