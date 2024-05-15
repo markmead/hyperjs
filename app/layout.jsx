@@ -1,5 +1,3 @@
-import Head from 'next/head'
-
 import { Inter } from 'next/font/google'
 
 import matter from 'gray-matter'
@@ -70,8 +68,6 @@ async function getComponents() {
 
   Object.keys(groupedComponentItems).forEach((itemKey) => {
     groupedComponentItems[itemKey].sort((itemA, itemB) => {
-      // return itemA.title.localeCompare(itemB.title)
-
       const itemALength = itemA.title.length
       const itemBLength = itemB.title.length
 
@@ -87,11 +83,6 @@ export default async function RootLayout({ children }) {
 
   return (
     <html className="h-full scroll-smooth" lang="en" dir="ltr">
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-      </Head>
-
       <body className={`${inter.variable} h-full bg-gray-50 font-sans antialiased`}>
         <Container navItems={componentItems}>{children}</Container>
       </body>
