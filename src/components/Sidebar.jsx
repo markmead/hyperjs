@@ -96,9 +96,7 @@ function NavGroup({ navItem, urlSlug }) {
             return (
               <li key={itemSlug}>
                 <Link
-                  passHref
-                  href="/examples/[slug]"
-                  as={`/examples/${itemSlug}`}
+                  href={`/examples/${itemSlug}`}
                   className={`text-xs/relaxed font-medium transition ${isActive ? 'text-indigo-600' : 'text-gray-700 hover:text-indigo-600'}`}
                 >
                   {itemTitle}

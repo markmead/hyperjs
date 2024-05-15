@@ -77,9 +77,7 @@ function SearchResults({ searchItems }) {
       {searchItems.map(({ title: itemTitle, slug: itemSlug }) => (
         <li key={itemSlug}>
           <Link
-            passHref
-            href="/examples/[slug]"
-            as={`/examples/${itemSlug}`}
+            href={`/examples/${itemSlug}`}
             className="block text-sm/relaxed font-medium text-gray-700 hover:text-indigo-600 focus:text-indigo-600"
           >
             {itemTitle}
