@@ -8,6 +8,12 @@ export function componentPreviewHtml(componentHtml) {
 
         <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 
+        <style>
+          [x-cloak] {
+            display: none;
+          }
+        </style>
+
         <script>
           tailwind.config = {
             theme: {
