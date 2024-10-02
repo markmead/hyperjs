@@ -36,13 +36,13 @@ async function getComponents() {
       const componentPath = join(componentsPath, componentSlug)
       const componentItem = await fs.readFile(componentPath, 'utf-8')
 
-      const { frontmatter: data } = await serialize(componentItem, {
+      const { frontmatter: componentData } = await serialize(componentItem, {
         parseFrontmatter: true,
       })
 
       return {
-        title: data.title,
-        group: data.group,
+        title: componentData.title,
+        group: componentData.group,
         slug: componentSlug.replace('.mdx', ''),
       }
     })

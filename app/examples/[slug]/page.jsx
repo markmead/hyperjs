@@ -45,20 +45,16 @@ async function getComponent(params) {
     const componentPath = join(componentsPath, `${params.slug}.mdx`)
     const componentItem = await fs.readFile(componentPath, 'utf-8')
 
-    const { frontmatter: componentData } = await serialize(componentItem, {
-      parseFrontmatter: true,
-    })
-
     const mdxSource = await serialize(componentItem, {
+      parseFrontmatter: true,
       mdxOptions: {
         remarkPlugins: [rehypeSlug],
         rehypePlugins: [[rehypeExternalLinks, { target: '_blank' }]],
       },
-      scope: componentData,
     })
 
     return {
-      componentData,
+      componentData: mdxSource.frontmatter,
       componentContent: mdxSource,
     }
   } catch {
