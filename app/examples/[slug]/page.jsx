@@ -1,12 +1,11 @@
 import { notFound } from 'next/navigation'
 
-import matter from 'gray-matter'
 import { promises as fs } from 'fs'
 import { join } from 'path'
 import { serialize } from 'next-mdx-remote/serialize'
 
 import rehypeExternalLinks from 'rehype-external-links'
-import remarkSlug from 'remark-slug'
+import rehypeSlug from 'rehype-slug'
 
 import { ogMeta, twitterMeta } from '@data/metadata'
 
@@ -46,11 +45,13 @@ async function getComponent(params) {
     const componentPath = join(componentsPath, `${params.slug}.mdx`)
     const componentItem = await fs.readFile(componentPath, 'utf-8')
 
-    const { content, data: componentData } = matter(componentItem)
+    const { frontmatter: componentData } = await serialize(componentItem, {
+      parseFrontmatter: true,
+    })
 
-    const mdxSource = await serialize(content, {
+    const mdxSource = await serialize(componentItem, {
       mdxOptions: {
-        remarkPlugins: [remarkSlug],
+        remarkPlugins: [rehypeSlug],
         rehypePlugins: [[rehypeExternalLinks, { target: '_blank' }]],
       },
       scope: componentData,

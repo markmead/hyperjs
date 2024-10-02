@@ -1,8 +1,8 @@
 import { Inter } from 'next/font/google'
 
-import matter from 'gray-matter'
 import { join } from 'path'
 import { promises as fs } from 'fs'
+import { serialize } from 'next-mdx-remote/serialize'
 
 import 'prismjs/themes/prism-okaidia.css'
 import '@style/site.css'
@@ -36,13 +36,13 @@ async function getComponents() {
       const componentPath = join(componentsPath, componentSlug)
       const componentItem = await fs.readFile(componentPath, 'utf-8')
 
-      const {
-        data: { title, group },
-      } = matter(componentItem)
+      const { frontmatter: data } = await serialize(componentItem, {
+        parseFrontmatter: true,
+      })
 
       return {
-        title,
-        group,
+        title: data.title,
+        group: data.group,
         slug: componentSlug.replace('.mdx', ''),
       }
     })
