@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import Sidebar from '@component/Sidebar'
 import Footer from '@component/Footer'

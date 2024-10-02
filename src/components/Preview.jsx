@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-import { ClipboardIcon, EyeIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
+import { ClipboardIcon, CodeBracketIcon, EyeIcon } from '@heroicons/react/24/outline'
 
 import Prism from 'prismjs'
 

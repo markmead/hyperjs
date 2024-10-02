@@ -1,15 +1,15 @@
 import Link from 'next/link'
 
 import {
-  ChevronDownIcon,
-  BookOpenIcon,
-  BellAlertIcon,
-  CalendarIcon,
+  ArchiveBoxIcon,
+  ArrowsUpDownIcon,
   BarsArrowDownIcon,
   BeakerIcon,
+  BellAlertIcon,
+  BookOpenIcon,
+  CalendarIcon,
+  ChevronDownIcon,
   NewspaperIcon,
-  ArrowsUpDownIcon,
-  ArchiveBoxIcon,
   QueueListIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline'

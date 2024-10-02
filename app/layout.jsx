@@ -7,7 +7,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import 'prismjs/themes/prism-okaidia.css'
 import '@style/site.css'
 
-import { siteMeta, ogMeta, twitterMeta } from '@data/metadata'
+import { ogMeta, siteMeta, twitterMeta } from '@data/metadata'
 
 import Container from '@component/Container'
 
