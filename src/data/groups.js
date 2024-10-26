@@ -49,4 +49,9 @@ export const groupData = [
     title: 'Utility',
     icon: 'SparklesIcon',
   },
+  {
+    id: 'LoadMore',
+    title: 'LoadMore',
+    icon: 'ChevronDoubleDownIcon',
+  },
 ]

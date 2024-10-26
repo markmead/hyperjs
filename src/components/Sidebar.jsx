@@ -12,6 +12,7 @@ import {
   NewspaperIcon,
   QueueListIcon,
   SparklesIcon,
+  ChevronDoubleDownIcon,
 } from '@heroicons/react/24/outline'
 
 import { groupData } from '@data/groups'
@@ -123,6 +124,7 @@ function GroupIcon({ groupIcon }) {
       {groupIcon === 'ArchiveBoxIcon' && <ArchiveBoxIcon className="size-4" />}
       {groupIcon === 'QueueListIcon' && <QueueListIcon className="size-4" />}
       {groupIcon === 'SparklesIcon' && <SparklesIcon className="size-4" />}
+      {groupIcon === 'ChevronDoubleDownIcon' && <ChevronDoubleDownIcon className="size-4" />}
     </>
   )
 }

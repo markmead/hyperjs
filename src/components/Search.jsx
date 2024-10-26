@@ -33,7 +33,7 @@ export default function Search({ navItems }) {
 
   useEffect(() => {
     const filteredItems = formattedItems.filter(({ title: itemTitle }) =>
-      itemTitle.toLowerCase().includes(searchQueryDebounced.toLowerCase())
+      itemTitle?.toLowerCase().includes(searchQueryDebounced.toLowerCase())
     )
 
     setFilteredItems(filteredItems)
