@@ -66,9 +66,7 @@ function NavGroup({ navItem, urlSlug }) {
   const [navGroup, navItems] = navItem
 
   const { title: groupTitle, icon: groupIcon } =
-    groupData.find(({ id: groupId }) => {
-      return groupId === navGroup
-    }) || {}
+    groupData.find(({ id: groupId }) => groupId === navGroup) || {}
 
   const isOpen = navItems.some(({ slug: itemSlug }) => itemSlug === urlSlug)
 

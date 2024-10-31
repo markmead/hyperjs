@@ -48,32 +48,25 @@ async function getComponents() {
     })
   )
 
-  const groupedComponentItems = componentItems.reduce((groupAcc, groupItem) => {
-    const itemGroup = groupItem.group
+  const sortedComponentItems = componentItems.sort((itemA, itemB) => {
+    return itemA.title.localeCompare(itemB.title)
+  })
 
-    if (!groupAcc[itemGroup]) {
-      groupAcc[itemGroup] = []
+  const groupItems = [...new Set(sortedComponentItems.map(({ group: itemGroup }) => itemGroup))]
+  const sortedGroupItems = groupItems.sort()
+
+  console.log(sortedGroupItems)
+
+  const groupedComponentItems = sortedGroupItems.reduce((groupedItems, groupItem) => {
+    const groupItems = sortedComponentItems.filter(
+      ({ group: itemGroup }) => itemGroup === groupItem
+    )
+
+    return {
+      ...groupedItems,
+      [groupItem]: groupItems,
     }
-
-    groupAcc[itemGroup].push(groupItem)
-
-    return groupAcc
   }, {})
-
-  Object.keys(groupedComponentItems).forEach((groupKey) => {
-    groupedComponentItems[groupKey].sort((groupA, groupB) => {
-      return groupA.title.localeCompare(groupB.title)
-    })
-  })
-
-  Object.keys(groupedComponentItems).forEach((itemKey) => {
-    groupedComponentItems[itemKey].sort((itemA, itemB) => {
-      const itemALength = itemA.title.length
-      const itemBLength = itemB.title.length
-
-      return itemALength - itemBLength
-    })
-  })
 
   return groupedComponentItems
 }
