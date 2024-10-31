@@ -1,0 +1,20 @@
+<script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
+
+<div x-data="{ readMore: false }" class="space-y-2">
+  <p :class="{ 'line-clamp-4': !readMore }">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed odio hic repudiandae libero.
+    Aperiam maiores amet est. Eos nisi possimus at, saepe consequuntur ipsum animi tempore ad
+    laudantium similique ex ratione atque libero aspernatur officia ut odit rem necessitatibus
+    tempora quia, vero aliquid quod suscipit hic? Vitae voluptate corrupti suscipit eos blanditiis
+    itaque velit excepturi dolor earum voluptatibus? Qui officiis quisquam ullam tenetur architecto
+    rerum assumenda fuga incidunt, placeat quia voluptates quaerat maxime laudantium adipisci ipsam
+    consequuntur accusantium perferendis cumque recusandae maiores veritatis. Quod hic nihil atque,
+    alias cumque, ipsa aliquam quos vero illo officiis ipsam. Nulla quibusdam aperiam eveniet!
+  </p>
+
+  <button
+    @click="readMore = !readMore"
+    class="underline"
+    x-text="readMore ? 'Read Less' : 'Read More'"
+  ></button>
+</div>
