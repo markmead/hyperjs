@@ -12,7 +12,6 @@ import {
   NewspaperIcon,
   QueueListIcon,
   SparklesIcon,
-  ChevronDoubleDownIcon,
 } from '@heroicons/react/24/outline'
 
 import { groupData } from '@data/groups'
