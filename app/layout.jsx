@@ -55,8 +55,6 @@ async function getComponents() {
   const groupItems = [...new Set(sortedComponentItems.map(({ group: itemGroup }) => itemGroup))]
   const sortedGroupItems = groupItems.sort()
 
-  console.log(sortedGroupItems)
-
   const groupedComponentItems = sortedGroupItems.reduce((groupedItems, groupItem) => {
     const groupItems = sortedComponentItems.filter(
       ({ group: itemGroup }) => itemGroup === groupItem
