@@ -13,7 +13,7 @@ export default function Header({ showMenu, showSide, setShowMenu, setShowSide, n
       <div className="flex h-16 items-center gap-4">
         <div className="flex items-center gap-2 sm:gap-4">
           <button
-            className="rounded border border-gray-200 p-1.5 text-gray-700"
+            className="rounded-sm border border-gray-200 p-1.5 text-gray-700"
             onClick={() => {
               setShowSide(!showSide)
               setShowMenu(!showMenu)

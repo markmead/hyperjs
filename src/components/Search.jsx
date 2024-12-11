@@ -47,7 +47,7 @@ export default function Search({ navItems }) {
     <div className="relative h-12 sm:h-auto sm:flex-1">
       <input
         type="text"
-        className={`relative z-[100] w-full rounded-t border-gray-200 py-1.5 text-sm focus:ring-inset sm:max-w-sm ${
+        className={`relative z-100 w-full rounded-t border-gray-200 py-1.5 text-sm focus:ring-inset sm:max-w-sm ${
           searchQuery ? 'border-b-none' : 'rounded-b'
         }`}
         placeholder="Search"
@@ -58,7 +58,7 @@ export default function Search({ navItems }) {
       {searchQuery && (
         <div
           ref={refDropdown}
-          className="absolute left-0 top-auto z-50 -mt-px w-full rounded-b border border-gray-200 bg-white shadow-sm sm:max-w-sm"
+          className="absolute left-0 top-auto z-50 -mt-px w-full rounded-b border border-gray-200 bg-white shadow-xs sm:max-w-sm"
         >
           {filteredItems.length ? (
             <SearchResults searchItems={filteredItems} />

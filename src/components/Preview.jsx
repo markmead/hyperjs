@@ -83,7 +83,7 @@ export default function Preview({ componentId, componentTitle }) {
             )}
 
             {previewCode && (
-              <pre className="!rounded-none">
+              <pre className="rounded-none!">
                 <code className="language-html h-[300px]">{componentCode}</code>
               </pre>
             )}
