@@ -1,25 +1,16 @@
-<script defer src="https://unpkg.com/alpinejs-overlap@latest/dist/overlap.min.js"></script>
+<script defer src="https://unpkg.com/alpinejs-overlap@latest/dist/cdn.min.js"></script>
 
 <script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
 <div class="relative">
-  <div id="targetEl" class="h-32 w-32 bg-gray-100"></div>
+  <div id="TargetEl" class="top-8 size-48 bg-gray-900"></div>
 
   <div
-    x-data="{ isOverlap: $overlap('#targetEl') }"
-    class="absolute left-12 top-12 grid h-24 w-24 place-content-center"
-    :class="{ 'bg-indigo-100': isOverlap, 'bg-red-100': !isOverlap }"
-    @resize.window="isOverlap = $overlap('#targetEl')"
+    x-data="{ elementsAreOverlapping: $overlap('#TargetEl') }"
+    :class="{ 'bg-green-700': elementsAreOverlapping, 'bg-gray-900': !elementsAreOverlapping }"
+    class="absolute inset-y-0 right-0 grid size-48 place-content-center text-white"
+    @resize.window="elementsAreOverlapping = $overlap('#TargetEl')"
   >
-    <p x-text="isOverlap ? 'Overlap: Yes' : 'Overlap: No'" class="text-sm"></p>
-  </div>
-
-  <div
-    x-data="{ isOverlap: $overlap('#targetEl') }"
-    class="absolute left-8 top-36 grid h-24 w-24 place-content-center"
-    :class="{ 'bg-indigo-100': isOverlap, 'bg-red-100': !isOverlap }"
-    @resize.window="isOverlap = $overlap('#targetEl')"
-  >
-    <p x-text="isOverlap ? 'Overlap: Yes' : 'Overlap: No'" class="text-sm"></p>
+    <p x-text="elementsAreOverlapping ? 'Overlapping' : 'Not Overlapping'"></p>
   </div>
 </div>

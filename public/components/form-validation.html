@@ -6,91 +6,85 @@
 <script defer src="https://unpkg.com/alpinejs@latest/dist/cdn.min.js"></script>
 
 <form
-  @submit.prevent
+  @submit.prevent="$dispatch('validate')"
   x-data="{ contactName: '', contactAge: '', contactMessage: '', contactTerms: false }"
-  class="space-y-2"
+  class="space-y-4"
 >
-  <div
-    x-data="{ required: false }"
-    @error="required = !$json($event.detail).required"
-    class="space-y-2"
-  >
+  <div x-data="{ required: false }" @error="required = $valid($event.detail, 'required')">
     <input
+      id="contactName"
       type="text"
       x-model="contactName"
       x-validation.required="contactName"
-      placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
-      class="w-full"
+      class="w-full data-[validation-valid=false]:border-red-500 data-[validation-valid=true]:border-green-500"
     />
 
-    <div x-cloak x-show="required" class="text-red-600">Need a name</div>
+    <small x-cloak x-show="required" class="mt-1 block text-red-600"> Need a name </small>
   </div>
 
   <div
     x-data="{ minAge: false, maxAge: false }"
     @error="
-      minAge = !$json($event.detail).min
-      maxAge = !$json($event.detail).max
+      minAge = $valid($event.detail, 'min')
+      maxAge = $valid($event.detail, 'max')
     "
-    class="space-y-2"
   >
     <input
+      id="contactAge"
       type="number"
       x-model="contactAge"
       x-validation.min.18.max.24="contactAge"
-      placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
-      class="w-full"
+      class="w-full data-[validation-valid=false]:border-red-500 data-[validation-valid=true]:border-green-500"
     />
 
-    <div x-cloak x-show="minAge" class="text-red-600">Must be at least 18 years old</div>
+    <small x-cloak x-show="minAge" class="mt-1 block text-red-600">
+      Must be at least 18 years old
+    </small>
 
-    <div x-cloak x-show="maxAge" class="text-red-600">Can't be older than 24 years old</div>
+    <small x-cloak x-show="maxAge" class="mt-1 block text-red-600">
+      Can't be older than 24 years old
+    </small>
   </div>
 
   <div
     x-data="{ minLetters: false, maxLetters: false }"
     @error="
-      minLetters = !$json($event.detail).minLength
-      maxLetters = !$json($event.detail).maxLength
+      minLetters = $valid($event.detail, 'minLength')
+      maxLetters = $valid($event.detail, 'maxLength')
     "
-    class="space-y-2"
   >
     <textarea
+      id="contactMessage"
       x-model="contactMessage"
       x-validation.min:length.10.max:length.50="contactMessage"
-      placeholder="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci reprehenderit architecto sed magnam quaerat accusantium."
-      class="w-full"
+      class="w-full data-[validation-valid=false]:border-red-500 data-[validation-valid=true]:border-green-500"
     ></textarea>
 
-    <div x-cloak x-show="minLetters" class="text-red-600">Must be at least 10 characters</div>
+    <small x-cloak x-show="minLetters" class="mt-1 block text-red-600">
+      Must be at least 10 characters
+    </small>
 
-    <div x-cloak x-show="maxLetters" class="text-red-600">Can't be more than 50 characters</div>
+    <small x-cloak x-show="maxLetters" class="mt-1 block text-red-600">
+      Can't be more than 50 characters
+    </small>
   </div>
 
-  <div
-    x-data="{ isAccepted: false }"
-    @error="isAccepted = !$json($event.detail).checked"
-    class="space-y-2"
-  >
-    <input
-      type="checkbox"
-      value="true"
-      x-model="contactTerms"
-      x-validation.checked="contactTerms"
-    />
+  <div x-data="{ isAccepted: false }" @error="isAccepted = $valid($event.detail, 'checked')">
+    <label for="contactTerms" class="inline-flex items-center gap-2">
+      <input
+        id="contactTerms"
+        type="checkbox"
+        value="true"
+        x-model="contactTerms"
+        x-validation.checked="contactTerms"
+        class="size-5 data-[validation-valid=false]:border-red-500"
+      />
 
-    <div x-cloak x-show="isAccepted" class="text-red-600">Must accept</div>
+      <span>I accept the terms and conditions</span>
+    </label>
+
+    <small x-cloak x-show="isAccepted" class="mt-1 block text-red-600"> Must accept </small>
   </div>
 
   <button class="underline">Submit</button>
 </form>
-
-<style>
-  [x-validation-valid='false'] {
-    border-color: rgb(220 38 38);
-  }
-
-  [x-validation-valid='true'] {
-    border-color: rgb(22 163 74);
-  }
-</style>
